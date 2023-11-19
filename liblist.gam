@@ -1,0 +1,6 @@
+game "Critical Dynamics"
+startmap "c0a0"
+trainmap "t0a0"
+mpentity "info_player_deatchmatch"
+gamedll       "..\valve\dlls\hl.dll"
+gamedll_linux "../valve/dlls/hl_i386.so"
