@@ -1,0 +1,5 @@
+.*.swp
+/maps/
+/mapssrc/*.jmx
+/mapssrc/*.map
+/mapssrc/*.max
