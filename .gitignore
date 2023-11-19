@@ -1,4 +1,5 @@
 .*.swp
+/config.cfg
 /maps/
 /mapssrc/*.jmx
 /mapssrc/*.map
