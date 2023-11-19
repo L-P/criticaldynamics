@@ -1,4 +1,5 @@
 .*.swp
+/SAVE
 /buffer.dat
 /config.cfg
 /maps/
