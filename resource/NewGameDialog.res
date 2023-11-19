@@ -72,46 +72,6 @@
 		"default"		"0"
 	}
 	
-	"PlayGame_Alt"
-	{
-		"ControlName"		"Button"
-		"fieldName"		"PlayGame_Alt"
-		"xpos"		"40"
-		"ypos"		"216"
-		"wide"		"200"
-		"tall"		"24"
-		"autoResize"		"0"
-		"pinCorner"		"0"
-		"visible"		"0"
-		"enabled"		"1"
-		"tabPosition"		"4"
-		"labelText"		"#GameUI_PlayGame_Alt"
-		"textAlignment"		"center"
-		"dulltext"		"0"
-		"command"		"PlayGameAlt"
-		"default"		"0"
-	}
-	
-	"TrainingButton"
-	{
-		"ControlName"		"Button"
-		"fieldName"		"Training"
-		"xpos"		"40"
-		"ypos"		"120"
-		"wide"		"200"
-		"tall"		"24"
-		"autoResize"		"0"
-		"pinCorner"		"0"
-		"visible"		"1"
-		"enabled"		"1"
-		"tabPosition"		"2"
-		"labelText"		"#GameUI_TrainingRoom"
-		"textAlignment"		"center"
-		"dulltext"		"0"
-		"command"		"PlayTraining"
-		"default"		"0"
-	}
-	
 	"Cancel"
 	{
 		"ControlName"		"Button"

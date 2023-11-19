@@ -55,9 +55,7 @@
 "GameUI_NewGameHelpText"	"Select a level of difficulty or the Training\nRoom, then press 'Play'."
 "GameUI_NewGameHelpTextUplink"	"Select a difficulty level for the main campaign,\nor select Uplink or the Training Room, then\npress 'Play'."
 "GameUI_Difficulty"			"Select Difficulty"
-"GameUI_TrainingRoom"		"Training Room"
-"GameUI_PlayGame"			"Play Half-Life"
-"GameUI_PlayGame_Alt"			"Play Half-Life: Uplink"
+"GameUI_PlayGame"			"Play Critical Dynamics"
 "GameUI_Easy"			"Easy"
 "GameUI_Medium"			"Medium"
 "GameUI_Hard"			"Hard"
@@ -279,6 +277,6 @@
 "GameUI_MainMenu_Hint_FindServer"	"Search for online multiplayer servers."
 "GameUI_MainMenu_Hint_CreateServer"	"Host an online multiplayer server for others to join."
 "GameUI_MainMenu_Hint_ChangeGame"	"Select a different mod to play."
-"GameUI_MainMenu_Hint_QuitGame"	"Quit playing Half-Life."
+"GameUI_MainMenu_Hint_QuitGame"	"Quit playing Critical Dynamics."
 } 
 }  
