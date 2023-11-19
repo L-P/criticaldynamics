@@ -1,6 +1,8 @@
 .*.swp
+/buffer.dat
 /config.cfg
 /maps/
 /mapssrc/*.jmx
 /mapssrc/*.map
 /mapssrc/*.max
+/voice_ban.dt
