@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+set -eux
+
+mod="criticaldynamics"
+
+map="$mod/$1"
+bsp="${map%.*}.bsp"
+dst="$mod/maps/$(basename "$bsp")"
+
+(
+# Ensure we're in the real HL parent directory for this as compile tools look
+# for WADs relative to this path.
+cd "$(dirname "$(realpath "$0")")/../.."
+rm -f -- "$bsp" "$dst"
+sdHLCSG -cliptype precise "$map"
+sdHLBSP "$map"
+sdHLVIS -full "$map"
+sdHLRAD -bounce 32 "$map"
+mv "$bsp" "$dst"
+)
