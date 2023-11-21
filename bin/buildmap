@@ -14,7 +14,7 @@ cd "$(dirname "$(realpath "$0")")/../.."
 rm -f -- "$bsp" "$dst"
 sdHLCSG -cliptype precise "$map"
 sdHLBSP "$map"
-sdHLVIS -full "$map"
+sdHLVIS -nofixprt -full "$map"
 sdHLRAD -bounce 32 "$map"
 mv "$bsp" "$dst"
 )
