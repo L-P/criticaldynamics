@@ -17,7 +17,7 @@ rm -f -- "$bsp"
 sdHLCSG -cliptype precise "$map"
 sdHLBSP "$map"
 
-if [ "${2:=}" = "-fast" ]; then
+if [[ $* == *-fast ]]; then
     sdHLVIS -nofixprt -fast "$map"
     sdHLRAD -fast "$map"
 else

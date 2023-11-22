@@ -1730,36 +1730,43 @@
 }
 // entity 74
 {
-"classname" "monster_scientist"
-"spawnflags" "257"
-"sequence" "13"
-"body" "3"
-"TriggerCondition" "10"
-"angles" "0 120 0"
-"rendercolor" "0 0 0"
-"rendermode" "0"
-"renderfx" "0"
-"origin" "80 160 8"
-"targetname" "slick"
-"TriggerTarget" "sen_greet"
-}
-// entity 75
-{
 "classname" "scripted_sentence"
-"spawnflags" "13"
 "duration" "10"
-"radius" "512"
-"refire" "3"
-"volume" "10"
-"attenuation" "0"
-"delay" "0"
-"origin" "80 160 80"
+"origin" "72 168 0"
 "targetname" "sen_greet"
 "entity" "slick"
 "listener" "player"
 "sentence" "!C0A0_GREET"
+"angles" "0 105 0"
+"spawnflags" "13"
+}
+// entity 75
+{
+"classname" "monster_scientist"
+"spawnflags" "258"
+"body" "3"
+"origin" "80 160 4"
+"targetname" "slick"
+"angles" "0 105 0"
 }
 // entity 76
+{
+"classname" "trigger_once"
+"sounds" "0"
+"delay" "0"
+"spawnflags" "0"
+"target" "sen_greet"
+// brush 0
+{
+( -80 368 0 ) ( -80 369 0 ) ( -80 368 1 ) AAATRIGGER [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -80 368 0 ) ( -80 368 1 ) ( -79 368 0 ) AAATRIGGER [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -80 368 0 ) ( -79 368 0 ) ( -80 369 0 ) AAATRIGGER [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 80 384 128 ) ( 80 385 128 ) ( 81 384 128 ) AAATRIGGER [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 80 384 16 ) ( 81 384 16 ) ( 80 384 17 ) AAATRIGGER [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 80 384 16 ) ( 80 384 17 ) ( 80 385 16 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+}
+// entity 77
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
@@ -1885,7 +1892,7 @@
 ( -160 1136 80 ) ( -160 1264 48 ) ( -160 1136 48 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 77
+// entity 78
 {
 "classname" "func_door"
 "zhlt_lightflags" "0"
@@ -1921,7 +1928,7 @@
 ( -264 1148 112 ) ( -264 1148 0 ) ( -264 1140 112 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1.16667
 }
 }
-// entity 78
+// entity 79
 {
 "classname" "func_door"
 "zhlt_lightflags" "0"
@@ -1957,7 +1964,7 @@
 ( -192 1148 112 ) ( -192 1148 0 ) ( -192 1140 112 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1.16667
 }
 }
-// entity 79
+// entity 80
 {
 "classname" "func_button"
 "spawnflags" "1"
@@ -2004,7 +2011,7 @@
 ( -344 1154 56 ) ( -344 1154 40 ) ( -344 1152 56 ) +AELEV_UP [ 0 1 0 0 ] [ 0 0 -1 27.9575 ] 0 1 1.33333
 }
 }
-// entity 80
+// entity 81
 {
 "classname" "light"
 "_falloff" "0"
@@ -2014,14 +2021,14 @@
 "origin" "-264 1064 64"
 "_tb_layer" "3"
 }
-// entity 81
+// entity 82
 {
 "classname" "info_player_start"
 "angles" "0 90 0"
 "origin" "-256 1072 40"
 "_tb_layer" "3"
 }
-// entity 82
+// entity 83
 {
 "classname" "ambient_generic"
 "health" "10"
@@ -2042,7 +2049,7 @@
 "origin" "-352 1128 88"
 "_tb_layer" "3"
 }
-// entity 83
+// entity 84
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
@@ -2053,7 +2060,7 @@
 "_tb_layer_hidden" "1"
 "_tb_layer_omit_from_export" "1"
 }
-// entity 84
+// entity 85
 {
 "classname" "func_wall_toggle"
 "zhlt_lightflags" "0"
@@ -2114,7 +2121,7 @@
 ( -208 1088 160 ) ( -208 1088 128 ) ( -208 992 160 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 85
+// entity 86
 {
 "classname" "trigger_auto"
 "angles" "0 90 0"
@@ -2124,7 +2131,7 @@
 "origin" "-448 1184 64"
 "_tb_layer" "4"
 }
-// entity 86
+// entity 87
 {
 "classname" "multi_manager"
 "angles" "0 90 0"
@@ -2136,7 +2143,7 @@
 "origin" "-416 1184 64"
 "_tb_layer" "4"
 }
-// entity 87
+// entity 88
 {
 "classname" "env_fade"
 "angles" "0 90 0"
@@ -2149,7 +2156,7 @@
 "origin" "-416 1184 32"
 "_tb_layer" "4"
 }
-// entity 88
+// entity 89
 {
 "classname" "env_message"
 "angles" "0 90 0"

@@ -1,1 +1,7 @@
 ["C0A0_GREET", "Ha, we can begin. Can you please open this big crate and install the retro-encabulator ?"]
+["C0A0_BRKCRT_01", "The crate. Can you please open it?"]
+["C0A0_BRKCRT_02", "To open the crate there must be a crowbar somewhere."]
+["C0A0_BRKCRT_03", "On the smaller crates. The crowbar."]
+["C0A0_BRKCRT_04", "THE CROWBAR. THE CRATE. BREAK THE CRATE WITH THE CROWBAR."]
+["C0A0_PUSH_START", "Alright this looks like what I ordered, you can install it in the center console."]
+["C0A0_PUSH_WARN", "Careful with that. This year's budget all went into this part."]
