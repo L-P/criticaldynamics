@@ -13,9 +13,17 @@ bsp="$mod/maps/$1.bsp"
 # for WADs relative to this path.
 cd "$(dirname "$(realpath "$0")")/../.."
 rm -f -- "$bsp"
+
 sdHLCSG -cliptype precise "$map"
 sdHLBSP "$map"
-sdHLVIS -nofixprt -full "$map"
-sdHLRAD -bounce 32 "$map"
+
+if [ "${2:=}" = "-fast" ]; then
+    sdHLVIS -nofixprt -fast "$map"
+    sdHLRAD -fast "$map"
+else
+    sdHLVIS -nofixprt -full "$map"
+    sdHLRAD -bounce 32 "$map"
+fi
+
 rm -- "$map"
 )
