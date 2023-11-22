@@ -26,7 +26,7 @@ while IFS="" read -r line || [ -n "$line" ]; do
     echo "$sentence" | text2wave -f 22050 -o tmp.wav
 
     rm -f "$destfile"
-    ffmpeg -loglevel error -i tmp.wav -acodec pcm_u8 -ar 22050 -ac 1 "$destfile"
+    ffmpeg -loglevel error -i tmp.wav -filter:a "volume=2" -acodec pcm_u8 -ar 22050 -ac 1 "$destfile"
     rm "tmp.wav"
     echo "$name $noext" >> "$sentences"
 done < "soundsrc/sentences.jsonl"
