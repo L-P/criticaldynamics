@@ -1,7 +1,7 @@
 game "Critical Dynamics"
 type "singleplayer_only"
 fallback_dir "valve"
-startmap "cd01intro00"
+startmap "c0a0"
 mpentity "info_player_deatchmatch"
 icon "logo"
 gamedll       "..\valve\dlls\hl.dll"
