@@ -4,9 +4,14 @@
 set -eux
 
 mod="criticaldynamics"
-
 map="$mod/maps/$1.map"
 bsp="$mod/maps/$1.bsp"
+fast=0
+if [ $# -gt 1 ]; then
+    if [ "$2" = "-fast" ]; then
+        fast=1
+    fi
+fi
 
 (
 # Ensure we're in the real HL parent directory for this as compile tools look
@@ -17,7 +22,7 @@ rm -f -- "$bsp"
 sdHLCSG -cliptype precise "$map"
 sdHLBSP "$map"
 
-if [[ $* == *-fast ]]; then
+if [ $fast -eq 1 ]; then
     sdHLVIS -nofixprt -fast "$map"
     sdHLRAD -fast "$map"
 else
