@@ -7,6 +7,7 @@
 "_tb_mod" "criticaldynamics"
 "_tb_def" "external:criticaldynamics/criticaldynamics.fgd"
 "wad" "criticaldynamics/sdhlt.wad;criticaldynamics/devtextures.wad;valve/halflife.wad"
+"_tb_layer_locked" "1"
 // brush 0
 {
 ( -384 -384 0 ) ( -384 -384 -32 ) ( -384 384 0 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -1730,50 +1731,13 @@
 }
 // entity 74
 {
-"classname" "scripted_sentence"
-"duration" "10"
-"origin" "72 168 0"
-"targetname" "sen_greet"
-"entity" "slick"
-"listener" "player"
-"sentence" "!C0A0_GREET"
-"angles" "0 105 0"
-"spawnflags" "13"
-}
-// entity 75
-{
-"classname" "monster_scientist"
-"spawnflags" "258"
-"body" "3"
-"origin" "80 160 4"
-"targetname" "slick"
-"angles" "0 105 0"
-}
-// entity 76
-{
-"classname" "trigger_once"
-"sounds" "0"
-"delay" "0"
-"spawnflags" "0"
-"target" "sen_greet"
-// brush 0
-{
-( -80 368 0 ) ( -80 369 0 ) ( -80 368 1 ) AAATRIGGER [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -80 368 0 ) ( -80 368 1 ) ( -79 368 0 ) AAATRIGGER [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -80 368 0 ) ( -79 368 0 ) ( -80 369 0 ) AAATRIGGER [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 80 384 128 ) ( 80 385 128 ) ( 81 384 128 ) AAATRIGGER [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 80 384 16 ) ( 81 384 16 ) ( 80 384 17 ) AAATRIGGER [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 80 384 16 ) ( 80 384 17 ) ( 80 385 16 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-}
-// entity 77
-{
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Elevator"
 "_tb_id" "3"
 "_tb_layer_sort_index" "0"
 "_tb_layer_locked" "1"
+"_tb_layer_hidden" "1"
 // brush 0
 {
 ( -336 1136 128 ) ( -336 1136 112 ) ( -336 1152 128 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 160 ] 0 1 0.5
@@ -1892,7 +1856,7 @@
 ( -160 1136 80 ) ( -160 1264 48 ) ( -160 1136 48 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 78
+// entity 75
 {
 "classname" "func_door"
 "zhlt_lightflags" "0"
@@ -1928,7 +1892,7 @@
 ( -264 1148 112 ) ( -264 1148 0 ) ( -264 1140 112 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1.16667
 }
 }
-// entity 79
+// entity 76
 {
 "classname" "func_door"
 "zhlt_lightflags" "0"
@@ -1964,7 +1928,7 @@
 ( -192 1148 112 ) ( -192 1148 0 ) ( -192 1140 112 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1.16667
 }
 }
-// entity 80
+// entity 77
 {
 "classname" "func_button"
 "spawnflags" "1"
@@ -2011,7 +1975,7 @@
 ( -344 1154 56 ) ( -344 1154 40 ) ( -344 1152 56 ) +AELEV_UP [ 0 1 0 0 ] [ 0 0 -1 27.9575 ] 0 1 1.33333
 }
 }
-// entity 81
+// entity 78
 {
 "classname" "light"
 "_falloff" "0"
@@ -2021,14 +1985,14 @@
 "origin" "-264 1064 64"
 "_tb_layer" "3"
 }
-// entity 82
+// entity 79
 {
 "classname" "info_player_start"
 "angles" "0 90 0"
 "origin" "-256 1072 40"
 "_tb_layer" "3"
 }
-// entity 83
+// entity 80
 {
 "classname" "ambient_generic"
 "health" "10"
@@ -2049,7 +2013,7 @@
 "origin" "-352 1128 88"
 "_tb_layer" "3"
 }
-// entity 84
+// entity 81
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
@@ -2060,7 +2024,7 @@
 "_tb_layer_hidden" "1"
 "_tb_layer_omit_from_export" "1"
 }
-// entity 85
+// entity 82
 {
 "classname" "func_wall_toggle"
 "zhlt_lightflags" "0"
@@ -2121,7 +2085,7 @@
 ( -208 1088 160 ) ( -208 1088 128 ) ( -208 992 160 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 86
+// entity 83
 {
 "classname" "trigger_auto"
 "angles" "0 90 0"
@@ -2131,7 +2095,7 @@
 "origin" "-448 1184 64"
 "_tb_layer" "4"
 }
-// entity 87
+// entity 84
 {
 "classname" "multi_manager"
 "angles" "0 90 0"
@@ -2143,7 +2107,7 @@
 "origin" "-416 1184 64"
 "_tb_layer" "4"
 }
-// entity 88
+// entity 85
 {
 "classname" "env_fade"
 "angles" "0 90 0"
@@ -2156,7 +2120,7 @@
 "origin" "-416 1184 32"
 "_tb_layer" "4"
 }
-// entity 89
+// entity 86
 {
 "classname" "env_message"
 "angles" "0 90 0"
@@ -2166,4 +2130,194 @@
 "targetname" "intro_title"
 "origin" "-448 1184 32"
 "_tb_layer" "4"
+}
+// entity 87
+{
+"classname" "func_group"
+"_tb_type" "_tb_layer"
+"_tb_name" "Greet Sequence"
+"_tb_id" "21"
+"_tb_layer_sort_index" "2"
+"_tb_layer_locked" "1"
+}
+// entity 88
+{
+"classname" "monster_scientist"
+"spawnflags" "258"
+"body" "3"
+"origin" "80 160 4"
+"targetname" "slick"
+"angles" "0 105 0"
+"_tb_layer" "21"
+}
+// entity 89
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "Greet sequence"
+"_tb_id" "29"
+"_tb_layer" "21"
+}
+// entity 90
+{
+"delay" "0"
+"origin" "-64 368 216"
+"classname" "trigger_changetarget"
+"m_iszNewTarget" "greet_sen_02"
+"target" "greet_loop_relay"
+"targetname" "greet_sen_01_next"
+"angle" "90"
+"_tb_group" "29"
+"_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
+}
+// entity 91
+{
+"delay" "0"
+"origin" "0 368 216"
+"classname" "trigger_changetarget"
+"m_iszNewTarget" "greet_sen_04"
+"target" "greet_loop_relay"
+"targetname" "greet_sen_03_next"
+"angle" "90"
+"_tb_group" "29"
+"_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
+}
+// entity 92
+{
+"classname" "trigger_relay"
+"spawnflags" "0"
+"triggerstate" "1"
+"delay" "0"
+"origin" "-16 272 152"
+"targetname" "greet_loop_relay"
+"target" "greet_sen_01"
+"angle" "90"
+"_tb_group" "29"
+}
+// entity 93
+{
+"delay" "0"
+"origin" "-32 368 216"
+"classname" "trigger_changetarget"
+"m_iszNewTarget" "greet_sen_03"
+"target" "greet_loop_relay"
+"targetname" "greet_sen_02_next"
+"angle" "90"
+"_tb_group" "29"
+"_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
+}
+// entity 94
+{
+"duration" "10"
+"origin" "0 368 128"
+"entity" "slick"
+"listener" "player"
+"angles" "0 90 0"
+"spawnflags" "13"
+"classname" "scripted_sentence"
+"sentence" "!C0A0_GREET_03"
+"target" "greet_sen_03_next"
+"targetname" "greet_sen_03"
+"_tb_group" "29"
+"_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
+}
+// entity 95
+{
+"duration" "10"
+"origin" "32 368 128"
+"entity" "slick"
+"listener" "player"
+"angles" "0 90 0"
+"spawnflags" "13"
+"classname" "scripted_sentence"
+"sentence" "!C0A0_GREET_04"
+"target" "greet_sen_04_next"
+"targetname" "greet_sen_04"
+"_tb_group" "29"
+"_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
+}
+// entity 96
+{
+"delay" "0"
+"origin" "32 368 216"
+"classname" "trigger_changetarget"
+"m_iszNewTarget" "greet_sen_05"
+"target" "greet_loop_relay"
+"targetname" "greet_sen_04_next"
+"angle" "90"
+"_tb_group" "29"
+"_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
+}
+// entity 97
+{
+"duration" "10"
+"origin" "-64 368 128"
+"entity" "slick"
+"listener" "player"
+"angles" "0 90 0"
+"spawnflags" "13"
+"classname" "scripted_sentence"
+"sentence" "!C0A0_GREET_01"
+"target" "greet_sen_01_next"
+"targetname" "greet_sen_01"
+"_tb_group" "29"
+"_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
+}
+// entity 98
+{
+"classname" "trigger_once"
+"sounds" "0"
+"delay" "0"
+"spawnflags" "0"
+"target" "greet_loop_mm"
+"_tb_group" "29"
+// brush 0
+{
+( -80 368 0 ) ( -80 369 0 ) ( -80 368 1 ) AAATRIGGER [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -80 368 0 ) ( -80 368 1 ) ( -79 368 0 ) AAATRIGGER [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -80 368 0 ) ( -79 368 0 ) ( -80 369 0 ) AAATRIGGER [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 80 384 128 ) ( 80 385 128 ) ( 81 384 128 ) AAATRIGGER [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 80 384 16 ) ( 81 384 16 ) ( 80 384 17 ) AAATRIGGER [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 80 384 16 ) ( 80 384 17 ) ( 80 385 16 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+}
+// entity 99
+{
+"duration" "10"
+"origin" "-32 368 128"
+"entity" "slick"
+"listener" "player"
+"angles" "0 90 0"
+"spawnflags" "13"
+"classname" "scripted_sentence"
+"sentence" "!C0A0_GREET_02"
+"target" "greet_sen_02_next"
+"targetname" "greet_sen_02"
+"_tb_group" "29"
+"_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
+}
+// entity 100
+{
+"duration" "10"
+"origin" "64 368 128"
+"entity" "slick"
+"listener" "player"
+"angles" "0 90 0"
+"spawnflags" "13"
+"classname" "scripted_sentence"
+"sentence" "!C0A0_GREET_05"
+"targetname" "greet_sen_05"
+"killtarget" "greet_loop_mm"
+"_tb_group" "29"
+"_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
+}
+// entity 101
+{
+"classname" "multi_manager"
+"spawnflags" "1"
+"origin" "16 272 152"
+"targetname" "greet_loop_mm"
+"greet_loop_mm" "10"
+"greet_loop_relay" ".001"
+"_tb_group" "29"
 }
