@@ -17,6 +17,16 @@ fi
 # Ensure we're in the real HL parent directory for this as compile tools look
 # for WADs relative to this path.
 cd "$(dirname "$(realpath "$0")")/../.."
+
+grep -q __TB_empty "$map" && (
+    echo "__TB_empty found in $map" 1>&2
+    if [ $fast -eq 1 ]; then
+        sed -i 's/__TB_empty/missing/' "$map"
+    else
+        exit 1
+    fi
+)
+
 rm -f -- "$bsp"
 
 sdHLCSG -cliptype precise "$map"
