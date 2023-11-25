@@ -3,5 +3,6 @@
 ["C0A0_GREET_03", "You left your crowbar here if that's what you're looking for."]
 ["C0A0_GREET_04", "I last saw your crowbar on the small crates here."]
 ["C0A0_GREET_05", "THE CROWBAR. THE CRATE. BREAK THE CRATE WITH THE CROWBAR. We don't have all day."]
-["C0A0_PUSH_START", "Alright this looks like what I ordered, you can install it in the center console."]
+["C0A0_PUSH_START", "Alright this looks like what I ordered. You can install it."]
 ["C0A0_PUSH_WARN", "Careful with that. This year's budget all went into this part."]
+["C0A0_PUSH_RPT", "Put that cabinet between the other two please."]

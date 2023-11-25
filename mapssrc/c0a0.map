@@ -9,7 +9,7 @@
 "wad" "criticaldynamics/sdhlt.wad;criticaldynamics/devtextures.wad;valve/halflife.wad;valve/decals.wad"
 "_tb_layer_locked" "1"
 "newunit" "1"
-"_tb_layer_hidden" "1"
+"startdark" "1"
 // brush 0
 {
 ( -384 -384 0 ) ( -384 -384 -32 ) ( -384 384 0 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -354,12 +354,21 @@
 }
 // brush 38
 {
-( 384 20 44 ) ( 384 21 44 ) ( 384 20 45 ) LAB1_COMP3F [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 380 20 44 ) ( 380 20 45 ) ( 381 20 44 ) NULL [ 1 0 0 -4 ] [ 0 0 -1 0 ] 0 1 1
-( 380 20 44 ) ( 381 20 44 ) ( 380 21 44 ) LAB1_COMP3F [ 0 1 0 0 ] [ 1 0 -2.220446049250313e-16 -4 ] 0 1 1
-( 388 24 48 ) ( 388 25 48 ) ( 389 24 48 ) NULL [ 1 0 0 -4 ] [ 0 -1 0 0 ] 0 1 1
-( 388 24 48 ) ( 389 24 48 ) ( 388 24 49 ) LAB1_COMP3F [ 2.220446049250313e-16 2.2204460492503128e-16 1 -4 ] [ 1 0 -2.220446049250313e-16 -4 ] 0 1 1
-( 385 24 48 ) ( 385 24 49 ) ( 385 25 48 ) ~SPOTRED [ 0 1 0 0 ] [ 2.7755575615628914e-16 0 1 0 ] 0 0.25000018 0.25
+( 416 64 96 ) ( 416 -32 96 ) ( 416 -32 44 ) CLIP [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 424 -24 44 ) ( 424 56 44 ) ( 416 64 44 ) CLIP [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 416 64 96 ) ( 424 56 88 ) ( 424 -24 88 ) CLIP [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 416 -32 96 ) ( 424 -24 88 ) ( 424 -24 44 ) CLIP [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 424 56 44 ) ( 424 56 88 ) ( 416 64 96 ) CLIP [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 424 -24 88 ) ( 424 56 88 ) ( 424 56 44 ) CLIP [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 39
+{
+( 384 -48 80 ) ( 384 -47 80 ) ( 384 -48 81 ) CLIP [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 416 -32 80 ) ( 416 -32 81 ) ( 417 -32 80 ) CLIP [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 416 -48 44 ) ( 417 -48 44 ) ( 416 -47 44 ) CLIP [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 448 -16 48 ) ( 448 -15 48 ) ( 449 -16 48 ) CLIP [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 448 64 96 ) ( 449 64 96 ) ( 448 64 97 ) CLIP [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 416 -24 92 ) ( 416 -8 220 ) ( 416 -8 92 ) CLIP [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
 // entity 1
@@ -424,7 +433,7 @@
 "angles" "0 90 0"
 "~LIGHT5A" "80 150 200 10000"
 "EXIT1" "240 20 20 100"
-"ELEV1_CIEL" "80 150 200 2000"
+"ELEV1_CIEL" "80 150 200 1700"
 "origin" "0 0 240"
 "+0~GYMLIGHT" "215 204 77 1500"
 "~SPOTRED" "255 80 80 100"
@@ -1425,6 +1434,15 @@
 ( 388 56 48 ) ( 389 56 48 ) ( 388 56 49 ) LAB1_COMP3F [ 2.220446049250313e-16 2.2204460492503128e-16 1 -4 ] [ 1 0 -2.220446049250313e-16 -4 ] 0 1 1
 ( 385 56 48 ) ( 385 56 49 ) ( 385 57 48 ) ~SPOTGREEN [ 0 1 0 0 ] [ 2.7755575615628914e-16 0 1 0 ] 0 0.25000018 0.25
 }
+// brush 11
+{
+( 384 20 44 ) ( 384 21 44 ) ( 384 20 45 ) LAB1_COMP3F [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 380 20 44 ) ( 380 20 45 ) ( 381 20 44 ) NULL [ 1 0 0 -4 ] [ 0 0 -1 0 ] 0 1 1
+( 380 20 44 ) ( 381 20 44 ) ( 380 21 44 ) LAB1_COMP3F [ 0 1 0 0 ] [ 1 0 -2.220446049250313e-16 -4 ] 0 1 1
+( 388 24 48 ) ( 388 25 48 ) ( 389 24 48 ) NULL [ 1 0 0 -4 ] [ 0 -1 0 0 ] 0 1 1
+( 388 24 48 ) ( 389 24 48 ) ( 388 24 49 ) LAB1_COMP3F [ 2.220446049250313e-16 2.2204460492503128e-16 1 -4 ] [ 1 0 -2.220446049250313e-16 -4 ] 0 1 1
+( 385 24 48 ) ( 385 24 49 ) ( 385 25 48 ) ~SPOTRED [ 0 1 0 0 ] [ 2.7755575615628914e-16 0 1 0 ] 0 0.25000018 0.25
+}
 }
 // entity 64
 {
@@ -1452,7 +1470,6 @@
 "_tb_id" "3"
 "_tb_layer_sort_index" "0"
 "_tb_layer_locked" "1"
-"_tb_layer_hidden" "1"
 // brush 0
 {
 ( -336 1136 128 ) ( -336 1136 112 ) ( -336 1152 128 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 160 ] 0 1 0.5
@@ -1604,7 +1621,7 @@
 ( -336 1148 0 ) ( -336 1140 0 ) ( -264 1148 0 ) MEASURE128_01 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
 ( -336 1140 112 ) ( -336 1148 112 ) ( -264 1140 112 ) MEASURE128_01 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
 ( -336 1148 0 ) ( -264 1148 0 ) ( -336 1148 112 ) ELEV1_DR [ -1 0 0 -43 ] [ 0 0 -1 0 ] 0 1.125 0.875
-( -264 1148 112 ) ( -264 1148 0 ) ( -264 1140 112 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1.16667
+( -264 1148 112 ) ( -264 1148 0 ) ( -264 1140 112 ) ELEV1_DR [ 2.220446049250313e-16 1 0 -78.44444 ] [ 0 0 -1 0 ] 0 1.125 0.875
 }
 }
 // entity 67
@@ -1635,7 +1652,7 @@
 "_tb_layer" "3"
 // brush 0
 {
-( -264 1140 112 ) ( -264 1140 0 ) ( -264 1148 112 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1.16667
+( -264 1140 112 ) ( -264 1140 0 ) ( -264 1148 112 ) ELEV1_DR [ 2.220446049250313e-16 1 0 -78.44444 ] [ 0 0 -1 0 ] 0 1.125 0.875
 ( -192 1140 0 ) ( -264 1140 0 ) ( -192 1140 112 ) ELEV1_DR [ 1 0 0 42.6667 ] [ 0 0 -1 0 ] 0 1.125 0.875
 ( -192 1148 0 ) ( -264 1148 0 ) ( -192 1140 0 ) MEASURE128_01 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
 ( -192 1140 112 ) ( -264 1140 112 ) ( -192 1148 112 ) MEASURE128_01 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
@@ -1697,7 +1714,7 @@
 "_fade" "1.0"
 "style" "0"
 "_light" "255 255 180 300"
-"origin" "-264 1064 64"
+"origin" "-264 1064 96"
 "_tb_layer" "3"
 }
 // entity 70
@@ -1708,6 +1725,23 @@
 "_tb_layer" "3"
 }
 // entity 71
+{
+"classname" "func_group"
+"_tb_type" "_tb_layer"
+"_tb_name" "Intro Sequence"
+"_tb_id" "4"
+"_tb_layer_sort_index" "1"
+"_tb_layer_locked" "1"
+}
+// entity 72
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "Intro sequence"
+"_tb_id" "55"
+"_tb_layer" "4"
+}
+// entity 73
 {
 "classname" "ambient_generic"
 "health" "10"
@@ -1724,116 +1758,57 @@
 "lfomodpitch" "0"
 "lfomodvol" "0"
 "cspinup" "0"
-"spawnflags" "4"
-"origin" "-352 1128 88"
-"_tb_layer" "3"
-}
-// entity 72
-{
-"classname" "func_group"
-"_tb_type" "_tb_layer"
-"_tb_name" "Intro Sequence"
-"_tb_id" "4"
-"_tb_layer_sort_index" "1"
-"_tb_layer_locked" "1"
-"_tb_layer_hidden" "1"
-"_tb_layer_omit_from_export" "1"
-}
-// entity 73
-{
-"classname" "func_wall_toggle"
-"zhlt_lightflags" "0"
-"rendercolor" "0 0 0"
-"rendermode" "1"
-"renderfx" "0"
-"spawnflags" "0"
-"zhlt_clipnodedetaillevel" "1"
-"zhlt_chopup" "0"
-"zhlt_chopdown" "0"
-"zhlt_detaillevel" "1"
-"renderamt" "255"
-"targetname" "intro_los_block"
-"_tb_layer" "4"
-// brush 0
-{
-( -304 992 128 ) ( -304 992 0 ) ( -304 1024 128 ) NULL [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -208 1008 128 ) ( -208 1008 0 ) ( -304 1008 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -208 1024 0 ) ( -304 1024 0 ) ( -208 992 0 ) NULL [ 0 -1 0 0 ] [ -1 0 0 0 ] 0 1 1
-( -304 992 128 ) ( -304 1024 128 ) ( -208 992 128 ) NULL [ 0 -1 0 0 ] [ -1 0 0 0 ] 0 1 1
-( -304 1024 128 ) ( -304 1024 0 ) ( -208 1024 128 ) BLACK [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -208 1024 128 ) ( -208 1024 0 ) ( -208 992 128 ) NULL [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 1
-{
-( -208 992 128 ) ( -208 992 0 ) ( -208 1088 128 ) BLACK [ 0 1 0 16 ] [ 0 0 -1 0 ] 0 1 1
-( -176 1024 128 ) ( -176 1024 0 ) ( -208 1024 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -208 1088 0 ) ( -208 992 0 ) ( -176 1088 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -176 992 128 ) ( -208 992 128 ) ( -176 1088 128 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -208 1088 128 ) ( -208 1088 0 ) ( -176 1088 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -192 1088 128 ) ( -192 1088 0 ) ( -192 992 128 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 2
-{
-( -304 1088 128 ) ( -304 1088 0 ) ( -304 1120 128 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -208 1088 128 ) ( -208 1088 0 ) ( -304 1088 128 ) BLACK [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -304 1088 0 ) ( -208 1088 0 ) ( -304 1120 0 ) NULL [ 0 1 0 0 ] [ 1 0 0 0 ] 0 1 1
-( -208 1120 128 ) ( -208 1088 128 ) ( -304 1120 128 ) NULL [ 0 1 0 0 ] [ 1 0 0 0 ] 0 1 1
-( -304 1104 128 ) ( -304 1104 0 ) ( -208 1104 128 ) NULL [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -208 1120 128 ) ( -208 1120 0 ) ( -208 1088 128 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 3
-{
-( -320 992 128 ) ( -320 992 0 ) ( -320 1088 128 ) NULL [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -304 1024 128 ) ( -304 1024 0 ) ( -336 1024 128 ) NULL [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -304 992 0 ) ( -304 1088 0 ) ( -336 992 0 ) NULL [ -1 0 0 0 ] [ 0 1 0 0 ] 0 1 1
-( -336 1088 128 ) ( -304 1088 128 ) ( -336 992 128 ) NULL [ -1 0 0 0 ] [ 0 1 0 0 ] 0 1 1
-( -336 1088 128 ) ( -336 1088 0 ) ( -304 1088 128 ) NULL [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -304 1088 128 ) ( -304 1088 0 ) ( -304 992 128 ) BLACK [ 0 -1 0 -16 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 4
-{
-( -304 992 160 ) ( -304 992 128 ) ( -304 1088 160 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -208 1024 160 ) ( -208 1024 128 ) ( -304 1024 160 ) NULL [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -304 992 128 ) ( -208 992 128 ) ( -304 1088 128 ) BLACK [ 0 1 0 16 ] [ 1 0 0 0 ] 0 1 1
-( -208 1088 144 ) ( -208 992 144 ) ( -304 1088 144 ) NULL [ 0 1 0 0 ] [ 1 0 0 0 ] 0 1 1
-( -304 1088 160 ) ( -304 1088 128 ) ( -208 1088 160 ) NULL [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -208 1088 160 ) ( -208 1088 128 ) ( -208 992 160 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
+"spawnflags" "20"
+"origin" "-256 1056 80"
+"targetname" "intro_snd_ding"
+"message" "plats/elevbell1.wav"
+"_tb_group" "55"
 }
 // entity 74
 {
-"classname" "trigger_auto"
-"angles" "0 90 0"
-"triggerstate" "0"
-"delay" "0"
-"target" "intro_mm"
-"origin" "-448 1184 64"
-"_tb_layer" "4"
+"classname" "ambient_generic"
+"health" "10"
+"preset" "0"
+"volstart" "0"
+"fadein" "0"
+"fadeout" ".5"
+"pitch" "100"
+"pitchstart" "100"
+"spinup" "0"
+"spindown" "0"
+"lfotype" "0"
+"lforate" "0"
+"lfomodpitch" "0"
+"lfomodvol" "0"
+"cspinup" "0"
+"spawnflags" "4"
+"origin" "-256 1040 80"
+"targetname" "intro_snd_loop"
+"message" "plats/elevmove2.wav"
+"_tb_group" "55"
 }
 // entity 75
+{
+"classname" "trigger_auto"
+"angles" "0 90 0"
+"triggerstate" "1"
+"delay" ".001"
+"target" "intro_mm"
+"origin" "-288 1040 80"
+"_tb_group" "55"
+}
+// entity 76
 {
 "classname" "multi_manager"
 "angles" "0 90 0"
 "targetname" "intro_mm"
-"intro_fade" "0.001"
 "intro_title" "1"
-"intro_los_block" "1"
 "elev_01_door" "8"
-"origin" "-416 1184 64"
-"_tb_layer" "4"
-}
-// entity 76
-{
-"classname" "env_fade"
-"angles" "0 90 0"
-"spawnflags" "1"
-"rendercolor" "0 0 0"
-"renderamt" "255"
-"holdtime" "4"
-"duration" "4"
-"targetname" "intro_fade"
-"origin" "-416 1184 32"
-"_tb_layer" "4"
+"origin" "-272 1040 80"
+"intro_snd_loop" "6"
+"intro_snd_ding" "7.5"
+"intro_snd_stop" "6"
+"_tb_group" "55"
 }
 // entity 77
 {
@@ -1843,10 +1818,33 @@
 "messagevolume" "10"
 "message" "GAMETITLE"
 "targetname" "intro_title"
-"origin" "-448 1184 32"
-"_tb_layer" "4"
+"origin" "-256 1040 112"
+"_tb_group" "55"
 }
 // entity 78
+{
+"classname" "ambient_generic"
+"health" "10"
+"preset" "0"
+"volstart" "0"
+"fadein" "0"
+"fadeout" "0"
+"pitch" "100"
+"pitchstart" "100"
+"spinup" "0"
+"spindown" "0"
+"lfotype" "0"
+"lforate" "0"
+"lfomodpitch" "0"
+"lfomodvol" "0"
+"cspinup" "0"
+"spawnflags" "20"
+"origin" "-256 1024 80"
+"targetname" "intro_snd_stop"
+"message" "doors/doorstop6.wav"
+"_tb_group" "55"
+}
+// entity 79
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
@@ -1854,8 +1852,9 @@
 "_tb_id" "21"
 "_tb_layer_sort_index" "2"
 "_tb_layer_locked" "1"
+"_tb_layer_hidden" "1"
 }
-// entity 79
+// entity 80
 {
 "classname" "monster_scientist"
 "spawnflags" "258"
@@ -1865,7 +1864,7 @@
 "angles" "0 105 0"
 "_tb_layer" "21"
 }
-// entity 80
+// entity 81
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -1873,55 +1872,7 @@
 "_tb_id" "29"
 "_tb_layer" "21"
 }
-// entity 81
-{
-"delay" "0"
-"origin" "-64 368 216"
-"classname" "trigger_changetarget"
-"m_iszNewTarget" "greet_sen_02"
-"target" "greet_loop_relay"
-"targetname" "greet_sen_01_next"
-"angle" "90"
-"_tb_group" "29"
-"_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
-}
 // entity 82
-{
-"delay" "0"
-"origin" "0 368 216"
-"classname" "trigger_changetarget"
-"m_iszNewTarget" "greet_sen_04"
-"target" "greet_loop_relay"
-"targetname" "greet_sen_03_next"
-"angle" "90"
-"_tb_group" "29"
-"_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
-}
-// entity 83
-{
-"classname" "trigger_relay"
-"spawnflags" "0"
-"triggerstate" "1"
-"delay" "0"
-"origin" "-16 272 152"
-"targetname" "greet_loop_relay"
-"target" "greet_sen_01"
-"angle" "90"
-"_tb_group" "29"
-}
-// entity 84
-{
-"delay" "0"
-"origin" "-32 368 216"
-"classname" "trigger_changetarget"
-"m_iszNewTarget" "greet_sen_03"
-"target" "greet_loop_relay"
-"targetname" "greet_sen_02_next"
-"angle" "90"
-"_tb_group" "29"
-"_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
-}
-// entity 85
 {
 "duration" "10"
 "origin" "0 368 128"
@@ -1931,12 +1882,11 @@
 "spawnflags" "13"
 "classname" "scripted_sentence"
 "sentence" "!C0A0_GREET_03"
-"target" "greet_sen_03_next"
 "targetname" "greet_sen_03"
 "_tb_group" "29"
 "_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
 }
-// entity 86
+// entity 83
 {
 "duration" "10"
 "origin" "32 368 128"
@@ -1946,24 +1896,11 @@
 "spawnflags" "13"
 "classname" "scripted_sentence"
 "sentence" "!C0A0_GREET_04"
-"target" "greet_sen_04_next"
 "targetname" "greet_sen_04"
 "_tb_group" "29"
 "_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
 }
-// entity 87
-{
-"delay" "0"
-"origin" "32 368 216"
-"classname" "trigger_changetarget"
-"m_iszNewTarget" "greet_sen_05"
-"target" "greet_loop_relay"
-"targetname" "greet_sen_04_next"
-"angle" "90"
-"_tb_group" "29"
-"_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
-}
-// entity 88
+// entity 84
 {
 "duration" "10"
 "origin" "-64 368 128"
@@ -1973,18 +1910,17 @@
 "spawnflags" "13"
 "classname" "scripted_sentence"
 "sentence" "!C0A0_GREET_01"
-"target" "greet_sen_01_next"
 "targetname" "greet_sen_01"
 "_tb_group" "29"
 "_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
 }
-// entity 89
+// entity 85
 {
 "classname" "trigger_once"
 "sounds" "0"
 "delay" "0"
 "spawnflags" "0"
-"target" "greet_loop_mm"
+"target" "greet_seq_mm"
 "_tb_group" "29"
 // brush 0
 {
@@ -1996,7 +1932,7 @@
 ( 80 384 16 ) ( 80 384 17 ) ( 80 385 16 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 90
+// entity 86
 {
 "duration" "10"
 "origin" "-32 368 128"
@@ -2006,12 +1942,11 @@
 "spawnflags" "13"
 "classname" "scripted_sentence"
 "sentence" "!C0A0_GREET_02"
-"target" "greet_sen_02_next"
 "targetname" "greet_sen_02"
 "_tb_group" "29"
 "_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
 }
-// entity 91
+// entity 87
 {
 "duration" "10"
 "origin" "64 368 128"
@@ -2022,21 +1957,23 @@
 "classname" "scripted_sentence"
 "sentence" "!C0A0_GREET_05"
 "targetname" "greet_sen_05"
-"killtarget" "greet_loop_mm"
 "_tb_group" "29"
 "_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
 }
-// entity 92
+// entity 88
 {
 "classname" "multi_manager"
-"spawnflags" "1"
-"origin" "16 272 152"
-"targetname" "greet_loop_mm"
-"greet_loop_mm" "20"
-"greet_loop_relay" ".001"
+"spawnflags" "0"
+"origin" "0 368 216"
+"targetname" "greet_seq_mm"
+"greet_sen_01" "1"
+"greet_sen_02" "20"
+"greet_sen_03" "50"
+"greet_sen_04" "80"
+"greet_sen_05" "110"
 "_tb_group" "29"
 }
-// entity 93
+// entity 89
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
@@ -2046,15 +1983,15 @@
 "_tb_layer_locked" "1"
 "_tb_layer_hidden" "1"
 }
-// entity 94
+// entity 90
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "Crate sequence"
-"_tb_id" "2"
+"_tb_id" "54"
 "_tb_layer" "30"
 }
-// entity 95
+// entity 91
 {
 "classname" "func_breakable"
 "zhlt_lightflags" "0"
@@ -2073,77 +2010,7 @@
 "zhlt_detaillevel" "1"
 "target" "bigcrate_01_counter"
 "targetname" "bigcrate_01"
-"_tb_group" "2"
-// brush 0
-{
-( 162 222 94 ) ( 162 222 47.5 ) ( 160 224 94 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 224 224 32 ) ( 160 224 48 ) ( 222 222 32.5 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.667 0.667
-( 222 222 94 ) ( 222 222 32.5 ) ( 162 222 94 ) CRATE10 [ 1 0 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
-( 222 222 94 ) ( 162 222 94 ) ( 224 224 94 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
-( 160 224 94 ) ( 160 224 48 ) ( 224 224 94 ) CRATE10 [ -1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 224 224 94 ) ( 224 224 32 ) ( 222 222 94 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-}
-}
-// entity 96
-{
-"classname" "func_breakable"
-"zhlt_lightflags" "0"
-"rendercolor" "0 0 0"
-"rendermode" "0"
-"renderfx" "0"
-"explodemagnitude" "0"
-"spawnobject" "0"
-"delay" "0"
-"explosion" "0"
-"material" "1"
-"health" "10"
-"zhlt_clipnodedetaillevel" "1"
-"zhlt_chopup" "0"
-"zhlt_chopdown" "0"
-"zhlt_detaillevel" "1"
-"target" "bigcrate_01_counter"
-"targetname" "bigcrate_01"
-"_tb_group" "2"
-// brush 0
-{
-( 160 160 0 ) ( 160 224 0 ) ( 160 160 23.4118 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 162 181.524 50 ) ( 162 162 25.8824 ) ( 160 181.524 50 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 160 224 0 ) ( 160 160 0 ) ( 162 222 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.667 0.667
-( 160 181.524 50 ) ( 160 196.105 50 ) ( 162 181.524 50 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.667 0.667
-( 160 196.105 50 ) ( 160 224 27.9166 ) ( 162 196.105 50 ) CRATE13 [ 1 0 0 -48 ] [ 0 -0.784046 0.620703 -48 ] 0 0.667 0.667
-( 162 162 25.8823 ) ( 162 162 0 ) ( 160 160 23.4118 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 160 224 27.9167 ) ( 160 224 0 ) ( 162 222 29.5 ) CRATE10 [ -1 -0 -0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 162 222 0 ) ( 162 162 0 ) ( 162 222 29.5 ) CRATE10 [ 0 1 0 -67.2 ] [ -0 0 -1 0 ] 0 0.625 0.734375
-}
-// brush 1
-{
-( 160 160 40 ) ( 160 160 23.4118 ) ( 160 171.832 38.028 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 160 160 40 ) ( 160 171.832 38.028 ) ( 162 162 39.6667 ) CRATE13 [ 1 0 0 -48 ] [ 0 -0.986394 0.164399 -48 ] 0 0.667 0.667
-( 160 171.832 38.028 ) ( 160 160 23.4118 ) ( 162 171.832 38.028 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 162 162 39.6667 ) ( 162 162 25.8823 ) ( 160 160 40 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 162 162 25.8823 ) ( 162 162 39.6667 ) ( 162 171.832 38.028 ) CRATE10 [ -0 1 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
-}
-}
-// entity 97
-{
-"classname" "func_breakable"
-"zhlt_lightflags" "0"
-"rendercolor" "0 0 0"
-"rendermode" "0"
-"renderfx" "0"
-"explodemagnitude" "0"
-"spawnobject" "0"
-"delay" "0"
-"explosion" "0"
-"material" "1"
-"health" "10"
-"zhlt_clipnodedetaillevel" "1"
-"zhlt_chopup" "0"
-"zhlt_chopdown" "0"
-"zhlt_detaillevel" "1"
-"target" "bigcrate_01_counter"
-"targetname" "bigcrate_01"
-"_tb_group" "2"
+"_tb_group" "54"
 // brush 0
 {
 ( 222 200.452 0 ) ( 222 222 0 ) ( 222 192.525 30.7143 ) CRATE10 [ 0 1 0 -67 ] [ 0 0 -1 0 ] 0 0.625 0.734
@@ -2164,13 +2031,26 @@
 ( 224 200.452 0 ) ( 224 166.64 0 ) ( 224 187.952 48.4362 ) CRATE11 [ -0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
 }
 }
-// entity 98
+// entity 92
 {
-"classname" "func_detail"
-"zhlt_clipnodedetaillevel" "1"
-"zhlt_chopup" "0"
-"zhlt_chopdown" "0"
-"zhlt_detaillevel" "1"
+"classname" "scripted_sentence"
+"spawnflags" "13"
+"duration" "10"
+"radius" "512"
+"refire" "3"
+"volume" "10"
+"attenuation" "0"
+"delay" "0"
+"origin" "192 192 176"
+"targetname" "bigcrate_01_sen_01"
+"entity" "slick"
+"listener" "player"
+"sentence" "!C0A0_PUSH_START"
+"_tb_group" "54"
+}
+// entity 93
+{
+"classname" "func_breakable"
 "zhlt_lightflags" "0"
 "rendercolor" "0 0 0"
 "rendermode" "0"
@@ -2179,17 +2059,188 @@
 "spawnobject" "0"
 "delay" "0"
 "explosion" "0"
-"material" "0"
-"health" "1"
-"_tb_group" "2"
+"material" "1"
+"health" "10"
+"zhlt_clipnodedetaillevel" "1"
+"zhlt_chopup" "0"
+"zhlt_chopdown" "0"
+"zhlt_detaillevel" "1"
+"target" "bigcrate_01_counter"
+"targetname" "bigcrate_01"
+"_tb_group" "54"
 // brush 0
 {
-( 162 162 2 ) ( 162 162 0 ) ( 162 222 2 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 222 162 2 ) ( 222 162 0 ) ( 162 162 2 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 162 222 0 ) ( 162 162 0 ) ( 222 222 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 162 162 2 ) ( 162 222 2 ) ( 222 162 2 ) CRATE13 [ 1 0 0 -67.2 ] [ 0 -1 0 67.2 ] 0 0.625 0.625
-( 162 222 2 ) ( 162 222 0 ) ( 222 222 2 ) CRATE10 [ -1 -0 -0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 222 222 2 ) ( 222 222 0 ) ( 222 162 2 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 160 160 94 ) ( 160 160 0 ) ( 162 162 94 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 165.619 160 0 ) ( 160 160 0 ) ( 197.703 160 51.8281 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 165.619 162 0 ) ( 162 162 0 ) ( 165.619 160 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.667 0.667
+( 172.4 160 94 ) ( 160 160 94 ) ( 172.4 162 94 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
+( 162 162 0 ) ( 165.619 162 0 ) ( 162 162 94 ) CRATE10 [ -1 -0 -0 67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
+( 197.703 162 51.8281 ) ( 165.619 162 0 ) ( 197.703 160 51.8281 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 172.4 162 94 ) ( 197.703 162 51.8281 ) ( 172.4 160 94 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+}
+// brush 1
+{
+( 190.653 160 82.297 ) ( 186.415 160 70.6415 ) ( 190.653 162 82.297 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 186.415 160 70.6415 ) ( 195.333 160 55.7777 ) ( 186.415 162 70.6415 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 186.415 160 70.6415 ) ( 190.653 160 82.297 ) ( 195.333 160 55.7778 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 186.415 162 70.6415 ) ( 195.333 162 55.7778 ) ( 190.653 162 82.297 ) CRATE10 [ -1 -0 -0 67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
+( 190.653 162 82.297 ) ( 195.333 162 55.7777 ) ( 190.653 160 82.297 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+}
+}
+// entity 94
+{
+"classname" "func_breakable"
+"zhlt_lightflags" "0"
+"rendercolor" "0 0 0"
+"rendermode" "0"
+"renderfx" "0"
+"explodemagnitude" "0"
+"spawnobject" "0"
+"delay" "0"
+"explosion" "0"
+"material" "1"
+"health" "10"
+"zhlt_clipnodedetaillevel" "1"
+"zhlt_chopup" "0"
+"zhlt_chopdown" "0"
+"zhlt_detaillevel" "1"
+"target" "bigcrate_01_counter"
+"targetname" "bigcrate_01"
+"_tb_group" "54"
+// brush 0
+{
+( 162 222 94 ) ( 162 222 47.5 ) ( 160 224 94 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 224 224 32 ) ( 160 224 48 ) ( 222 222 32.5 ) CRATE11 [ 0 1 0 -48 ] [ 1 0 -2.220446049250313e-16 -38.30304 ] 0 0.666667 0.75
+( 222 222 94 ) ( 222 222 32.5 ) ( 162 222 94 ) CRATE10 [ 1 0 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
+( 222 222 94 ) ( 162 222 94 ) ( 224 224 94 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
+( 160 224 94 ) ( 160 224 48 ) ( 224 224 94 ) CRATE10 [ -1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 224 224 94 ) ( 224 224 32 ) ( 222 222 94 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+}
+}
+// entity 95
+{
+"classname" "func_breakable"
+"zhlt_lightflags" "0"
+"rendercolor" "0 0 0"
+"rendermode" "0"
+"renderfx" "0"
+"explodemagnitude" "0"
+"spawnobject" "0"
+"delay" "0"
+"explosion" "0"
+"material" "1"
+"health" "10"
+"zhlt_clipnodedetaillevel" "1"
+"zhlt_chopup" "0"
+"zhlt_chopdown" "0"
+"zhlt_detaillevel" "1"
+"target" "bigcrate_01_counter"
+"targetname" "bigcrate_01"
+"_tb_group" "54"
+// brush 0
+{
+( 162 222 47.5 ) ( 162 222 0 ) ( 160 224 48 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 222 222 0 ) ( 162 222 0 ) ( 222 222 32.5 ) CRATE10 [ 1 0 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
+( 224 224 0 ) ( 160 224 0 ) ( 222 222 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.667 0.667
+( 224 224 0 ) ( 224 224 32 ) ( 160 224 0 ) CRATE10 [ -1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 222 222 32.5 ) ( 162 222 47.5 ) ( 224 224 32 ) CRATE10 [ 0 1 0 -67.2 ] [ -1 0 -2.220446049250313e-16 27.914886 ] 0 0.625 0.734375
+( 224 224 32 ) ( 224 224 0 ) ( 222 222 32.5 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+}
+}
+// entity 96
+{
+"classname" "trigger_relay"
+"spawnflags" "1"
+"triggerstate" "0"
+"delay" "0"
+"origin" "192 192 160"
+"targetname" "bigcrate_01_kill_greet"
+"killtarget" "greet_seq_mm"
+"_tb_group" "54"
+}
+// entity 97
+{
+"classname" "func_breakable"
+"zhlt_lightflags" "0"
+"rendercolor" "0 0 0"
+"rendermode" "0"
+"renderfx" "0"
+"explodemagnitude" "0"
+"spawnobject" "0"
+"delay" "0"
+"explosion" "0"
+"material" "1"
+"health" "10"
+"zhlt_clipnodedetaillevel" "1"
+"zhlt_chopup" "0"
+"zhlt_chopdown" "0"
+"zhlt_detaillevel" "1"
+"target" "bigcrate_01_counter"
+"targetname" "bigcrate_01"
+"_tb_group" "54"
+// brush 0
+{
+( 222 187.952 48.4362 ) ( 222 192.525 30.7143 ) ( 222 202.241 80.911 ) CRATE10 [ 0 1 0 -67 ] [ 0 0 -1 0 ] 0 0.625 0.734
+( 224 187.952 48.4362 ) ( 224 192.525 30.7143 ) ( 222 187.952 48.4362 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 224 202.241 80.911 ) ( 224 187.952 48.4362 ) ( 222 202.241 80.911 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 222 202.241 80.9109 ) ( 222 192.525 30.7143 ) ( 224 202.241 80.9109 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 224 187.952 48.4362 ) ( 224 202.241 80.911 ) ( 224 192.525 30.7143 ) CRATE11 [ -0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+}
+// brush 1
+{
+( 222 162 0 ) ( 222 166.64 0 ) ( 222 162 94 ) CRATE10 [ 0 1 0 -67 ] [ 0 0 -1 0 ] 0 0.625 0.734
+( 224 160 94 ) ( 224 160 0 ) ( 222 162 94 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 222 166.64 0 ) ( 222 162 0 ) ( 224 166.64 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.667 0.667
+( 222 162 94 ) ( 222 208 94 ) ( 224 160 94 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
+( 222 208 94 ) ( 222 166.64 0 ) ( 224 208 94 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 224 166.64 0 ) ( 224 160 0 ) ( 224 208 94 ) CRATE11 [ -0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+}
+// brush 2
+{
+( 224 160 96 ) ( 224 160 94 ) ( 160 224 96 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.667 0.75
+( 224 224 94 ) ( 160 224 94 ) ( 224 160 94 ) CRATE13 [ 1 0 0 -45.0015 ] [ 0 -1 0 50.9985 ] 0 0.667 0.667
+( 224 224 96 ) ( 224 160 96 ) ( 160 224 96 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 48 ] 0 0.666667 0.666667
+( 224 224 96 ) ( 160 224 96 ) ( 224 224 94 ) CRATE10 [ -1 -0 -0 -48 ] [ 0 0 -1 0 ] 0 0.667 0.75
+( 224 224 94 ) ( 224 160 94 ) ( 224 224 96 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.667 0.75
+}
+}
+// entity 98
+{
+"classname" "func_breakable"
+"zhlt_lightflags" "0"
+"rendercolor" "0 0 0"
+"rendermode" "0"
+"renderfx" "0"
+"explodemagnitude" "0"
+"spawnobject" "0"
+"delay" "0"
+"explosion" "0"
+"material" "1"
+"health" "10"
+"zhlt_clipnodedetaillevel" "1"
+"zhlt_chopup" "0"
+"zhlt_chopdown" "0"
+"zhlt_detaillevel" "1"
+"target" "bigcrate_01_counter"
+"targetname" "bigcrate_01"
+"_tb_group" "54"
+// brush 0
+{
+( 160 160 50 ) ( 160 160 40 ) ( 160 181.524 50 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 160 171.832 38.028 ) ( 160 160 40 ) ( 162 171.832 38.028 ) CRATE13 [ -1 -0 0 -48 ] [ 0 -0.986394 0.164399 -48 ] 0 0.667 0.667
+( 160 160 50 ) ( 160 181.524 50 ) ( 162 162 50 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
+( 160 181.524 50 ) ( 160 171.832 38.028 ) ( 162 181.524 50 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 162 162 50 ) ( 162 162 39.6667 ) ( 160 160 50 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 162 162 50 ) ( 162 181.524 50 ) ( 162 162 39.6667 ) CRATE10 [ -0 1 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
+}
+// brush 1
+{
+( 160 217.143 94 ) ( 160 160 94 ) ( 160 181.524 50 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 160 181.524 50 ) ( 160 160 50 ) ( 162 181.524 50 ) CRATE13 [ -1 -0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
+( 160 160 94 ) ( 160 217.143 94 ) ( 162 162 94 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
+( 160 217.143 94 ) ( 160 181.524 50 ) ( 162 217.143 94 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 162 162 94 ) ( 162 162 50 ) ( 160 160 94 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 162 217.143 94 ) ( 162 181.524 50 ) ( 162 162 94 ) CRATE10 [ 0 1 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
 }
 }
 // entity 99
@@ -2211,175 +2262,7 @@
 "zhlt_detaillevel" "1"
 "target" "bigcrate_01_counter"
 "targetname" "bigcrate_01"
-"_tb_group" "2"
-// brush 0
-{
-( 160 196.105 50 ) ( 160 224 27.9167 ) ( 160 224 50 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 160 224 27.9167 ) ( 160 196.105 50 ) ( 162 222 29.5 ) CRATE13 [ -1 -0 0 -48 ] [ 0 -0.784046 0.620703 -48 ] 0 0.667 0.667
-( 160 196.105 50 ) ( 160 224 50 ) ( 162 196.105 50 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
-( 160 224 50 ) ( 160 224 27.9167 ) ( 162 222 50 ) CRATE10 [ -1 -0 -0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 162 222 29.5 ) ( 162 196.105 50 ) ( 162 222 50 ) CRATE10 [ -0 1 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
-}
-// brush 1
-{
-( 160 187.219 57.035 ) ( 160 196.105 50 ) ( 160 217.143 94 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 162 217.143 94 ) ( 162 187.219 57.035 ) ( 160 217.143 94 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 160 196.105 50 ) ( 160 187.219 57.035 ) ( 162 196.105 50 ) CRATE13 [ -1 -0 0 -48 ] [ 0 -0.784046 0.620703 -48 ] 0 0.667 0.667
-( 160 224 50 ) ( 160 196.105 50 ) ( 162 222 50 ) CRATE13 [ -1 -0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
-( 160 217.143 94 ) ( 160 224 94 ) ( 162 217.143 94 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
-( 160 224 94 ) ( 160 224 50 ) ( 162 222 94 ) CRATE10 [ -1 -0 -0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 162 217.143 94 ) ( 162 222 94 ) ( 162 187.219 57.035 ) CRATE10 [ -0 1 0 -67 ] [ 0 0 -1 0 ] 0 0.625 0.734
-}
-// brush 2
-{
-( 160 187.219 57.0351 ) ( 160 181.524 50 ) ( 160 196.105 50 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 162 187.219 57.0351 ) ( 162 181.524 50 ) ( 160 187.219 57.0351 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 160 196.105 50 ) ( 160 181.524 50 ) ( 162 196.105 50 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.667 0.667
-( 160 187.219 57.0351 ) ( 160 196.105 50 ) ( 162 187.219 57.0351 ) CRATE13 [ 1 0 0 -48 ] [ 0 -0.784046 0.620703 -48 ] 0 0.667 0.667
-( 162 187.219 57.0351 ) ( 162 196.105 50 ) ( 162 181.524 50 ) CRATE10 [ -0 1 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
-}
-}
-// entity 100
-{
-"classname" "func_breakable"
-"zhlt_lightflags" "0"
-"rendercolor" "0 0 0"
-"rendermode" "0"
-"renderfx" "0"
-"explodemagnitude" "0"
-"spawnobject" "0"
-"delay" "0"
-"explosion" "0"
-"material" "1"
-"health" "10"
-"zhlt_clipnodedetaillevel" "1"
-"zhlt_chopup" "0"
-"zhlt_chopdown" "0"
-"zhlt_detaillevel" "1"
-"target" "bigcrate_01_counter"
-"targetname" "bigcrate_01"
-"_tb_group" "2"
-// brush 0
-{
-( 160 160 94 ) ( 160 160 0 ) ( 162 162 94 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 165.619 160 0 ) ( 160 160 0 ) ( 197.703 160 51.8281 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 165.619 162 0 ) ( 162 162 0 ) ( 165.619 160 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.667 0.667
-( 172.4 160 94 ) ( 160 160 94 ) ( 172.4 162 94 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
-( 162 162 0 ) ( 165.619 162 0 ) ( 162 162 94 ) CRATE10 [ -1 -0 -0 67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
-( 197.703 162 51.8281 ) ( 165.619 162 0 ) ( 197.703 160 51.8281 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 172.4 162 94 ) ( 197.703 162 51.8281 ) ( 172.4 160 94 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-}
-// brush 1
-{
-( 190.653 160 82.297 ) ( 186.415 160 70.6415 ) ( 190.653 162 82.297 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 186.415 160 70.6415 ) ( 195.333 160 55.7777 ) ( 186.415 162 70.6415 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 186.415 160 70.6415 ) ( 190.653 160 82.297 ) ( 195.333 160 55.7778 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 186.415 162 70.6415 ) ( 195.333 162 55.7778 ) ( 190.653 162 82.297 ) CRATE10 [ -1 -0 -0 67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
-( 190.653 162 82.297 ) ( 195.333 162 55.7777 ) ( 190.653 160 82.297 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-}
-}
-// entity 101
-{
-"classname" "func_breakable"
-"zhlt_lightflags" "0"
-"rendercolor" "0 0 0"
-"rendermode" "0"
-"renderfx" "0"
-"explodemagnitude" "0"
-"spawnobject" "0"
-"delay" "0"
-"explosion" "0"
-"material" "1"
-"health" "10"
-"zhlt_clipnodedetaillevel" "1"
-"zhlt_chopup" "0"
-"zhlt_chopdown" "0"
-"zhlt_detaillevel" "1"
-"target" "bigcrate_01_counter"
-"targetname" "bigcrate_01"
-"_tb_group" "2"
-// brush 0
-{
-( 162 222 47.5 ) ( 162 222 0 ) ( 160 224 48 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 222 222 0 ) ( 162 222 0 ) ( 222 222 32.5 ) CRATE10 [ 1 0 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
-( 224 224 0 ) ( 160 224 0 ) ( 222 222 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.667 0.667
-( 224 224 0 ) ( 224 224 32 ) ( 160 224 0 ) CRATE10 [ -1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 222 222 32.5 ) ( 162 222 47.5 ) ( 224 224 32 ) CRATE10 [ 0 1 0 -67.2 ] [ -1 0 -2.220446049250313e-16 27.914886 ] 0 0.625 0.734375
-( 224 224 32 ) ( 224 224 0 ) ( 222 222 32.5 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-}
-}
-// entity 102
-{
-"classname" "func_breakable"
-"zhlt_lightflags" "0"
-"rendercolor" "0 0 0"
-"rendermode" "0"
-"renderfx" "0"
-"explodemagnitude" "0"
-"spawnobject" "0"
-"delay" "0"
-"explosion" "0"
-"material" "1"
-"health" "10"
-"zhlt_clipnodedetaillevel" "1"
-"zhlt_chopup" "0"
-"zhlt_chopdown" "0"
-"zhlt_detaillevel" "1"
-"target" "bigcrate_01_counter"
-"targetname" "bigcrate_01"
-"_tb_group" "2"
-// brush 0
-{
-( 160 160 50 ) ( 160 160 40 ) ( 160 181.524 50 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 160 171.832 38.028 ) ( 160 160 40 ) ( 162 171.832 38.028 ) CRATE13 [ -1 -0 0 -48 ] [ 0 -0.986394 0.164399 -48 ] 0 0.667 0.667
-( 160 160 50 ) ( 160 181.524 50 ) ( 162 162 50 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
-( 160 181.524 50 ) ( 160 171.832 38.028 ) ( 162 181.524 50 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 162 162 50 ) ( 162 162 39.6667 ) ( 160 160 50 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 162 162 50 ) ( 162 181.524 50 ) ( 162 162 39.6667 ) CRATE10 [ -0 1 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
-}
-// brush 1
-{
-( 160 217.143 94 ) ( 160 160 94 ) ( 160 181.524 50 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 160 181.524 50 ) ( 160 160 50 ) ( 162 181.524 50 ) CRATE13 [ -1 -0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
-( 160 160 94 ) ( 160 217.143 94 ) ( 162 162 94 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
-( 160 217.143 94 ) ( 160 181.524 50 ) ( 162 217.143 94 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 162 162 94 ) ( 162 162 50 ) ( 160 160 94 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 162 217.143 94 ) ( 162 181.524 50 ) ( 162 162 94 ) CRATE10 [ 0 1 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
-}
-}
-// entity 103
-{
-"classname" "game_counter"
-"health" "4"
-"frags" "0"
-"delay" "0"
-"targetname" "bigcrate_01_counter"
-"target" "bigcrate_01_mm"
-"origin" "192 192 112"
-"killtarget" ""
-"spawnflags" "1"
-"_tb_group" "2"
-}
-// entity 104
-{
-"classname" "func_breakable"
-"zhlt_lightflags" "0"
-"rendercolor" "0 0 0"
-"rendermode" "0"
-"renderfx" "0"
-"explodemagnitude" "0"
-"spawnobject" "0"
-"delay" "0"
-"explosion" "0"
-"material" "1"
-"health" "10"
-"zhlt_clipnodedetaillevel" "1"
-"zhlt_chopup" "0"
-"zhlt_chopdown" "0"
-"zhlt_detaillevel" "1"
-"target" "bigcrate_01_counter"
-"targetname" "bigcrate_01"
-"_tb_group" "2"
+"_tb_group" "54"
 // brush 0
 {
 ( 190.653 160 82.2971 ) ( 192.427 160 72.2472 ) ( 190.653 162 82.2971 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
@@ -2425,7 +2308,60 @@
 ( 160 224 96 ) ( 160 224 94 ) ( 224 160 96 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.667 0.75
 }
 }
-// entity 105
+// entity 100
+{
+"classname" "multi_manager"
+"spawnflags" "0"
+"origin" "192 192 136"
+"targetname" "bigcrate_01_mm"
+"bigcrate_01" "0.001"
+"bigcrate_01_kill_greet" "0.001"
+"bigcrate_01_sen_01" "0.5"
+"push_sen_rpt_mm" "20"
+"_tb_group" "54"
+}
+// entity 101
+{
+"classname" "func_detail"
+"zhlt_clipnodedetaillevel" "1"
+"zhlt_chopup" "0"
+"zhlt_chopdown" "0"
+"zhlt_detaillevel" "1"
+"zhlt_lightflags" "0"
+"rendercolor" "0 0 0"
+"rendermode" "0"
+"renderfx" "0"
+"explodemagnitude" "0"
+"spawnobject" "0"
+"delay" "0"
+"explosion" "0"
+"material" "0"
+"health" "1"
+"_tb_group" "54"
+// brush 0
+{
+( 162 162 2 ) ( 162 162 0 ) ( 162 222 2 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 222 162 2 ) ( 222 162 0 ) ( 162 162 2 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 162 222 0 ) ( 162 162 0 ) ( 222 222 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 162 162 2 ) ( 162 222 2 ) ( 222 162 2 ) CRATE13 [ 1 0 0 -67.2 ] [ 0 -1 0 67.2 ] 0 0.625 0.625
+( 162 222 2 ) ( 162 222 0 ) ( 222 222 2 ) CRATE10 [ -1 -0 -0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 222 222 2 ) ( 222 222 0 ) ( 222 162 2 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+}
+}
+// entity 102
+{
+"classname" "game_counter"
+"health" "4"
+"frags" "0"
+"delay" "0"
+"targetname" "bigcrate_01_counter"
+"target" "bigcrate_01_mm"
+"origin" "192 192 112"
+"killtarget" ""
+"spawnflags" "1"
+"_tb_group" "54"
+}
+// entity 103
 {
 "classname" "func_breakable"
 "zhlt_lightflags" "0"
@@ -2444,81 +2380,85 @@
 "zhlt_detaillevel" "1"
 "target" "bigcrate_01_counter"
 "targetname" "bigcrate_01"
-"_tb_group" "2"
+"_tb_group" "54"
 // brush 0
 {
-( 222 187.952 48.4362 ) ( 222 192.525 30.7143 ) ( 222 202.241 80.911 ) CRATE10 [ 0 1 0 -67 ] [ 0 0 -1 0 ] 0 0.625 0.734
-( 224 187.952 48.4362 ) ( 224 192.525 30.7143 ) ( 222 187.952 48.4362 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 224 202.241 80.911 ) ( 224 187.952 48.4362 ) ( 222 202.241 80.911 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 222 202.241 80.9109 ) ( 222 192.525 30.7143 ) ( 224 202.241 80.9109 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 224 187.952 48.4362 ) ( 224 202.241 80.911 ) ( 224 192.525 30.7143 ) CRATE11 [ -0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 160 160 0 ) ( 160 224 0 ) ( 160 160 23.4118 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 162 181.524 50 ) ( 162 162 25.8824 ) ( 160 181.524 50 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 160 224 0 ) ( 160 160 0 ) ( 162 222 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.667 0.667
+( 160 181.524 50 ) ( 160 196.105 50 ) ( 162 181.524 50 ) CRATE13 [ 1 0 0 -48 ] [ 0 -0.784046 0.620703 -48 ] 0 0.667 0.667
+( 160 196.105 50 ) ( 160 224 27.9166 ) ( 162 196.105 50 ) CRATE13 [ 1 0 0 -48 ] [ 0 -0.784046 0.620703 -48 ] 0 0.667 0.667
+( 162 162 25.8823 ) ( 162 162 0 ) ( 160 160 23.4118 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 160 224 27.9167 ) ( 160 224 0 ) ( 162 222 29.5 ) CRATE10 [ -1 -0 -0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 162 222 0 ) ( 162 162 0 ) ( 162 222 29.5 ) CRATE10 [ 0 1 0 -67.2 ] [ -0 0 -1 0 ] 0 0.625 0.734375
 }
 // brush 1
 {
-( 222 162 0 ) ( 222 166.64 0 ) ( 222 162 94 ) CRATE10 [ 0 1 0 -67 ] [ 0 0 -1 0 ] 0 0.625 0.734
-( 224 160 94 ) ( 224 160 0 ) ( 222 162 94 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 222 166.64 0 ) ( 222 162 0 ) ( 224 166.64 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.667 0.667
-( 222 162 94 ) ( 222 208 94 ) ( 224 160 94 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
-( 222 208 94 ) ( 222 166.64 0 ) ( 224 208 94 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
-( 224 166.64 0 ) ( 224 160 0 ) ( 224 208 94 ) CRATE11 [ -0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 160 160 40 ) ( 160 160 23.4118 ) ( 160 171.832 38.028 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 160 160 40 ) ( 160 171.832 38.028 ) ( 162 162 39.6667 ) CRATE13 [ 1 0 0 -48 ] [ 0 -0.986394 0.164399 -48 ] 0 0.667 0.667
+( 160 171.832 38.028 ) ( 160 160 23.4118 ) ( 162 171.832 38.028 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 162 162 39.6667 ) ( 162 162 25.8823 ) ( 160 160 40 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 162 162 25.8823 ) ( 162 162 39.6667 ) ( 162 171.832 38.028 ) CRATE10 [ -0 1 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
+}
+}
+// entity 104
+{
+"classname" "func_breakable"
+"zhlt_lightflags" "0"
+"rendercolor" "0 0 0"
+"rendermode" "0"
+"renderfx" "0"
+"explodemagnitude" "0"
+"spawnobject" "0"
+"delay" "0"
+"explosion" "0"
+"material" "1"
+"health" "10"
+"zhlt_clipnodedetaillevel" "1"
+"zhlt_chopup" "0"
+"zhlt_chopdown" "0"
+"zhlt_detaillevel" "1"
+"target" "bigcrate_01_counter"
+"targetname" "bigcrate_01"
+"_tb_group" "54"
+// brush 0
+{
+( 160 196.105 50 ) ( 160 224 27.9167 ) ( 160 224 50 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 160 224 27.9167 ) ( 160 196.105 50 ) ( 162 222 29.5 ) CRATE13 [ -1 -0 0 -48 ] [ 0 -0.784046 0.620703 -48 ] 0 0.667 0.667
+( 160 196.105 50 ) ( 160 224 50 ) ( 162 196.105 50 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
+( 160 224 50 ) ( 160 224 27.9167 ) ( 162 222 50 ) CRATE10 [ -1 -0 -0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 162 222 29.5 ) ( 162 196.105 50 ) ( 162 222 50 ) CRATE10 [ -0 1 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
+}
+// brush 1
+{
+( 160 187.219 57.035 ) ( 160 196.105 50 ) ( 160 217.143 94 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 162 217.143 94 ) ( 162 187.219 57.035 ) ( 160 217.143 94 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 160 196.105 50 ) ( 160 187.219 57.035 ) ( 162 196.105 50 ) CRATE13 [ -1 -0 0 -48 ] [ 0 -0.784046 0.620703 -48 ] 0 0.667 0.667
+( 160 224 50 ) ( 160 196.105 50 ) ( 162 222 50 ) CRATE13 [ -1 -0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
+( 160 217.143 94 ) ( 160 224 94 ) ( 162 217.143 94 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 -48 ] 0 0.667 0.667
+( 160 224 94 ) ( 160 224 50 ) ( 162 222 94 ) CRATE10 [ -1 -0 -0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 162 217.143 94 ) ( 162 222 94 ) ( 162 187.219 57.035 ) CRATE10 [ -0 1 0 -67 ] [ 0 0 -1 0 ] 0 0.625 0.734
 }
 // brush 2
 {
-( 224 160 96 ) ( 224 160 94 ) ( 160 224 96 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.667 0.75
-( 224 224 94 ) ( 160 224 94 ) ( 224 160 94 ) CRATE13 [ 1 0 0 -45.0015 ] [ 0 -1 0 50.9985 ] 0 0.667 0.667
-( 224 224 96 ) ( 224 160 96 ) ( 160 224 96 ) CRATE13 [ 1 0 0 -48 ] [ 0 -1 0 48 ] 0 0.666667 0.666667
-( 224 224 96 ) ( 160 224 96 ) ( 224 224 94 ) CRATE10 [ -1 -0 -0 -48 ] [ 0 0 -1 0 ] 0 0.667 0.75
-( 224 224 94 ) ( 224 160 94 ) ( 224 224 96 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.667 0.75
+( 160 187.219 57.0351 ) ( 160 181.524 50 ) ( 160 196.105 50 ) CRATE11 [ 0 -1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 162 187.219 57.0351 ) ( 162 181.524 50 ) ( 160 187.219 57.0351 ) CRATE10 [ 1 0 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
+( 160 196.105 50 ) ( 160 181.524 50 ) ( 162 196.105 50 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 0.667 0.667
+( 160 187.219 57.0351 ) ( 160 196.105 50 ) ( 162 187.219 57.0351 ) CRATE13 [ 1 0 0 -48 ] [ 0 -0.784046 0.620703 -48 ] 0 0.667 0.667
+( 162 187.219 57.0351 ) ( 162 196.105 50 ) ( 162 181.524 50 ) CRATE10 [ -0 1 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
 }
 }
-// entity 106
-{
-"classname" "multi_manager"
-"spawnflags" "0"
-"origin" "192 192 136"
-"targetname" "bigcrate_01_mm"
-"bigcrate_01" "0.001"
-"bigcrate_01_kill_greet" "0.001"
-"bigcrate_01_sen_01" "0.5"
-"_tb_group" "2"
-}
-// entity 107
-{
-"classname" "trigger_relay"
-"spawnflags" "1"
-"triggerstate" "0"
-"delay" "0"
-"origin" "192 192 160"
-"targetname" "bigcrate_01_kill_greet"
-"killtarget" "greet_loop_mm"
-"_tb_group" "2"
-}
-// entity 108
-{
-"classname" "scripted_sentence"
-"spawnflags" "13"
-"duration" "10"
-"radius" "512"
-"refire" "3"
-"volume" "10"
-"attenuation" "0"
-"delay" "0"
-"origin" "192 192 176"
-"targetname" "bigcrate_01_sen_01"
-"entity" "slick"
-"listener" "player"
-"sentence" "!C0A0_PUSH_START"
-"_tb_layer" "30"
-}
-// entity 109
+// entity 105
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Push sequence"
 "_tb_id" "31"
 "_tb_layer_sort_index" "4"
+"_tb_layer_locked" "1"
+"_tb_layer_hidden" "1"
 }
-// entity 110
+// entity 106
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2526,7 +2466,7 @@
 "_tb_id" "32"
 "_tb_layer" "31"
 }
-// entity 111
+// entity 107
 {
 "classname" "func_pushable"
 "size" "0"
@@ -2591,7 +2531,7 @@
 ( 188 208 56 ) ( 188 208 40 ) ( 188 80 40 ) NULL [ 1.8369701987210297e-16 1 0 -4 ] [ 0 0 -1 4 ] 0 1 1
 }
 }
-// entity 112
+// entity 108
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2599,7 +2539,7 @@
 "_tb_id" "45"
 "_tb_layer" "31"
 }
-// entity 113
+// entity 109
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2652,7 +2592,7 @@
 ( 372 0 84 ) ( 372 0 80 ) ( 372 -128 80 ) NULL [ 1.8369701987210297e-16 1 0 -20 ] [ 0 0 -1 -4 ] 0 1 1
 }
 }
-// entity 114
+// entity 110
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2705,7 +2645,7 @@
 ( 372 65 84 ) ( 372 65 80 ) ( 372 -63 80 ) NULL [ 1.8369701987210297e-16 1 0 11 ] [ 0 0 -1 -4 ] 0 1 1
 }
 }
-// entity 115
+// entity 111
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2713,7 +2653,7 @@
 "_tb_id" "49"
 "_tb_group" "45"
 }
-// entity 116
+// entity 112
 {
 "classname" "func_wall_toggle"
 "spawnflags" "1"
@@ -2769,7 +2709,7 @@
 ( 372 32 84 ) ( 372 32 80 ) ( 372 -96 80 ) NULL [ 1.8369701987210297e-16 1 0 -20 ] [ 0 0 -1 -4 ] 0 1 1
 }
 }
-// entity 117
+// entity 113
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2777,7 +2717,7 @@
 "_tb_id" "50"
 "_tb_layer" "31"
 }
-// entity 118
+// entity 114
 {
 "classname" "trigger_once"
 "spawnflags" "6"
@@ -2820,7 +2760,7 @@
 ( 256 272 0 ) ( 256 256 0 ) ( 256 272 112 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 119
+// entity 115
 {
 "classname" "scripted_sentence"
 "spawnflags" "13"
@@ -2837,7 +2777,7 @@
 "sentence" "!C0A0_PUSH_WARN"
 "_tb_group" "50"
 }
-// entity 120
+// entity 116
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2845,7 +2785,7 @@
 "_tb_id" "51"
 "_tb_layer" "31"
 }
-// entity 121
+// entity 117
 {
 "classname" "trigger_once"
 "sounds" "0"
@@ -2858,19 +2798,19 @@
 ( 383 0 -40 ) ( 383 1 -40 ) ( 383 0 -39 ) AAATRIGGER [ 0 -1 0 0 ] [ 0 0 -1 8 ] 0 1 1
 ( 352 -16 -40 ) ( 352 -16 -39 ) ( 353 -16 -40 ) AAATRIGGER [ 1 0 0 0 ] [ 0 0 -1 8 ] 0 1 1
 ( 352 0 8 ) ( 353 0 8 ) ( 352 1 8 ) AAATRIGGER [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 384 32 48 ) ( 384 33 48 ) ( 385 32 48 ) AAATRIGGER [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 384 32 32 ) ( 384 33 32 ) ( 385 32 32 ) AAATRIGGER [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
 ( 384 48 -24 ) ( 385 48 -24 ) ( 384 48 -23 ) AAATRIGGER [ -1 0 0 0 ] [ 0 0 -1 8 ] 0 1 1
 ( 384 32 -24 ) ( 384 32 -23 ) ( 384 33 -24 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 8 ] 0 1 1
 }
 }
-// entity 122
+// entity 118
 {
 "classname" "multisource"
-"origin" "424 40 120"
+"origin" "376 40 120"
 "targetname" "push_switcharoo_ms_inplace"
 "_tb_group" "51"
 }
-// entity 123
+// entity 119
 {
 "classname" "trigger_once"
 "sounds" "0"
@@ -2882,13 +2822,13 @@
 {
 ( 383 0 0 ) ( 383 1 0 ) ( 383 0 1 ) AAATRIGGER [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 352 -16 0 ) ( 352 -16 1 ) ( 353 -16 0 ) AAATRIGGER [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 352 0 48 ) ( 353 0 48 ) ( 352 1 48 ) AAATRIGGER [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 352 0 64 ) ( 353 0 64 ) ( 352 1 64 ) AAATRIGGER [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
 ( 384 32 88 ) ( 384 33 88 ) ( 385 32 88 ) AAATRIGGER [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
 ( 384 48 16 ) ( 385 48 16 ) ( 384 48 17 ) AAATRIGGER [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 384 32 16 ) ( 384 32 17 ) ( 384 33 16 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 124
+// entity 120
 {
 "classname" "trigger_once"
 "sounds" "0"
@@ -2907,36 +2847,54 @@
 ( 432 320 16 ) ( 432 320 17 ) ( 432 321 16 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 125
+// entity 121
 {
 "classname" "multisource"
-"origin" "424 24 104"
+"origin" "376 24 104"
 "target" "push_switcharoo_mm"
 "targetname" "push_switcharoo_ms"
 "_tb_group" "51"
 }
-// entity 126
+// entity 122
 {
 "classname" "multi_manager"
 "spawnflags" "0"
-"origin" "424 40 104"
+"origin" "376 40 104"
 "targetname" "push_switcharoo_mm"
 "push_switcharoo_kill_pushable" ".001"
 "cabinet_toggle" ".001"
 "_tb_group" "51"
 }
-// entity 127
+// entity 123
 {
 "classname" "trigger_relay"
 "spawnflags" "1"
 "triggerstate" "0"
 "delay" "0"
-"origin" "424 24 120"
+"origin" "376 24 120"
 "targetname" "push_switcharoo_kill_pushable"
 "killtarget" "cabinet_push"
 "_tb_group" "51"
 }
-// entity 128
+// entity 124
+{
+"classname" "trigger_once"
+"sounds" "0"
+"delay" "0"
+"spawnflags" "6"
+"killtarget" "push_sen_rpt_mm"
+"_tb_group" "51"
+// brush 0
+{
+( 383 0 -8 ) ( 383 1 -8 ) ( 383 0 -7 ) AAATRIGGER [ 0 -1 0 0 ] [ 0 0 -1 8 ] 0 1 1
+( 352 -16 -8 ) ( 352 -16 -7 ) ( 353 -16 -8 ) AAATRIGGER [ 1 0 0 0 ] [ 0 0 -1 8 ] 0 1 1
+( 352 0 32 ) ( 353 0 32 ) ( 352 1 32 ) AAATRIGGER [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 384 32 64 ) ( 384 33 64 ) ( 385 32 64 ) AAATRIGGER [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 384 48 8 ) ( 385 48 8 ) ( 384 48 9 ) AAATRIGGER [ -1 0 0 0 ] [ 0 0 -1 8 ] 0 1 1
+( 384 32 8 ) ( 384 32 9 ) ( 384 33 8 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 8 ] 0 1 1
+}
+}
+// entity 125
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -3103,4 +3061,39 @@
 ( 56 -24 64 ) ( 56 -24 32 ) ( 24 -56 64 ) ~LAB1_COMP3A [ 0.707107 0.707107 0 22.6274 ] [ 0 0 -1 0 ] 0 1 1
 ( 64 0 32 ) ( 56 -24 32 ) ( 64 0 64 ) METAL_BORD01 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
+}
+// entity 126
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "Push repeat"
+"_tb_id" "53"
+"_tb_layer" "31"
+}
+// entity 127
+{
+"classname" "multi_manager"
+"spawnflags" "1"
+"origin" "128 80 80"
+"targetname" "push_sen_rpt_mm"
+"push_sen_rpt_mm" "30"
+"push_sen_rpt" ".001"
+"_tb_group" "53"
+}
+// entity 128
+{
+"classname" "scripted_sentence"
+"spawnflags" "12"
+"duration" "10"
+"radius" "512"
+"refire" "3"
+"volume" "10"
+"attenuation" "0"
+"delay" "0"
+"origin" "128 80 0"
+"targetname" "push_sen_rpt"
+"entity" "slick"
+"listener" "player"
+"sentence" "!C0A0_PUSH_RPT"
+"_tb_group" "53"
 }
