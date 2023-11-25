@@ -15,7 +15,7 @@
 //    $holdtime x - Sets how many seconds the message will remain on-screen for. For effect 2, this time starts after the last letter appears.
 //    $fadeout x - Sets how many seconds the message takes to fade out.
 
-// {{{ cd01intro00
+// {{{ c0a0
 $position -1 -1
 $effect 0
 $color 180 180 180
@@ -28,4 +28,4 @@ GAMETITLE
 {
 Critical Dynamics
 }
-// }}} cd01intro00
+// }}} c0a0
