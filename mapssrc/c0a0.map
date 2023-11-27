@@ -8,9 +8,8 @@
 "_tb_def" "external:criticaldynamics/criticaldynamics.fgd"
 "wad" "criticaldynamics/sdhlt.wad;criticaldynamics/devtextures.wad;valve/halflife.wad;valve/decals.wad"
 "newunit" "1"
-"startdark" "0"
+"startdark" "1"
 "_tb_layer_locked" "1"
-"_tb_layer_hidden" "1"
 // brush 0
 {
 ( -384 -384 0 ) ( -384 -384 -32 ) ( -384 384 0 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -559,6 +558,123 @@
 ( 424 216 88 ) ( 424 217 88 ) ( 425 216 88 ) CLIP [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
 ( 424 216 48 ) ( 425 216 48 ) ( 424 216 49 ) CLIP [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 416 216 48 ) ( 416 216 49 ) ( 416 217 48 ) CLIP [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 61
+{
+( -336 1136 128 ) ( -336 1136 112 ) ( -336 1152 128 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 160 ] 0 1 0.5
+( -192 1136 128 ) ( -192 1136 112 ) ( -336 1136 128 ) ELEV1 [ 1 0 0 83 ] [ 0 0 -1 0 ] 0 1.25 0.889
+( -336 1152 112 ) ( -336 1136 112 ) ( -192 1152 112 ) ELEV1_TRIM [ -0 1 0 0 ] [ 1 0 0 48 ] 90 1 1
+( -192 1136 128 ) ( -336 1136 128 ) ( -192 1152 128 ) NULL [ 0 1 0 0 ] [ 1 0 0 0 ] 0 1 1
+( -336 1152 128 ) ( -336 1152 112 ) ( -192 1152 128 ) MEASURE128_01 [ -1 0 0 192 ] [ 0 0 -1 0 ] 0 1 1
+( -192 1152 128 ) ( -192 1152 112 ) ( -192 1136 128 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 160 ] 0 1 0.5
+}
+// brush 62
+{
+( -384 992 128 ) ( -384 992 0 ) ( -384 1136 128 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -368 992 128 ) ( -368 992 0 ) ( -384 992 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -384 1136 0 ) ( -384 992 0 ) ( -368 1136 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -368 992 128 ) ( -384 992 128 ) ( -368 1136 128 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -384 1136 128 ) ( -384 1136 0 ) ( -368 1136 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -368 1136 128 ) ( -368 1136 0 ) ( -368 992 128 ) ELEV1 [ 0 1 0 14 ] [ 0 0 -1 0 ] 0 1.25 0.889
+}
+// brush 63
+{
+( -368 976 128 ) ( -368 976 0 ) ( -368 992 128 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -160 976 128 ) ( -160 976 0 ) ( -368 976 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -368 992 0 ) ( -368 976 0 ) ( -160 992 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -160 976 128 ) ( -368 976 128 ) ( -160 992 128 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -368 992 128 ) ( -368 992 0 ) ( -160 992 128 ) ELEV1 [ -1 0 0 -19.2 ] [ 0 0 -1 143.991 ] 0 1.25 0.889
+( -160 992 128 ) ( -160 992 0 ) ( -160 976 128 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 64
+{
+( -160 992 128 ) ( -160 992 0 ) ( -160 1136 128 ) ELEV1 [ 0 -1 0 -15 ] [ 0 0 -1 0 ] 0 1.25 0.889
+( -144 992 128 ) ( -144 992 0 ) ( -160 992 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -160 1136 0 ) ( -160 992 0 ) ( -144 1136 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -144 992 128 ) ( -160 992 128 ) ( -144 1136 128 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -160 1136 128 ) ( -160 1136 0 ) ( -144 1136 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -144 1136 128 ) ( -144 1136 0 ) ( -144 992 128 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 65
+{
+( -232 992 144 ) ( -232 992 128 ) ( -232 1136 144 ) NULL [ -0 -1 -0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -160 992 128 ) ( -232 992 128 ) ( -160 992 144 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -160 1136 128 ) ( -232 1136 128 ) ( -160 992 128 ) ELEV2_CIEL2 [ 1 0 0 40 ] [ 0 -1 0 8 ] 0 1 1
+( -160 992 144 ) ( -232 992 144 ) ( -160 1136 144 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -160 1136 144 ) ( -232 1136 144 ) ( -160 1136 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -160 1136 144 ) ( -160 1136 128 ) ( -160 992 144 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 66
+{
+( -368 992 144 ) ( -368 992 128 ) ( -368 1136 144 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -368 992 144 ) ( -296 992 144 ) ( -368 992 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -368 1136 128 ) ( -368 992 128 ) ( -296 1136 128 ) ELEV2_CIEL2 [ 1 0 0 40 ] [ 0 -1 0 8 ] 0 1 1
+( -368 992 144 ) ( -368 1136 144 ) ( -296 992 144 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -368 1136 128 ) ( -296 1136 128 ) ( -368 1136 144 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -296 1136 144 ) ( -296 1136 128 ) ( -296 992 144 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 67
+{
+( -296 1136 144 ) ( -296 1096 144 ) ( -296 1136 128 ) NULL [ -0 -1 -0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -232 1096 144 ) ( -232 1096 128 ) ( -296 1096 144 ) NULL [ 1 0 0 0 ] [ 0 -0 -1 0 ] 0 1 1
+( -296 1136 128 ) ( -296 1096 128 ) ( -232 1136 128 ) ELEV2_CIEL2 [ 1 0 0 40 ] [ 0 -1 0 8 ] 0 1 1
+( -296 1096 144 ) ( -296 1136 144 ) ( -232 1096 144 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -296 1136 144 ) ( -296 1136 128 ) ( -232 1136 144 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -232 1136 128 ) ( -232 1096 128 ) ( -232 1136 144 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 68
+{
+( -296 992 128 ) ( -296 1032 128 ) ( -296 992 144 ) NULL [ -0 -1 -0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -232 992 144 ) ( -232 992 128 ) ( -296 992 144 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -296 1032 128 ) ( -296 992 128 ) ( -232 1032 128 ) ELEV2_CIEL2 [ 1 0 0 40 ] [ 0 -1 0 8 ] 0 1 1
+( -296 992 144 ) ( -296 1032 144 ) ( -232 992 144 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -296 1032 144 ) ( -296 1032 128 ) ( -232 1032 144 ) NULL [ -1 -0 -0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -232 992 144 ) ( -232 1032 144 ) ( -232 992 128 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 69
+{
+( -296 1096 144 ) ( -296 1032 144 ) ( -296 1096 128 ) NULL [ -0 -1 -0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -232 1032 144 ) ( -232 1032 128 ) ( -296 1032 144 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -296 1096 128 ) ( -296 1032 128 ) ( -232 1096 128 ) ELEV1_CIEL [ 1 0 0 40 ] [ 0 -1 0 8 ] 0 1 1
+( -296 1032 144 ) ( -296 1096 144 ) ( -232 1032 144 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -296 1096 144 ) ( -296 1096 128 ) ( -232 1096 144 ) NULL [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -232 1096 128 ) ( -232 1032 128 ) ( -232 1096 144 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 70
+{
+( -368 1152 64 ) ( -368 1104 192 ) ( -368 1104 64 ) NULL [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -608 1136 128 ) ( -336 1136 128 ) ( -608 1136 0 ) ELEV1 [ 1 0 0 83 ] [ 0 0 -1 0 ] 0 1.25 0.889
+( -608 1152 0 ) ( -608 1136 0 ) ( -336 1152 0 ) NULL [ 0 1 0 0 ] [ 1 0 0 0 ] 0 1 1
+( -608 1136 128 ) ( -608 1152 128 ) ( -336 1136 128 ) NULL [ 0 1 0 0 ] [ 1 0 0 0 ] 0 1 1
+( -608 1152 0 ) ( -336 1152 0 ) ( -608 1152 128 ) MEASURE128_01 [ -1 0 0 192 ] [ 0 0 -1 0 ] 0 1 1
+( -336 1152 128 ) ( -336 1152 0 ) ( -336 1136 128 ) ELEV1_TRIM [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 0.888889
+}
+// brush 71
+{
+( -192 1136 128 ) ( -192 1136 0 ) ( -192 1152 128 ) ELEV1_TRIM [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 0.889
+( -192 1136 128 ) ( -80 1136 128 ) ( -192 1136 0 ) ELEV1 [ 1 0 0 83 ] [ 0 0 -1 0 ] 0 1.25 0.889
+( -192 1152 0 ) ( -192 1136 0 ) ( -80 1152 0 ) NULL [ 0 1 0 0 ] [ 1 0 0 0 ] 0 1 1
+( -192 1136 128 ) ( -192 1152 128 ) ( -80 1136 128 ) NULL [ 0 1 0 0 ] [ 1 0 0 0 ] 0 1 1
+( -192 1152 0 ) ( -80 1152 0 ) ( -192 1152 128 ) MEASURE128_01 [ -1 0 0 192 ] [ 0 0 -1 0 ] 0 1 1
+( -160 1136 80 ) ( -160 1264 48 ) ( -160 1136 48 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 72
+{
+( -368 992 0 ) ( -368 992 -32 ) ( -368 1136 0 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -160 992 0 ) ( -160 992 -32 ) ( -368 992 0 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -368 1136 -32 ) ( -368 992 -32 ) ( -160 1136 -32 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -160 992 0 ) ( -368 992 0 ) ( -160 1136 0 ) MEASURE128_22 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -368 1136 0 ) ( -368 1136 -32 ) ( -160 1136 0 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -160 1136 0 ) ( -160 1136 -32 ) ( -160 992 0 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 73
+{
+( -336 1136 0 ) ( -336 1136 -32 ) ( -336 1152 0 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -192 1136 0 ) ( -192 1136 -32 ) ( -336 1136 0 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -336 1152 -32 ) ( -336 1136 -32 ) ( -192 1152 -32 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -192 1136 0 ) ( -336 1136 0 ) ( -192 1152 0 ) ELEV1_TRIM [ -0 1 0 0 ] [ 1 0 0 48 ] 90 1 1
+( -336 1152 0 ) ( -336 1152 -32 ) ( -192 1152 0 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -192 1152 0 ) ( -192 1152 -32 ) ( -192 1136 0 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
 // entity 1
@@ -1414,132 +1530,15 @@
 }
 // entity 58
 {
-"classname" "func_group"
-"_tb_type" "_tb_layer"
-"_tb_name" "Elevator"
-"_tb_id" "3"
-"_tb_layer_sort_index" "0"
-"_tb_layer_locked" "1"
-"_tb_layer_hidden" "1"
-// brush 0
-{
-( -336 1136 128 ) ( -336 1136 112 ) ( -336 1152 128 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 160 ] 0 1 0.5
-( -192 1136 128 ) ( -192 1136 112 ) ( -336 1136 128 ) ELEV1 [ 1 0 0 83 ] [ 0 0 -1 0 ] 0 1.25 0.889
-( -336 1152 112 ) ( -336 1136 112 ) ( -192 1152 112 ) ELEV1_TRIM [ -0 1 0 0 ] [ 1 0 0 48 ] 90 1 1
-( -192 1136 128 ) ( -336 1136 128 ) ( -192 1152 128 ) NULL [ 0 1 0 0 ] [ 1 0 0 0 ] 0 1 1
-( -336 1152 128 ) ( -336 1152 112 ) ( -192 1152 128 ) MEASURE128_01 [ -1 0 0 192 ] [ 0 0 -1 0 ] 0 1 1
-( -192 1152 128 ) ( -192 1152 112 ) ( -192 1136 128 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 160 ] 0 1 0.5
-}
-// brush 1
-{
-( -368 992 0 ) ( -368 992 -32 ) ( -368 1136 0 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -160 992 0 ) ( -160 992 -32 ) ( -368 992 0 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -368 1136 -32 ) ( -368 992 -32 ) ( -160 1136 -32 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -160 992 0 ) ( -368 992 0 ) ( -160 1136 0 ) MEASURE128_22 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -368 1136 0 ) ( -368 1136 -32 ) ( -160 1136 0 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -160 1136 0 ) ( -160 1136 -32 ) ( -160 992 0 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 2
-{
-( -336 1136 0 ) ( -336 1136 -32 ) ( -336 1152 0 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -192 1136 0 ) ( -192 1136 -32 ) ( -336 1136 0 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -336 1152 -32 ) ( -336 1136 -32 ) ( -192 1152 -32 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -192 1136 0 ) ( -336 1136 0 ) ( -192 1152 0 ) ELEV1_TRIM [ -0 1 0 0 ] [ 1 0 0 48 ] 90 1 1
-( -336 1152 0 ) ( -336 1152 -32 ) ( -192 1152 0 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -192 1152 0 ) ( -192 1152 -32 ) ( -192 1136 0 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 3
-{
-( -384 992 128 ) ( -384 992 0 ) ( -384 1136 128 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -368 992 128 ) ( -368 992 0 ) ( -384 992 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -384 1136 0 ) ( -384 992 0 ) ( -368 1136 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -368 992 128 ) ( -384 992 128 ) ( -368 1136 128 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -384 1136 128 ) ( -384 1136 0 ) ( -368 1136 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -368 1136 128 ) ( -368 1136 0 ) ( -368 992 128 ) ELEV1 [ 0 1 0 14 ] [ 0 0 -1 0 ] 0 1.25 0.889
-}
-// brush 4
-{
-( -368 976 128 ) ( -368 976 0 ) ( -368 992 128 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -160 976 128 ) ( -160 976 0 ) ( -368 976 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -368 992 0 ) ( -368 976 0 ) ( -160 992 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -160 976 128 ) ( -368 976 128 ) ( -160 992 128 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -368 992 128 ) ( -368 992 0 ) ( -160 992 128 ) ELEV1 [ -1 0 0 -19.2 ] [ 0 0 -1 143.991 ] 0 1.25 0.889
-( -160 992 128 ) ( -160 992 0 ) ( -160 976 128 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 5
-{
-( -160 992 128 ) ( -160 992 0 ) ( -160 1136 128 ) ELEV1 [ 0 -1 0 -15 ] [ 0 0 -1 0 ] 0 1.25 0.889
-( -144 992 128 ) ( -144 992 0 ) ( -160 992 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -160 1136 0 ) ( -160 992 0 ) ( -144 1136 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -144 992 128 ) ( -160 992 128 ) ( -144 1136 128 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -160 1136 128 ) ( -160 1136 0 ) ( -144 1136 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -144 1136 128 ) ( -144 1136 0 ) ( -144 992 128 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 6
-{
-( -232 992 144 ) ( -232 992 128 ) ( -232 1136 144 ) NULL [ -0 -1 -0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -160 992 128 ) ( -232 992 128 ) ( -160 992 144 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -160 1136 128 ) ( -232 1136 128 ) ( -160 992 128 ) ELEV2_CIEL2 [ 1 0 0 40 ] [ 0 -1 0 8 ] 0 1 1
-( -160 992 144 ) ( -232 992 144 ) ( -160 1136 144 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -160 1136 144 ) ( -232 1136 144 ) ( -160 1136 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -160 1136 144 ) ( -160 1136 128 ) ( -160 992 144 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 7
-{
-( -368 992 144 ) ( -368 992 128 ) ( -368 1136 144 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -368 992 144 ) ( -296 992 144 ) ( -368 992 128 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -368 1136 128 ) ( -368 992 128 ) ( -296 1136 128 ) ELEV2_CIEL2 [ 1 0 0 40 ] [ 0 -1 0 8 ] 0 1 1
-( -368 992 144 ) ( -368 1136 144 ) ( -296 992 144 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -368 1136 128 ) ( -296 1136 128 ) ( -368 1136 144 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -296 1136 144 ) ( -296 1136 128 ) ( -296 992 144 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 8
-{
-( -296 1136 144 ) ( -296 1096 144 ) ( -296 1136 128 ) NULL [ -0 -1 -0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -232 1096 144 ) ( -232 1096 128 ) ( -296 1096 144 ) NULL [ 1 0 0 0 ] [ 0 -0 -1 0 ] 0 1 1
-( -296 1136 128 ) ( -296 1096 128 ) ( -232 1136 128 ) ELEV2_CIEL2 [ 1 0 0 40 ] [ 0 -1 0 8 ] 0 1 1
-( -296 1096 144 ) ( -296 1136 144 ) ( -232 1096 144 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -296 1136 144 ) ( -296 1136 128 ) ( -232 1136 144 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -232 1136 128 ) ( -232 1096 128 ) ( -232 1136 144 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 9
-{
-( -296 992 128 ) ( -296 1032 128 ) ( -296 992 144 ) NULL [ -0 -1 -0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -232 992 144 ) ( -232 992 128 ) ( -296 992 144 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -296 1032 128 ) ( -296 992 128 ) ( -232 1032 128 ) ELEV2_CIEL2 [ 1 0 0 40 ] [ 0 -1 0 8 ] 0 1 1
-( -296 992 144 ) ( -296 1032 144 ) ( -232 992 144 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -296 1032 144 ) ( -296 1032 128 ) ( -232 1032 144 ) NULL [ -1 -0 -0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -232 992 144 ) ( -232 1032 144 ) ( -232 992 128 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 10
-{
-( -296 1096 144 ) ( -296 1032 144 ) ( -296 1096 128 ) NULL [ -0 -1 -0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -232 1032 144 ) ( -232 1032 128 ) ( -296 1032 144 ) NULL [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -296 1096 128 ) ( -296 1032 128 ) ( -232 1096 128 ) ELEV1_CIEL [ 1 0 0 40 ] [ 0 -1 0 8 ] 0 1 1
-( -296 1032 144 ) ( -296 1096 144 ) ( -232 1032 144 ) NULL [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -296 1096 144 ) ( -296 1096 128 ) ( -232 1096 144 ) NULL [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -232 1096 128 ) ( -232 1032 128 ) ( -232 1096 144 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 11
-{
-( -368 1152 64 ) ( -368 1104 192 ) ( -368 1104 64 ) NULL [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -608 1136 128 ) ( -336 1136 128 ) ( -608 1136 0 ) ELEV1 [ 1 0 0 83 ] [ 0 0 -1 0 ] 0 1.25 0.889
-( -608 1152 0 ) ( -608 1136 0 ) ( -336 1152 0 ) NULL [ 0 1 0 0 ] [ 1 0 0 0 ] 0 1 1
-( -608 1136 128 ) ( -608 1152 128 ) ( -336 1136 128 ) NULL [ 0 1 0 0 ] [ 1 0 0 0 ] 0 1 1
-( -608 1152 0 ) ( -336 1152 0 ) ( -608 1152 128 ) MEASURE128_01 [ -1 0 0 192 ] [ 0 0 -1 0 ] 0 1 1
-( -336 1152 128 ) ( -336 1152 0 ) ( -336 1136 128 ) ELEV1_TRIM [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 0.888889
-}
-// brush 12
-{
-( -192 1136 128 ) ( -192 1136 0 ) ( -192 1152 128 ) ELEV1_TRIM [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 0.889
-( -192 1136 128 ) ( -80 1136 128 ) ( -192 1136 0 ) ELEV1 [ 1 0 0 83 ] [ 0 0 -1 0 ] 0 1.25 0.889
-( -192 1152 0 ) ( -192 1136 0 ) ( -80 1152 0 ) NULL [ 0 1 0 0 ] [ 1 0 0 0 ] 0 1 1
-( -192 1136 128 ) ( -192 1152 128 ) ( -80 1136 128 ) NULL [ 0 1 0 0 ] [ 1 0 0 0 ] 0 1 1
-( -192 1152 0 ) ( -80 1152 0 ) ( -192 1152 128 ) MEASURE128_01 [ -1 0 0 192 ] [ 0 0 -1 0 ] 0 1 1
-( -160 1136 80 ) ( -160 1264 48 ) ( -160 1136 48 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
+"classname" "info_node"
+"origin" "40 0 140"
 }
 // entity 59
+{
+"classname" "info_node"
+"origin" "-40 0 140"
+}
+// entity 60
 {
 "classname" "func_door"
 "zhlt_lightflags" "0"
@@ -1564,7 +1563,6 @@
 "zhlt_detaillevel" "1"
 "targetname" "elev_01_door"
 "lip" "4"
-"_tb_layer" "3"
 // brush 0
 {
 ( -336 1140 112 ) ( -336 1140 0 ) ( -336 1148 112 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1.16667
@@ -1575,7 +1573,7 @@
 ( -264 1148 112 ) ( -264 1148 0 ) ( -264 1140 112 ) ELEV1_DR [ 2.220446049250313e-16 1 0 -78.44444 ] [ 0 0 -1 0 ] 0 1.125 0.875
 }
 }
-// entity 60
+// entity 61
 {
 "classname" "func_door"
 "zhlt_lightflags" "0"
@@ -1600,7 +1598,6 @@
 "zhlt_detaillevel" "1"
 "lip" "4"
 "targetname" "elev_01_door"
-"_tb_layer" "3"
 // brush 0
 {
 ( -264 1140 112 ) ( -264 1140 0 ) ( -264 1148 112 ) ELEV1_DR [ 2.220446049250313e-16 1 0 -78.44444 ] [ 0 0 -1 0 ] 0 1.125 0.875
@@ -1611,7 +1608,7 @@
 ( -192 1148 112 ) ( -192 1148 0 ) ( -192 1140 112 ) MEASURE128_01 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1.16667
 }
 }
-// entity 61
+// entity 62
 {
 "classname" "func_button"
 "spawnflags" "1"
@@ -1638,7 +1635,6 @@
 "zhlt_chopdown" "0"
 "zhlt_detaillevel" "1"
 "target" "elev_01_door"
-"_tb_layer" "3"
 // brush 0
 {
 ( -356 1134 56 ) ( -356 1134 40 ) ( -356 1136 56 ) +AELEV_UP [ 0 -1 0 16 ] [ 0 0 -1 27.9575 ] 0 1 1.33333
@@ -1658,7 +1654,7 @@
 ( -344 1154 56 ) ( -344 1154 40 ) ( -344 1152 56 ) +AELEV_UP [ 0 1 0 0 ] [ 0 0 -1 27.9575 ] 0 1 1.33333
 }
 }
-// entity 62
+// entity 63
 {
 "classname" "light"
 "_falloff" "0"
@@ -1666,19 +1662,18 @@
 "style" "0"
 "_light" "255 255 180 300"
 "origin" "-264 1064 96"
-"_tb_layer" "3"
 }
-// entity 63
+// entity 64
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Intro Sequence"
 "_tb_id" "4"
-"_tb_layer_sort_index" "1"
+"_tb_layer_sort_index" "2"
 "_tb_layer_locked" "1"
 "_tb_layer_hidden" "1"
 }
-// entity 64
+// entity 65
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -1686,7 +1681,7 @@
 "_tb_id" "55"
 "_tb_layer" "4"
 }
-// entity 65
+// entity 66
 {
 "classname" "ambient_generic"
 "health" "8"
@@ -1709,7 +1704,7 @@
 "message" "plats/elevbell1.wav"
 "_tb_group" "55"
 }
-// entity 66
+// entity 67
 {
 "classname" "ambient_generic"
 "health" "8"
@@ -1732,7 +1727,7 @@
 "message" "plats/elevmove2.wav"
 "_tb_group" "55"
 }
-// entity 67
+// entity 68
 {
 "classname" "trigger_auto"
 "angles" "0 90 0"
@@ -1740,9 +1735,10 @@
 "delay" ".001"
 "target" "intro_mm"
 "origin" "-288 1040 80"
+"spawnflags" "1"
 "_tb_group" "55"
 }
-// entity 68
+// entity 69
 {
 "classname" "multi_manager"
 "angles" "0 90 0"
@@ -1755,7 +1751,7 @@
 "intro_snd_stop" "6"
 "_tb_group" "55"
 }
-// entity 69
+// entity 70
 {
 "classname" "env_message"
 "angles" "0 90 0"
@@ -1766,7 +1762,7 @@
 "origin" "-256 1040 112"
 "_tb_group" "55"
 }
-// entity 70
+// entity 71
 {
 "classname" "ambient_generic"
 "health" "8"
@@ -1789,24 +1785,24 @@
 "message" "doors/doorstop6.wav"
 "_tb_group" "55"
 }
-// entity 71
+// entity 72
 {
 "classname" "info_player_start"
 "angles" "0 90 0"
 "origin" "-256 1072 40"
 "_tb_layer" "4"
 }
-// entity 72
+// entity 73
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Greet Sequence"
 "_tb_id" "21"
-"_tb_layer_sort_index" "3"
+"_tb_layer_sort_index" "4"
 "_tb_layer_locked" "1"
 "_tb_layer_hidden" "1"
 }
-// entity 73
+// entity 74
 {
 "classname" "monster_scientist"
 "spawnflags" "258"
@@ -1816,7 +1812,7 @@
 "angles" "0 105 0"
 "_tb_layer" "21"
 }
-// entity 74
+// entity 75
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -1824,7 +1820,7 @@
 "_tb_id" "29"
 "_tb_layer" "21"
 }
-// entity 75
+// entity 76
 {
 "duration" "10"
 "origin" "0 368 128"
@@ -1838,7 +1834,7 @@
 "_tb_group" "29"
 "_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
 }
-// entity 76
+// entity 77
 {
 "duration" "10"
 "origin" "32 368 128"
@@ -1852,7 +1848,7 @@
 "_tb_group" "29"
 "_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
 }
-// entity 77
+// entity 78
 {
 "duration" "10"
 "origin" "-64 368 128"
@@ -1866,7 +1862,7 @@
 "_tb_group" "29"
 "_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
 }
-// entity 78
+// entity 79
 {
 "classname" "trigger_once"
 "sounds" "0"
@@ -1884,7 +1880,7 @@
 ( 80 384 16 ) ( 80 384 17 ) ( 80 385 16 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 79
+// entity 80
 {
 "duration" "10"
 "origin" "-32 368 128"
@@ -1898,7 +1894,7 @@
 "_tb_group" "29"
 "_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
 }
-// entity 80
+// entity 81
 {
 "duration" "10"
 "origin" "64 368 128"
@@ -1912,7 +1908,7 @@
 "_tb_group" "29"
 "_tb_protected_properties" "m_iszNewTarget;target;targetname;sentence;classname"
 }
-// entity 81
+// entity 82
 {
 "classname" "multi_manager"
 "spawnflags" "0"
@@ -1925,17 +1921,17 @@
 "greet_sen_05" "110"
 "_tb_group" "29"
 }
-// entity 82
+// entity 83
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Crate sequence"
 "_tb_id" "30"
-"_tb_layer_sort_index" "4"
+"_tb_layer_sort_index" "5"
 "_tb_layer_locked" "1"
 "_tb_layer_hidden" "1"
 }
-// entity 83
+// entity 84
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -1943,7 +1939,7 @@
 "_tb_id" "54"
 "_tb_layer" "30"
 }
-// entity 84
+// entity 85
 {
 "classname" "func_breakable"
 "zhlt_lightflags" "0"
@@ -1983,7 +1979,7 @@
 ( 224 200.452 0 ) ( 224 166.64 0 ) ( 224 187.952 48.4362 ) CRATE11 [ -0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
 }
 }
-// entity 85
+// entity 86
 {
 "classname" "scripted_sentence"
 "spawnflags" "13"
@@ -2000,7 +1996,7 @@
 "sentence" "!C0A0_PUSH_START"
 "_tb_group" "54"
 }
-// entity 86
+// entity 87
 {
 "classname" "func_breakable"
 "zhlt_lightflags" "0"
@@ -2039,7 +2035,7 @@
 ( 190.653 162 82.297 ) ( 195.333 162 55.7777 ) ( 190.653 160 82.297 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
 }
 }
-// entity 87
+// entity 88
 {
 "classname" "func_breakable"
 "zhlt_lightflags" "0"
@@ -2069,7 +2065,7 @@
 ( 224 224 94 ) ( 224 224 32 ) ( 222 222 94 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
 }
 }
-// entity 88
+// entity 89
 {
 "classname" "func_breakable"
 "zhlt_lightflags" "0"
@@ -2099,7 +2095,7 @@
 ( 224 224 32 ) ( 224 224 0 ) ( 222 222 32.5 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
 }
 }
-// entity 89
+// entity 90
 {
 "classname" "trigger_relay"
 "spawnflags" "1"
@@ -2110,7 +2106,7 @@
 "killtarget" "greet_seq_mm"
 "_tb_group" "54"
 }
-// entity 90
+// entity 91
 {
 "classname" "func_breakable"
 "zhlt_lightflags" "0"
@@ -2156,7 +2152,7 @@
 ( 224 224 94 ) ( 224 160 94 ) ( 224 224 96 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.667 0.75
 }
 }
-// entity 91
+// entity 92
 {
 "classname" "func_breakable"
 "zhlt_lightflags" "0"
@@ -2195,7 +2191,7 @@
 ( 162 217.143 94 ) ( 162 181.524 50 ) ( 162 162 94 ) CRATE10 [ 0 1 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
 }
 }
-// entity 92
+// entity 93
 {
 "classname" "func_breakable"
 "zhlt_lightflags" "0"
@@ -2260,7 +2256,7 @@
 ( 160 224 96 ) ( 160 224 94 ) ( 224 160 96 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.667 0.75
 }
 }
-// entity 93
+// entity 94
 {
 "classname" "multi_manager"
 "spawnflags" "0"
@@ -2272,7 +2268,7 @@
 "push_sen_rpt_mm" "20"
 "_tb_group" "54"
 }
-// entity 94
+// entity 95
 {
 "classname" "func_detail"
 "zhlt_clipnodedetaillevel" "1"
@@ -2300,7 +2296,7 @@
 ( 222 222 2 ) ( 222 222 0 ) ( 222 162 2 ) CRATE11 [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 0.666667 0.75
 }
 }
-// entity 95
+// entity 96
 {
 "classname" "game_counter"
 "health" "4"
@@ -2313,7 +2309,7 @@
 "spawnflags" "1"
 "_tb_group" "54"
 }
-// entity 96
+// entity 97
 {
 "classname" "func_breakable"
 "zhlt_lightflags" "0"
@@ -2353,7 +2349,7 @@
 ( 162 162 25.8823 ) ( 162 162 39.6667 ) ( 162 171.832 38.028 ) CRATE10 [ -0 1 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
 }
 }
-// entity 97
+// entity 98
 {
 "classname" "func_breakable"
 "zhlt_lightflags" "0"
@@ -2400,7 +2396,7 @@
 ( 162 187.219 57.0351 ) ( 162 196.105 50 ) ( 162 181.524 50 ) CRATE10 [ -0 1 0 -67.2 ] [ 0 0 -1 0 ] 0 0.625 0.734375
 }
 }
-// entity 98
+// entity 99
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2408,7 +2404,7 @@
 "_tb_id" "1"
 "_tb_layer" "30"
 }
-// entity 99
+// entity 100
 {
 "classname" "func_breakable"
 "gibmodel" "models/computergibs.mdl"
@@ -2438,7 +2434,7 @@
 ( 345.347 55 32 ) ( 345.347 55 0 ) ( 352 23.698999999999998 32 ) BCRATE02 [ -0.207912 0.978148 0 36.007065 ] [ 0 0 -1 0 ] 0 0.5 0.5
 }
 }
-// entity 100
+// entity 101
 {
 "classname" "func_breakable"
 "gibmodel" "models/computergibs.mdl"
@@ -2468,7 +2464,7 @@
 ( 308 44 32 ) ( 308 44 0 ) ( 308 12 32 ) BCRATE02 [ 0 1 0 -24 ] [ 0 0 -1 0 ] 0 0.5 0.5
 }
 }
-// entity 101
+// entity 102
 {
 "classname" "func_wall_toggle"
 "zhlt_lightflags" "0"
@@ -2498,7 +2494,7 @@
 ( 340 36 32 ) ( 340 36 28 ) ( 340 24 32 ) NULL [ 0 1 0 -16 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 102
+// entity 103
 {
 "classname" "weapon_crowbar"
 "delay" "0"
@@ -2508,7 +2504,7 @@
 "origin" "319.439 24 32"
 "_tb_group" "1"
 }
-// entity 103
+// entity 104
 {
 "classname" "func_breakable"
 "gibmodel" "models/computergibs.mdl"
@@ -2538,7 +2534,7 @@
 ( 323.718 66 64 ) ( 323.718 66 32 ) ( 332 35.09 64 ) BCRATE02 [ -0.258819 0.965926 0 -23.93364 ] [ 0 0 -1 0 ] 0 0.5 0.5
 }
 }
-// entity 104
+// entity 105
 {
 "classname" "func_breakable"
 "gibmodel" "models/computergibs.mdl"
@@ -2568,16 +2564,17 @@
 ( 325 83.606 32 ) ( 325 83.606 0 ) ( 320 52 32 ) BCRATE02 [ 0.156434 0.987688 0 -10.835495 ] [ 0 0 -1 0 ] 0 0.5 0.5
 }
 }
-// entity 105
+// entity 106
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Push sequence"
 "_tb_id" "31"
-"_tb_layer_sort_index" "5"
+"_tb_layer_sort_index" "6"
 "_tb_layer_locked" "1"
+"_tb_layer_hidden" "1"
 }
-// entity 106
+// entity 107
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2585,7 +2582,7 @@
 "_tb_id" "32"
 "_tb_layer" "31"
 }
-// entity 107
+// entity 108
 {
 "classname" "func_pushable"
 "size" "0"
@@ -2650,7 +2647,7 @@
 ( 188 208 56 ) ( 188 208 40 ) ( 188 80 40 ) NULL [ 1.8369701987210297e-16 1 0 -4 ] [ 0 0 -1 4 ] 0 1 1
 }
 }
-// entity 108
+// entity 109
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2658,7 +2655,7 @@
 "_tb_id" "45"
 "_tb_layer" "31"
 }
-// entity 109
+// entity 110
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2711,7 +2708,7 @@
 ( 372 0 84 ) ( 372 0 80 ) ( 372 -128 80 ) NULL [ 1.8369701987210297e-16 1 0 -20 ] [ 0 0 -1 -4 ] 0 1 1
 }
 }
-// entity 110
+// entity 111
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2764,7 +2761,7 @@
 ( 372 65 84 ) ( 372 65 80 ) ( 372 -63 80 ) NULL [ 1.8369701987210297e-16 1 0 11 ] [ 0 0 -1 -4 ] 0 1 1
 }
 }
-// entity 111
+// entity 112
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2772,7 +2769,7 @@
 "_tb_id" "49"
 "_tb_group" "45"
 }
-// entity 112
+// entity 113
 {
 "classname" "func_wall_toggle"
 "spawnflags" "1"
@@ -2828,7 +2825,7 @@
 ( 372 32 84 ) ( 372 32 80 ) ( 372 -96 80 ) NULL [ 1.8369701987210297e-16 1 0 -20 ] [ 0 0 -1 -4 ] 0 1 1
 }
 }
-// entity 113
+// entity 114
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2836,7 +2833,7 @@
 "_tb_id" "50"
 "_tb_layer" "31"
 }
-// entity 114
+// entity 115
 {
 "classname" "trigger_once"
 "spawnflags" "6"
@@ -2879,7 +2876,7 @@
 ( 256 272 0 ) ( 256 256 0 ) ( 256 272 112 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 115
+// entity 116
 {
 "classname" "scripted_sentence"
 "spawnflags" "13"
@@ -2896,7 +2893,7 @@
 "sentence" "!C0A0_PUSH_WARN"
 "_tb_group" "50"
 }
-// entity 116
+// entity 117
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -2904,7 +2901,7 @@
 "_tb_id" "51"
 "_tb_layer" "31"
 }
-// entity 117
+// entity 118
 {
 "classname" "trigger_once"
 "sounds" "0"
@@ -2922,14 +2919,14 @@
 ( 384 32 -24 ) ( 384 32 -23 ) ( 384 33 -24 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 8 ] 0 1 1
 }
 }
-// entity 118
+// entity 119
 {
 "classname" "multisource"
 "origin" "376 40 120"
 "targetname" "push_switcharoo_ms_inplace"
 "_tb_group" "51"
 }
-// entity 119
+// entity 120
 {
 "classname" "trigger_once"
 "sounds" "0"
@@ -2947,7 +2944,7 @@
 ( 384 32 16 ) ( 384 32 17 ) ( 384 33 16 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 120
+// entity 121
 {
 "classname" "trigger_once"
 "sounds" "0"
@@ -2966,7 +2963,7 @@
 ( 432 320 16 ) ( 432 320 17 ) ( 432 321 16 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 121
+// entity 122
 {
 "classname" "multisource"
 "origin" "376 24 104"
@@ -2974,7 +2971,7 @@
 "targetname" "push_switcharoo_ms"
 "_tb_group" "51"
 }
-// entity 122
+// entity 123
 {
 "classname" "multi_manager"
 "spawnflags" "0"
@@ -2984,7 +2981,7 @@
 "cabinet_toggle" ".001"
 "_tb_group" "51"
 }
-// entity 123
+// entity 124
 {
 "classname" "trigger_relay"
 "spawnflags" "1"
@@ -2995,7 +2992,7 @@
 "killtarget" "cabinet_push"
 "_tb_group" "51"
 }
-// entity 124
+// entity 125
 {
 "classname" "trigger_once"
 "sounds" "0"
@@ -3013,7 +3010,7 @@
 ( 384 32 8 ) ( 384 32 9 ) ( 384 33 8 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 8 ] 0 1 1
 }
 }
-// entity 125
+// entity 126
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -3181,7 +3178,7 @@
 ( 64 0 32 ) ( 56 -24 32 ) ( 64 0 64 ) METAL_BORD01 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 126
+// entity 127
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -3189,7 +3186,7 @@
 "_tb_id" "53"
 "_tb_layer" "31"
 }
-// entity 127
+// entity 128
 {
 "classname" "multi_manager"
 "spawnflags" "1"
@@ -3199,7 +3196,7 @@
 "push_sen_rpt" ".001"
 "_tb_group" "53"
 }
-// entity 128
+// entity 129
 {
 "classname" "scripted_sentence"
 "spawnflags" "12"
@@ -3216,15 +3213,15 @@
 "sentence" "!C0A0_PUSH_RPT"
 "_tb_group" "53"
 }
-// entity 129
+// entity 130
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Disaster sequence"
 "_tb_id" "56"
-"_tb_layer_sort_index" "6"
+"_tb_layer_sort_index" "7"
 }
-// entity 130
+// entity 131
 {
 "classname" "func_wall_toggle"
 "spawnflags" "1"
@@ -3244,7 +3241,7 @@
 ( 416 320 16 ) ( 416 320 17 ) ( 416 321 16 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 131
+// entity 132
 {
 "classname" "multi_manager"
 "spawnflags" "0"
@@ -3253,9 +3250,15 @@
 "dis_beam_down" "1"
 "dis_sen_05" "5"
 "dis_shake" ".5"
+"dis_hcspwn_1" "8"
+"dis_sen_06" "10"
+"dis_hcspwn_2" "10"
+"dis_hcspwn_3" "11"
+"dis_hcspwn_4" "15"
+"dis_hcspwn_5" "18"
 "_tb_layer" "56"
 }
-// entity 132
+// entity 133
 {
 "classname" "ambient_generic"
 "health" "10"
@@ -3278,7 +3281,7 @@
 "message" "debris/bustconcrete1.wav"
 "_tb_layer" "56"
 }
-// entity 133
+// entity 134
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -3286,7 +3289,7 @@
 "_tb_id" "59"
 "_tb_layer" "56"
 }
-// entity 134
+// entity 135
 {
 "classname" "func_door_rotating"
 "spawnflags" "592"
@@ -3328,14 +3331,14 @@
 ( 448 384 128 ) ( 448 384 129 ) ( 448 385 128 ) measure128_08 [ -2.220446049250313e-16 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 135
+// entity 136
 {
 "classname" "info_target"
 "origin" "440 316 108"
 "targetname" "dis_beam_lightorigin"
 "_tb_group" "59"
 }
-// entity 136
+// entity 137
 {
 "classname" "env_shooter"
 "shootsounds" "-1"
@@ -3355,7 +3358,7 @@
 "targetname" "dis_beam_down"
 "_tb_group" "59"
 }
-// entity 137
+// entity 138
 {
 "classname" "env_shooter"
 "shootsounds" "-1"
@@ -3375,7 +3378,7 @@
 "targetname" "dis_beam_down"
 "_tb_group" "59"
 }
-// entity 138
+// entity 139
 {
 "classname" "env_shooter"
 "shootsounds" "-1"
@@ -3395,7 +3398,7 @@
 "targetname" "dis_beam_down"
 "_tb_group" "59"
 }
-// entity 139
+// entity 140
 {
 "classname" "aiscripted_sequence"
 "m_fMoveTo" "1"
@@ -3406,7 +3409,7 @@
 "m_iszEntity" "slick"
 "_tb_layer" "56"
 }
-// entity 140
+// entity 141
 {
 "classname" "func_detail"
 "zhlt_detaillevel" "1"
@@ -3515,7 +3518,7 @@
 ( 385 56 48 ) ( 385 56 49 ) ( 385 57 48 ) ~SPOTGREEN [ 0 1 0 0 ] [ 2.7755575615628914e-16 0 1 0 ] 0 0.25000018 0.25
 }
 }
-// entity 141
+// entity 142
 {
 "classname" "scripted_sentence"
 "spawnflags" "5"
@@ -3531,7 +3534,7 @@
 "sentence" "!C0A0_DIS_05"
 "_tb_layer" "56"
 }
-// entity 142
+// entity 143
 {
 "classname" "env_shake"
 "spawnflags" "0"
@@ -3543,7 +3546,7 @@
 "targetname" "dis_shake"
 "_tb_layer" "56"
 }
-// entity 143
+// entity 144
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -3551,7 +3554,7 @@
 "_tb_id" "61"
 "_tb_layer" "56"
 }
-// entity 144
+// entity 145
 {
 "classname" "multi_manager"
 "spawnflags" "0"
@@ -3561,21 +3564,21 @@
 "dis_btn_spark#0" ".001"
 "dis_btn_spark#1" "2"
 "dis_sen_02" "5"
-"dis_sen_03" "20"
-"dis_sen_04" "35"
+"dis_sen_03" "15"
+"dis_sen_04" "25"
 "dis_btn_spark#2" "18"
 "dis_pre_boom_ms_relay" "40"
 "dis_btn_start_btn_kill" ".001"
 "_tb_group" "61"
 }
-// entity 145
+// entity 146
 {
 "classname" "multisource"
 "origin" "432 40 112"
 "targetname" "dis_pre_boom_ms"
 "_tb_group" "61"
 }
-// entity 146
+// entity 147
 {
 "classname" "trigger_relay"
 "spawnflags" "0"
@@ -3586,7 +3589,7 @@
 "killtarget" "dis_btn_start_btn"
 "_tb_group" "61"
 }
-// entity 147
+// entity 148
 {
 "classname" "trigger_relay"
 "spawnflags" "0"
@@ -3597,7 +3600,7 @@
 "target" "dis_pre_boom_ms"
 "_tb_group" "61"
 }
-// entity 148
+// entity 149
 {
 "classname" "func_wall_toggle"
 "spawnflags" "1"
@@ -3617,7 +3620,7 @@
 ( 385 24 48 ) ( 385 24 49 ) ( 385 25 48 ) ~SPOTGREEN [ 0 1 0 0 ] [ 2.7755575615628914e-16 0 1 0 ] 0 0.25000018 0.25
 }
 }
-// entity 149
+// entity 150
 {
 "classname" "func_button"
 "speed" "5"
@@ -3648,7 +3651,7 @@
 ( 389 21 48 ) ( 389 21 49 ) ( 389 22 48 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 150
+// entity 151
 {
 "classname" "func_button"
 "speed" "5"
@@ -3678,7 +3681,7 @@
 ( 387 21 48 ) ( 387 21 49 ) ( 387 22 48 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 151
+// entity 152
 {
 "classname" "trigger_once"
 "sounds" "0"
@@ -3696,7 +3699,7 @@
 ( 384 32 -24 ) ( 384 32 -23 ) ( 384 33 -24 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 8 ] 0 1 1
 }
 }
-// entity 152
+// entity 153
 {
 "classname" "func_wall_toggle"
 "spawnflags" "0"
@@ -3716,7 +3719,7 @@
 ( 385 24 48 ) ( 385 24 49 ) ( 385 25 48 ) ~SPOTRED [ 0 1 0 0 ] [ 2.7755575615628914e-16 0 1 0 ] 0 0.25000018 0.25
 }
 }
-// entity 153
+// entity 154
 {
 "classname" "env_spark"
 "MaxDelay" "0"
@@ -3726,7 +3729,7 @@
 "targetname" "dis_btn_spark"
 "_tb_group" "61"
 }
-// entity 154
+// entity 155
 {
 "classname" "scripted_sentence"
 "spawnflags" "5"
@@ -3742,7 +3745,7 @@
 "sentence" "!C0A0_DIS_02"
 "_tb_group" "61"
 }
-// entity 155
+// entity 156
 {
 "classname" "multi_manager"
 "spawnflags" "0"
@@ -3752,7 +3755,7 @@
 "dis_seq_boot" ".001"
 "_tb_group" "61"
 }
-// entity 156
+// entity 157
 {
 "classname" "scripted_sentence"
 "spawnflags" "5"
@@ -3769,7 +3772,7 @@
 "listener" "player"
 "_tb_group" "61"
 }
-// entity 157
+// entity 158
 {
 "classname" "scripted_sentence"
 "spawnflags" "5"
@@ -3785,7 +3788,7 @@
 "sentence" "!C0A0_DIS_01"
 "_tb_group" "61"
 }
-// entity 158
+// entity 159
 {
 "classname" "scripted_sentence"
 "spawnflags" "5"
@@ -3801,18 +3804,439 @@
 "sentence" "!C0A0_DIS_03"
 "_tb_group" "61"
 }
-// entity 159
+// entity 160
+{
+"classname" "scripted_sentence"
+"spawnflags" "5"
+"duration" "10"
+"radius" "512"
+"refire" "3"
+"volume" "10"
+"attenuation" "0"
+"delay" "0"
+"origin" "368 0 128"
+"targetname" "dis_sen_06"
+"entity" "slick"
+"sentence" "!C0A0_DIS_06"
+"_tb_layer" "56"
+}
+// entity 161
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "Headcrab spawner"
+"_tb_id" "65"
+"_tb_linked_group_id" "{796fe311-f471-4b48-8eb0-a74540e81be6}"
+"_tb_transformation" "0.49999999999999933 0.866025403784439 0 625.4922678357858 -0.866025403784439 0.49999999999999933 0 191.138438763306 0 0 1 48 0 0 0 1"
+"_tb_layer" "56"
+}
+// entity 162
+{
+"classname" "monstermaker"
+"spawnflags" "0"
+"monstercount" "1"
+"delay" "1"
+"m_imaxlivechildren" "1"
+"angles" "0 -60 0"
+"origin" "522.536 25.464 100"
+"monstertype" "monster_headcrab"
+"targetname" "dis_hcspwn_5"
+"_tb_group" "65"
+"_tb_protected_properties" "targetname"
+}
+// entity 163
+{
+"classname" "ambient_generic"
+"health" "10"
+"preset" "0"
+"volstart" "0"
+"fadein" "0"
+"fadeout" "0"
+"pitch" "100"
+"pitchstart" "100"
+"spinup" "0"
+"spindown" "0"
+"lfotype" "0"
+"lforate" "0"
+"lfomodpitch" "0"
+"lfomodvol" "0"
+"cspinup" "0"
+"spawnflags" "24"
+"origin" "522.536 25.464 100"
+"message" "debris/beamstart2.wav"
+"targetname" "dis_hcspwn_5"
+"angle" "300"
+"_tb_group" "65"
+"_tb_protected_properties" "targetname"
+}
+// entity 164
+{
+"classname" "env_sprite"
+"framerate" "10.0"
+"model" "sprites/xflare1.spr"
+"spawnflags" "2"
+"rendermode" "3"
+"rendercolor" "184 250 214"
+"renderfx" "14"
+"angles" "0 -60 0"
+"origin" "522.536 25.464 100"
+"targetname" "dis_hcspwn_5"
+"renderamt" "255"
+"_tb_group" "65"
+"_tb_protected_properties" "targetname"
+}
+// entity 165
+{
+"classname" "env_sprite"
+"framerate" "10.0"
+"model" "sprites/fexplo1.spr"
+"spawnflags" "2"
+"rendermode" "3"
+"rendercolor" "77 210 130"
+"renderfx" "14"
+"angles" "0 -60 0"
+"origin" "522.536 25.464 100"
+"targetname" "dis_hcspwn_5"
+"renderamt" "255"
+"_tb_group" "65"
+"_tb_protected_properties" "targetname"
+}
+// entity 166
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "Headcrab spawner"
+"_tb_id" "67"
+"_tb_linked_group_id" "{796fe311-f471-4b48-8eb0-a74540e81be6}"
+"_tb_transformation" "1 0 0 64 0 1 0 0 0 0 1 0 0 0 0 1"
+"_tb_layer" "56"
+}
+// entity 167
+{
+"classname" "monstermaker"
+"spawnflags" "0"
+"monstercount" "1"
+"delay" "1"
+"m_imaxlivechildren" "1"
+"angles" "0 0 0"
+"origin" "156 -172 52"
+"monstertype" "monster_headcrab"
+"targetname" "dis_hcspwn_1"
+"_tb_group" "67"
+"_tb_protected_properties" "targetname"
+}
+// entity 168
+{
+"classname" "ambient_generic"
+"health" "10"
+"preset" "0"
+"volstart" "0"
+"fadein" "0"
+"fadeout" "0"
+"pitch" "100"
+"pitchstart" "100"
+"spinup" "0"
+"spindown" "0"
+"lfotype" "0"
+"lforate" "0"
+"lfomodpitch" "0"
+"lfomodvol" "0"
+"cspinup" "0"
+"spawnflags" "24"
+"origin" "156 -172 52"
+"message" "debris/beamstart2.wav"
+"angle" "0"
+"targetname" "dis_hcspwn_1"
+"_tb_group" "67"
+"_tb_protected_properties" "targetname"
+}
+// entity 169
+{
+"classname" "env_sprite"
+"framerate" "10.0"
+"model" "sprites/xflare1.spr"
+"spawnflags" "2"
+"rendermode" "3"
+"rendercolor" "184 250 214"
+"renderfx" "14"
+"angles" "0 0 0"
+"origin" "156 -172 52"
+"renderamt" "255"
+"targetname" "dis_hcspwn_1"
+"_tb_group" "67"
+"_tb_protected_properties" "targetname"
+}
+// entity 170
+{
+"classname" "env_sprite"
+"framerate" "10.0"
+"model" "sprites/fexplo1.spr"
+"spawnflags" "2"
+"rendermode" "3"
+"rendercolor" "77 210 130"
+"renderfx" "14"
+"angles" "0 0 0"
+"origin" "156 -172 52"
+"renderamt" "255"
+"targetname" "dis_hcspwn_1"
+"_tb_group" "67"
+"_tb_protected_properties" "targetname"
+}
+// entity 171
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "Headcrab spawner"
+"_tb_id" "68"
+"_tb_linked_group_id" "{796fe311-f471-4b48-8eb0-a74540e81be6}"
+"_tb_transformation" "1 0 0 -96 0 1 0 176 0 0 1 112 0 0 0 1"
+"_tb_layer" "56"
+}
+// entity 172
+{
+"classname" "monstermaker"
+"spawnflags" "0"
+"monstercount" "1"
+"delay" "1"
+"m_imaxlivechildren" "1"
+"angles" "0 0 0"
+"origin" "-4 4 164"
+"monstertype" "monster_headcrab"
+"targetname" "dis_hcspwn_2"
+"_tb_group" "68"
+"_tb_protected_properties" "targetname"
+}
+// entity 173
+{
+"classname" "ambient_generic"
+"health" "10"
+"preset" "0"
+"volstart" "0"
+"fadein" "0"
+"fadeout" "0"
+"pitch" "100"
+"pitchstart" "100"
+"spinup" "0"
+"spindown" "0"
+"lfotype" "0"
+"lforate" "0"
+"lfomodpitch" "0"
+"lfomodvol" "0"
+"cspinup" "0"
+"spawnflags" "24"
+"origin" "-4 4 164"
+"message" "debris/beamstart2.wav"
+"angle" "0"
+"targetname" "dis_hcspwn_2"
+"_tb_group" "68"
+"_tb_protected_properties" "targetname"
+}
+// entity 174
+{
+"classname" "env_sprite"
+"framerate" "10.0"
+"model" "sprites/xflare1.spr"
+"spawnflags" "2"
+"rendermode" "3"
+"rendercolor" "184 250 214"
+"renderfx" "14"
+"angles" "0 0 0"
+"origin" "-4 4 164"
+"renderamt" "255"
+"targetname" "dis_hcspwn_2"
+"_tb_group" "68"
+"_tb_protected_properties" "targetname"
+}
+// entity 175
+{
+"classname" "env_sprite"
+"framerate" "10.0"
+"model" "sprites/fexplo1.spr"
+"spawnflags" "2"
+"rendermode" "3"
+"rendercolor" "77 210 130"
+"renderfx" "14"
+"angles" "0 0 0"
+"origin" "-4 4 164"
+"renderamt" "255"
+"targetname" "dis_hcspwn_2"
+"_tb_group" "68"
+"_tb_protected_properties" "targetname"
+}
+// entity 176
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "Headcrab spawner"
+"_tb_id" "69"
+"_tb_linked_group_id" "{796fe311-f471-4b48-8eb0-a74540e81be6}"
+"_tb_transformation" "1 0 0 -232 0 1 0 376 0 0 1 -16 0 0 0 1"
+"_tb_layer" "56"
+}
+// entity 177
+{
+"classname" "monstermaker"
+"spawnflags" "0"
+"monstercount" "1"
+"delay" "1"
+"m_imaxlivechildren" "1"
+"angles" "0 0 0"
+"origin" "-140 204 36"
+"monstertype" "monster_headcrab"
+"targetname" "dis_hcspwn_3"
+"_tb_group" "69"
+"_tb_protected_properties" "targetname"
+}
+// entity 178
+{
+"classname" "ambient_generic"
+"health" "10"
+"preset" "0"
+"volstart" "0"
+"fadein" "0"
+"fadeout" "0"
+"pitch" "100"
+"pitchstart" "100"
+"spinup" "0"
+"spindown" "0"
+"lfotype" "0"
+"lforate" "0"
+"lfomodpitch" "0"
+"lfomodvol" "0"
+"cspinup" "0"
+"spawnflags" "24"
+"origin" "-140 204 36"
+"message" "debris/beamstart2.wav"
+"angle" "0"
+"targetname" "dis_hcspwn_3"
+"_tb_group" "69"
+"_tb_protected_properties" "targetname"
+}
+// entity 179
+{
+"classname" "env_sprite"
+"framerate" "10.0"
+"model" "sprites/xflare1.spr"
+"spawnflags" "2"
+"rendermode" "3"
+"rendercolor" "184 250 214"
+"renderfx" "14"
+"angles" "0 0 0"
+"origin" "-140 204 36"
+"renderamt" "255"
+"targetname" "dis_hcspwn_3"
+"_tb_group" "69"
+"_tb_protected_properties" "targetname"
+}
+// entity 180
+{
+"classname" "env_sprite"
+"framerate" "10.0"
+"model" "sprites/fexplo1.spr"
+"spawnflags" "2"
+"rendermode" "3"
+"rendercolor" "77 210 130"
+"renderfx" "14"
+"angles" "0 0 0"
+"origin" "-140 204 36"
+"renderamt" "255"
+"targetname" "dis_hcspwn_3"
+"_tb_group" "69"
+"_tb_protected_properties" "targetname"
+}
+// entity 181
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "Headcrab spawner"
+"_tb_id" "70"
+"_tb_linked_group_id" "{796fe311-f471-4b48-8eb0-a74540e81be6}"
+"_tb_transformation" "0.49999999999999933 0.866025403784439 0 593.4922678357858 -0.866025403784439 0.49999999999999933 0 511.138438763306 0 0 1 -16 0 0 0 1"
+"_tb_layer" "56"
+}
+// entity 182
+{
+"classname" "monstermaker"
+"spawnflags" "0"
+"monstercount" "1"
+"delay" "1"
+"m_imaxlivechildren" "1"
+"angles" "0 -60 0"
+"origin" "490.536 345.464 36"
+"monstertype" "monster_headcrab"
+"targetname" "dis_hcspwn_4"
+"_tb_group" "70"
+"_tb_protected_properties" "targetname"
+}
+// entity 183
+{
+"classname" "ambient_generic"
+"health" "10"
+"preset" "0"
+"volstart" "0"
+"fadein" "0"
+"fadeout" "0"
+"pitch" "100"
+"pitchstart" "100"
+"spinup" "0"
+"spindown" "0"
+"lfotype" "0"
+"lforate" "0"
+"lfomodpitch" "0"
+"lfomodvol" "0"
+"cspinup" "0"
+"spawnflags" "24"
+"origin" "490.536 345.464 36"
+"message" "debris/beamstart2.wav"
+"angle" "300"
+"targetname" "dis_hcspwn_4"
+"_tb_group" "70"
+"_tb_protected_properties" "targetname"
+}
+// entity 184
+{
+"classname" "env_sprite"
+"framerate" "10.0"
+"model" "sprites/xflare1.spr"
+"spawnflags" "2"
+"rendermode" "3"
+"rendercolor" "184 250 214"
+"renderfx" "14"
+"angles" "0 -60 0"
+"origin" "490.536 345.464 36"
+"renderamt" "255"
+"targetname" "dis_hcspwn_4"
+"_tb_group" "70"
+"_tb_protected_properties" "targetname"
+}
+// entity 185
+{
+"classname" "env_sprite"
+"framerate" "10.0"
+"model" "sprites/fexplo1.spr"
+"spawnflags" "2"
+"rendermode" "3"
+"rendercolor" "77 210 130"
+"renderfx" "14"
+"angles" "0 -60 0"
+"origin" "490.536 345.464 36"
+"renderamt" "255"
+"targetname" "dis_hcspwn_4"
+"_tb_group" "70"
+"_tb_protected_properties" "targetname"
+}
+// entity 186
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Debug"
 "_tb_id" "57"
-"_tb_layer_sort_index" "7"
+"_tb_layer_sort_index" "8"
 "_tb_layer_locked" "1"
 "_tb_layer_hidden" "1"
 "_tb_layer_omit_from_export" "1"
 }
-// entity 160
+// entity 187
 {
 "classname" "info_player_start"
 "spawnflags" "0"
@@ -3820,7 +4244,7 @@
 "origin" "-208 304 40"
 "_tb_layer" "57"
 }
-// entity 161
+// entity 188
 {
 "classname" "trigger_once"
 "sounds" "0"
@@ -3838,17 +4262,17 @@
 ( 560 -48 16 ) ( 560 -48 17 ) ( 560 -47 16 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 162
+// entity 189
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Intro G-Man"
 "_tb_id" "60"
-"_tb_layer_sort_index" "2"
+"_tb_layer_sort_index" "3"
 "_tb_layer_locked" "1"
 "_tb_layer_hidden" "1"
 }
-// entity 163
+// entity 190
 {
 "classname" "monster_gman"
 "TriggerCondition" "0"
@@ -3861,7 +4285,7 @@
 "targetname" "gman"
 "_tb_layer" "60"
 }
-// entity 164
+// entity 191
 {
 "classname" "aiscripted_sequence"
 "m_flRadius" "512"
@@ -3877,7 +4301,7 @@
 "killtarget" "gman"
 "_tb_layer" "60"
 }
-// entity 165
+// entity 192
 {
 "classname" "trigger_once"
 "sounds" "0"
@@ -3895,7 +4319,7 @@
 ( 80 400 16 ) ( 80 400 17 ) ( 80 401 16 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 166
+// entity 193
 {
 "classname" "trigger_once"
 "sounds" "0"
@@ -3913,7 +4337,7 @@
 ( 416 320 16 ) ( 416 320 17 ) ( 416 321 16 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 167
+// entity 194
 {
 "classname" "trigger_once"
 "sounds" "0"
@@ -3930,4 +4354,92 @@
 ( 384 136 0 ) ( 384 136 144 ) ( -384 216 144 ) AAATRIGGER [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 384 120 144 ) ( 384 136 144 ) ( 384 136 0 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
+}
+// entity 195
+{
+"classname" "func_group"
+"_tb_type" "_tb_layer"
+"_tb_name" "Prefabs"
+"_tb_id" "63"
+"_tb_layer_sort_index" "0"
+"_tb_layer_locked" "1"
+"_tb_layer_hidden" "1"
+"_tb_layer_omit_from_export" "1"
+}
+// entity 196
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "Headcrab spawner"
+"_tb_id" "66"
+"_tb_linked_group_id" "{796fe311-f471-4b48-8eb0-a74540e81be6}"
+"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
+"_tb_layer" "63"
+}
+// entity 197
+{
+"classname" "monstermaker"
+"spawnflags" "0"
+"monstercount" "1"
+"delay" "1"
+"m_imaxlivechildren" "1"
+"angles" "0 0 0"
+"origin" "92 -172 52"
+"monstertype" "monster_headcrab"
+"targetname" "prefab_headcrab_spawner"
+"_tb_group" "66"
+}
+// entity 198
+{
+"classname" "ambient_generic"
+"health" "10"
+"preset" "0"
+"volstart" "0"
+"fadein" "0"
+"fadeout" "0"
+"pitch" "100"
+"pitchstart" "100"
+"spinup" "0"
+"spindown" "0"
+"lfotype" "0"
+"lforate" "0"
+"lfomodpitch" "0"
+"lfomodvol" "0"
+"cspinup" "0"
+"spawnflags" "24"
+"origin" "92 -172 52"
+"message" "debris/beamstart2.wav"
+"angle" "0"
+"targetname" "prefab_headcrab_spawner"
+"_tb_group" "66"
+}
+// entity 199
+{
+"classname" "env_sprite"
+"framerate" "10.0"
+"model" "sprites/xflare1.spr"
+"spawnflags" "2"
+"rendermode" "3"
+"rendercolor" "184 250 214"
+"renderfx" "14"
+"angles" "0 0 0"
+"origin" "92 -172 52"
+"renderamt" "255"
+"targetname" "prefab_headcrab_spawner"
+"_tb_group" "66"
+}
+// entity 200
+{
+"classname" "env_sprite"
+"framerate" "10.0"
+"model" "sprites/fexplo1.spr"
+"spawnflags" "2"
+"rendermode" "3"
+"rendercolor" "77 210 130"
+"renderfx" "14"
+"angles" "0 0 0"
+"origin" "92 -172 52"
+"renderamt" "255"
+"targetname" "prefab_headcrab_spawner"
+"_tb_group" "66"
 }
