@@ -5,6 +5,7 @@ cd "$(dirname "$0")/.."
 
 destdir="sound"
 dest_sentences="$destdir/sentences.txt"
+predefined_sentences="soundsrc/sentences.txt"
 tts_sentences="soundsrc/sentences.jsonl"
 
 main() {
@@ -20,6 +21,9 @@ prepare() {
     cp "../valve/sound/sentences.txt" "$dest_sentences"
     chmod -x "$dest_sentences"
     printf "Added %s sentences from Half-Life.\n" "$(grep -Ec '^[^//].+$' "$dest_sentences")"
+
+    cat "$predefined_sentences" >> "$dest_sentences"
+    printf "Added %s predefined sentences.\n" "$(grep -Ec '^[^//].+$' "$predefined_sentences")"
 }
 
 convert_sentences() {
