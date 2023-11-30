@@ -50,8 +50,8 @@ train_forward3	2560	2560/hud_train_forward3 0	0	216	216
 
 autoaim_c		2560	2560/hud_autoaim_c	0	0	72	72
 
-title_half		2560 2560/hud_title_half	0	0	768	90
-title_life		2560 2560/hud_title_life	0	0	660	90
+title_half		2560 1280/hud_title_half	0	0	512	64
+title_life		2560 1280/hud_title_life	0	0	512	64
 
 d_crowbar		2560	2560/hud_d_crowbar	0	0	144	48
 d_9mmhandgun	2560	2560/hud_d_9mmhandgun	0	0	96	48
@@ -127,8 +127,8 @@ train_forward3	1280	1280/hud_train_forward3 0	0	144	144
 
 autoaim_c		1280	1280/hud_autoaim_c	0	0	48	48
 
-title_half		1280 1280/hud_title_half	0	0	512	60
-title_life		1280 1280/hud_title_life	0	0	440	60
+title_half		1280 1280/hud_title_half	0	0	512	64
+title_life		1280 1280/hud_title_life	0	0	512	64
 
 d_crowbar		1280	1280/hud_d_crowbar	0	0	96	32
 d_9mmhandgun	1280	1280/hud_d_9mmhandgun	0	0	64	32

@@ -5,7 +5,3 @@ cd "$(dirname "$0")/.."
 
 goldutil sprite-create -out sprites/1280/hud_title_half.spr -type parallel -format additive spritessrc/1280/hud_title_half.png
 goldutil sprite-create -out sprites/1280/hud_title_life.spr -type parallel -format additive spritessrc/1280/hud_title_life.png
-
-# Can't be arsed right now.
-mkdir -p sprites/2560
-cp sprites/1280/*.spr sprites/2560
