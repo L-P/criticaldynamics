@@ -8,8 +8,9 @@
 "_tb_def" "external:criticaldynamics/criticaldynamics.fgd"
 "wad" "criticaldynamics/sdhlt.wad;criticaldynamics/devtextures.wad;valve/halflife.wad;valve/decals.wad"
 "newunit" "1"
-"startdark" "0"
-"gametitle" "0"
+"startdark" "1"
+"gametitle" "1"
+"_tb_layer_locked" "1"
 // brush 0
 {
 ( -384 -384 0 ) ( -384 -384 -32 ) ( -384 384 0 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -2894,7 +2895,6 @@
 "classname" "trigger_multiple"
 "wait" "6"
 "sounds" "0"
-"delay" "5"
 "spawnflags" "0"
 "target" "labdoors"
 // brush 0
@@ -3030,7 +3030,6 @@
 "_tb_name" "Greet Sequence"
 "_tb_id" "21"
 "_tb_layer_sort_index" "5"
-"_tb_layer_locked" "1"
 }
 // entity 113
 {
@@ -3145,10 +3144,10 @@
 "origin" "0 368 216"
 "targetname" "greet_seq_mm"
 "greet_sen_01" "1"
-"greet_sen_02" "20"
-"greet_sen_03" "50"
-"greet_sen_04" "80"
-"greet_sen_05" "110"
+"greet_sen_02" "10"
+"greet_sen_03" "15"
+"greet_sen_04" "30"
+"greet_sen_05" "45"
 "_tb_group" "29"
 }
 // entity 122
@@ -5422,6 +5421,7 @@
 "_tb_id" "57"
 "_tb_layer_sort_index" "2"
 "_tb_layer_locked" "1"
+"_tb_layer_hidden" "1"
 "_tb_layer_omit_from_export" "1"
 }
 // entity 223
@@ -5550,6 +5550,7 @@
 "_tb_id" "63"
 "_tb_layer_sort_index" "0"
 "_tb_layer_locked" "1"
+"_tb_layer_hidden" "1"
 "_tb_layer_omit_from_export" "1"
 }
 // entity 232
@@ -6106,7 +6107,7 @@
 "classname" "trigger_changetarget"
 "delay" "0"
 "origin" "328 1160 72"
-"targetname" "hev_suit"
+"targetname" "hev_give"
 "target" "hevdoor_button"
 "m_iszNewTarget" "hevdoor"
 "_tb_layer" "96"
