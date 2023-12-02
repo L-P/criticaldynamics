@@ -1,0 +1,55 @@
+#!/usr/bin/env sh
+
+set -eu
+
+cd "$(dirname "$0")/.."
+
+game="criticaldynamics"
+revision="$(git describe)"
+dest="$(pwd)/${game}_${revision}.zip"
+tmp="$(mktemp -d)/$game"
+mkdir -p "$tmp"
+
+__main() {
+    git clean -dfX
+
+    bin/buildsounds
+    rsync -av sound "$tmp/sound"
+
+    bin/buildsprites
+    rsync -av sprites "$tmp/sprites"
+
+    __buildmaps
+    mkdir "$tmp/maps"
+    cp maps/*.bsp "$tmp/maps/"
+
+    __copymisc
+    __buildzip
+
+    rm --preserve-root -rf "$(realpath "$tmp/..")"
+
+    echo "Output written to $(realpath --relative-to=. "$dest")"
+}
+
+__copymisc() {
+    rsync -av resource "$tmp"
+    cp titles.txt *.wad logo_big.png liblist.gam \
+        "$tmp/"
+}
+
+__buildzip() {
+    (
+    cd "$tmp/.."
+    rm -f "$dest"
+    zip -r "$dest" "$game"
+    )
+}
+
+__buildmaps() {
+    for map in mapssrc/*.map; do
+        cp "$map" "maps/"
+        bin/buildmap "${map#mapssrc/}"
+    done
+}
+
+__main
