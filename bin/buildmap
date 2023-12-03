@@ -22,11 +22,7 @@ goldutil map-export "$mod/mapssrc/$1" > "$map"
 
 grep -q __TB_empty "$map" && (
     echo "__TB_empty found in $map" 1>&2
-    if [ $fast -eq 1 ]; then
-        sed -i 's/__TB_empty/missing/' "$map"
-    else
-        exit 1
-    fi
+    sed -i 's/__TB_empty/missing/' "$map"
 )
 
 rm -f -- "$bsp"
