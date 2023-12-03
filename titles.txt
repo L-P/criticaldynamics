@@ -29,3 +29,52 @@ GAMETITLE
 Critical Dynamics
 }
 // }}} c0a0
+
+// {{{ Game Over
+$position -1 -1
+$effect 2
+$color 100 100 100
+$color2 240 110 0
+$fadein 0.01
+$fxtime 0.25
+$holdtime 10
+$fadeout 2
+
+FAIL_HUMAN
+{
+SUBJECT: BYRON
+
+STATUS:  EVALUATION TERMINATED
+
+POSTMORTEM:
+Subject failed to effectively utilize
+human assets in achievement of goal.
+}
+
+FAIL_ASSET
+{
+SUBJECT: BYRON
+
+STATUS:  EVALUATION TERMINATED
+
+POSTMORTEM:
+Subject failed to effectively utilize
+material assets in achievement of goal.
+}
+// }}} Game Over
+
+// {{{ "Standard" text
+$position -1 0.65
+$effect 2
+$color 100 100 100
+$color2 240 110 0
+$fadein 0.01
+$fxtime 0.25
+$holdtime 2.0
+$fadeout 0.5
+
+GAMESAVED
+{
+Saved...
+}
+// }}} "Standard" text
