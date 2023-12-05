@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+set -eux
+
+cd "$(dirname "$0")/.."
+
+goldutil sprite-create -out sprites/1280/hud_title_half.spr -type parallel -format additive spritessrc/1280/hud_title_half.png
+goldutil sprite-create -out sprites/1280/hud_title_life.spr -type parallel -format additive spritessrc/1280/hud_title_life.png

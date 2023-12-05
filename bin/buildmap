@@ -1,21 +1,40 @@
 #!/usr/bin/env sh
-# This expects the .map to be present in the maps directory and will clean it
-# up afterwards. Configure TrenchBroom to export the map to the maps dir first.
 set -eux
 
 mod="criticaldynamics"
+map="$mod/maps/$1"
+mapname="${1%.*}"
+bsp="$mod/maps/$mapname.bsp"
 
-map="$mod/maps/$1.map"
-bsp="$mod/maps/$1.bsp"
+fast=0
+if [ $# -gt 1 ]; then
+    if [ "$2" = "-fast" ]; then
+        fast=1
+    fi
+fi
 
 (
 # Ensure we're in the real HL parent directory for this as compile tools look
 # for WADs relative to this path.
 cd "$(dirname "$(realpath "$0")")/../.."
+
+goldutil map-export "$mod/mapssrc/$1" > "$map"
+
+grep -q __TB_empty "$map" && (
+    echo "__TB_empty found in $map" 1>&2
+    sed -i 's/__TB_empty/missing/' "$map"
+)
+
 rm -f -- "$bsp"
+
 sdHLCSG -cliptype precise "$map"
 sdHLBSP "$map"
-sdHLVIS -nofixprt -full "$map"
-sdHLRAD -bounce 32 "$map"
-rm -- "$map"
+
+if [ $fast -eq 1 ]; then
+    sdHLVIS -fast "$map"
+    sdHLRAD -fast "$map"
+else
+    sdHLVIS -full "$map"
+    sdHLRAD -bounce 32 "$map"
+fi
 )

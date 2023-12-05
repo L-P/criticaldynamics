@@ -1,0 +1,1 @@
+C0A0_HEV_REQ bloop(s70) bloop(e35) (e95 v75) hazard suit required(e100)
