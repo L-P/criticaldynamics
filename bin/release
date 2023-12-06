@@ -41,7 +41,7 @@ __buildzip() {
     (
     cd "$tmp/.."
     rm -f "$dest"
-    zip -r "$dest" "$game"
+    zip -9 -r "$dest" "$game"
     )
 }
 
