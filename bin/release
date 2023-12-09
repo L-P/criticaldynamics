@@ -46,7 +46,7 @@ __buildzip() {
 }
 
 __buildmaps() {
-    for map in mapssrc/*.map; do
+    for map in mapssrc/c*.map; do
         cp "$map" "maps/"
         bin/buildmap "${map#mapssrc/}"
     done

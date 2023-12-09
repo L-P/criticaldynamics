@@ -6531,6 +6531,7 @@
 "_tb_layer_sort_index" "0"
 "_tb_layer_locked" "1"
 "_tb_layer_hidden" "1"
+"_tb_layer_omit_from_export" "1"
 }
 // entity 198
 {
