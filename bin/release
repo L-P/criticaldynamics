@@ -13,6 +13,8 @@ mkdir -p "$tmp"
 __main() {
     git clean -dfX
 
+    bin/buildso
+
     bin/buildsounds
     rsync -av sound "$tmp/sound"
 

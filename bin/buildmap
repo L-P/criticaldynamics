@@ -18,7 +18,7 @@ fi
 # for WADs relative to this path.
 cd "$(dirname "$(realpath "$0")")/../.."
 
-goldutil map-export "$mod/mapssrc/$1" > "$map"
+goldutil map-export -cleanup-tb "$mod/mapssrc/$1" > "$map"
 
 grep -q __TB_empty "$map" && (
     echo "__TB_empty found in $map" 1>&2

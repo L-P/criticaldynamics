@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+set -eu
+
+cd "$(dirname "$(realpath "$0")")/.."
+modpath="$(pwd)"
+
+(
+cd "$CRITICAL_DYNAMICS_SRC/linux"
+set -x
+make "-j$(nproc)"
+cp release/hl.so* "$modpath/dlls/"
+cp release/client.so* "$modpath/cl_dlls/"
+)
