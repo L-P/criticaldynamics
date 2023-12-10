@@ -1,10 +1,17 @@
 #!/usr/bin/env sh
-set -eux
-
 steam="$HOME/.local/share/Steam"
 mod="criticaldynamics"
 
 # This unholy mess comes straight from a live process launched by steam.
 export LD_LIBRARY_PATH="$steam/steamapps/common/Half-Life:$steam/ubuntu12_32/steam-runtime/pinned_libs_32:$steam/ubuntu12_32/steam-runtime/pinned_libs_64:/lib/i386-linux-gnu:/usr/local/lib:/lib/x86_64-linux-gnu:/lib:/lib/i386-linux-gnu/i686:/lib/i386-linux-gnu/i686/sse2:$steam/ubuntu12_32/steam-runtime/lib/i386-linux-gnu:$steam/ubuntu12_32/steam-runtime/usr/lib/i386-linux-gnu:$steam/ubuntu12_32/steam-runtime/lib/x86_64-linux-gnu:$steam/ubuntu12_32/steam-runtime/usr/lib/x86_64-linux-gnu:$steam/ubuntu12_32/steam-runtime/lib:$steam/ubuntu12_32/steam-runtime/usr/lib:$steam/steamapps/common/Half-Life"
 
-SteamEnv=1 "$steam/steamapps/common/Half-Life/hl.sh" -novid -console -dev -game "$mod" +developer 2 +exec dev.cfg "$@"
+cd "$steam/steamapps/common/Half-Life/"
+commands="$(mktemp)"
+
+echo "file hl_linux" > "$commands"
+echo "set env SteamEnv=1" >> "$commands"
+echo "set args -novid -console -dev -game $mod +developer 2 +exec dev.cfg $@"  >> "$commands"
+echo "run" >> "$commands"
+
+gdb -x "$commands"
+rm -f "$commands"
