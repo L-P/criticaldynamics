@@ -7,10 +7,16 @@ mapname="${1%.*}"
 bsp="$mod/maps/$mapname.bsp"
 
 fast=0
+ent=0
 if [ $# -gt 1 ]; then
-    if [ "$2" = "-fast" ]; then
-        fast=1
-    fi
+    case "$2" in
+        -fast)
+            fast=1
+            ;;
+        -ent)
+            ent=1
+            ;;
+    esac
 fi
 
 (
@@ -24,6 +30,11 @@ grep -q __TB_empty "$map" && (
     echo "__TB_empty found in $map" 1>&2
     sed -i 's/__TB_empty/missing/' "$map"
 )
+
+if [ $ent -eq 1 ]; then
+    sdHLCSG -onlyents "$map"
+    return
+fi
 
 rm -f -- "$bsp"
 
