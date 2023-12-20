@@ -1,2 +1,12 @@
 @include "halflife.fgd"
 @include "sdhlt.fgd"
+
+@PointClass base(Targetname) = game_wasm
+[
+    spawnflags(flags) =
+    [
+    ]
+
+    path(string) : "Path to the WASM file relative to the mod directory."
+    args(string) : "Arguments to pass to the WASM runtime."
+]

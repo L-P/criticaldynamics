@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+set -eux
+
+cd "$(dirname "$0")/.."
+
+cd wasmsrc
+for f in *.c; do
+    clang \
+        --target=wasm32 \
+        -nostdlib \
+        -O3 \
+        -o "${f%.*}.o" -c "$f"
+
+    wasm-ld-18 \
+        --no-entry \
+        --strip-all \
+        --export-all \
+        --import-memory \
+        --allow-undefined \
+        "${f%.*}.o" \
+        -o "../wasm/${f%.*}.wasm"
+done

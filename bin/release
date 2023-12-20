@@ -15,6 +15,9 @@ __main() {
 
     bin/buildso
 
+    bin/buildwasm
+    rsync -av wasm "$tmp/wasm"
+
     bin/buildsounds
     rsync -av sound "$tmp/sound"
 
