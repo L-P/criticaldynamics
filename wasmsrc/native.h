@@ -1,13 +1,10 @@
 // Mapped 1:1 to ALERT_TYPE in eiface.h.
 typedef enum {
-    con_notice    = 0,
-    con_console   = 1,
-    con_aiconsole = 2,
-    con_warning   = 3,
-    con_error     = 4,
-    con_logged    = 5,
-} console_output_type_t;
-
+    log_debug = 2,
+    log_info  = 1,
+    log_warn  = 3,
+    log_error = 4,
+} log_level_t;
 
 // Mapped 1:1 to USE_TYPE in cbase.h.
 typedef enum
@@ -18,7 +15,12 @@ typedef enum
     use_toggle = 3,
 } use_type_t;
 
-void alert(console_output_type_t dest, char* msg);
+void console_log(log_level_t log_level, const char* msg);
+void ent_fire(const char* target, use_type_t use_type, float value);
+
+float sin(float);
+float cos(float);
+float mod(float, float);
 
 /*
  * Methods to export, all are optional:
