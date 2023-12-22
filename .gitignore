@@ -1,4 +1,5 @@
 *.dbg
+*.o
 .*.swp
 /*.tga
 /*.zip
@@ -13,4 +14,3 @@
 /user.scr
 /voice_ban.dt
 /wasm/*
-/wasmsrc/*.o

@@ -1,0 +1,5 @@
+console_log
+cos
+ent_fire
+mod
+sin

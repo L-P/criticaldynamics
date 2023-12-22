@@ -1,17 +1,21 @@
 #include <stdint.h>
+#include <stddef.h>
 #include <stdbool.h>
-#include "native.h"
+#include "lib/base.h"
+#include "lib/native.h"
+#include "lib/strings.h"
 
 #define SCREEN_WIDTH 10
 #define SCREEN_HEIGHT 10
-#define SCREEN_PIXELS (SCREEN_WIDTH*SCREEN_HEIGHT)
 
-const float fps = 60;
+static const size_t SCREEN_PIXELS = (SCREEN_WIDTH*SCREEN_HEIGHT);
+static const float fps = 60;
+static const float damp = .75f;
 
 static float time = .0f;
 static bool enable = false;
 
-static const char * screen[SCREEN_PIXELS] = {
+static const char * screen[] = {
     "screen_0_0", "screen_1_0", "screen_2_0", "screen_3_0", "screen_4_0", "screen_5_0", "screen_6_0", "screen_7_0", "screen_8_0", "screen_9_0",
     "screen_0_1", "screen_1_1", "screen_2_1", "screen_3_1", "screen_4_1", "screen_5_1", "screen_6_1", "screen_7_1", "screen_8_1", "screen_9_1",
     "screen_0_2", "screen_1_2", "screen_2_2", "screen_3_2", "screen_4_2", "screen_5_2", "screen_6_2", "screen_7_2", "screen_8_2", "screen_9_2",
@@ -42,16 +46,6 @@ static int pixelxy(int x, int y, bool state) {
     return i;
 }
 
-static void fill_screen(bool on) {
-    for (int i = 0; i < SCREEN_PIXELS; i++) {
-        if (on) {
-            ent_fire(screen[i], use_on, 0);
-        } else {
-            ent_fire(screen[i], use_off, 0);
-        }
-    }
-}
-
 typedef struct{
     float x;
     float y;
@@ -69,7 +63,7 @@ static vec_t pos;
 static vec_t vel;
 static vec_t g = {0, .01f};
 
-void draw(void)  {
+static void draw(void)  {
     const int newPixelIndex = pixelxy((int) pos.x, (int) pos.y, true);
     if (newPixelIndex != lastPixelIndex) {
         pixeli(lastPixelIndex, false);
@@ -77,8 +71,7 @@ void draw(void)  {
     }
 }
 
-const float damp = .75f;
-void update(void) {
+static void update(void) {
     vel = vec_add(vel, g);
     pos = vec_add(pos, vel);
 
@@ -108,7 +101,7 @@ static void reset(void) {
     pos.y = 0;
 }
 
-float on_think(float dt) {
+EXPORT float on_think(float dt) {
     if (!enable) {
         return .1f;
     }
@@ -121,10 +114,44 @@ float on_think(float dt) {
     return 1 / fps;
 }
 
-int32_t on_fire(use_type_t use_type, float value)
-{
+static void pstring(const char *str) {
+    if (str == NULL) {
+        console_log(log_info, "NULL");
+        return;
+    }
+
+    if (str[0] == '\0') {
+        console_log(log_info, "<empty>");
+        return;
+    }
+
+    console_log(log_info, str);
+}
+
+EXPORT int32_t on_fire(
+    const char* activatorClass,
+    const char* activatorName,
+    const char* otherClass,
+    const char* otherName,
+    use_type_t use_type,
+    float value
+) {
     enable = true;
     reset();
+
+    if (strcmp(activatorClass, "player") == 0) {
+        console_log(log_info, "activator is player\n");
+    }
+
+    console_log(log_info, "activatorClass: ");
+    pstring(activatorClass);
+    console_log(log_info, "\nactivatorName: ");
+    pstring(activatorName);
+    console_log(log_info, "\notherClass: ");
+    pstring(otherClass);
+    console_log(log_info, "\notherName: ");
+    pstring(otherName);
+    console_log(log_info, "\n");
 
     return 1;
 }
