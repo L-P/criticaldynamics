@@ -28,6 +28,7 @@ link() {
         --lto-O3 \
         -L "wasmsrc/lib" \
         -l:strings.o \
+        -l:vec.o \
         -o "$dst" \
         "$obj"
 }

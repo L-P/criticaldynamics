@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "lib/base.h"
 #include "lib/native.h"
+#include "lib/vec.h"
 #include "lib/strings.h"
 
 #define SCREEN_WIDTH 10
@@ -46,22 +47,10 @@ static int pixelxy(int x, int y, bool state) {
     return i;
 }
 
-typedef struct{
-    float x;
-    float y;
-} vec_t;
-
-static vec_t vec_add(vec_t a, vec_t b) {
-    return (vec_t) {
-        .x = a.x + b.x,
-        .y = a.y + b.y,
-    };
-}
-
 static int lastPixelIndex = 0;
-static vec_t pos;
-static vec_t vel;
-static vec_t g = {0, .01f};
+static vec2_t pos;
+static vec2_t vel;
+static vec2_t g = {0, .01f};
 
 static void draw(void)  {
     const int newPixelIndex = pixelxy((int) pos.x, (int) pos.y, true);
@@ -72,8 +61,8 @@ static void draw(void)  {
 }
 
 static void update(void) {
-    vel = vec_add(vel, g);
-    pos = vec_add(pos, vel);
+    vel = vec2_add(vel, g);
+    pos = vec2_add(pos, vel);
 
     if (pos.x <= 0) {
         pos.x = 0;
@@ -114,44 +103,29 @@ EXPORT float on_think(float dt) {
     return 1 / fps;
 }
 
-static void pstring(const char *str) {
-    if (str == NULL) {
-        console_log(log_info, "NULL");
-        return;
-    }
-
-    if (str[0] == '\0') {
-        console_log(log_info, "<empty>");
-        return;
-    }
-
-    console_log(log_info, str);
-}
-
 EXPORT int32_t on_fire(
     const char* activatorClass,
     const char* activatorName,
-    const char* otherClass,
-    const char* otherName,
+    const char* callerClass,
+    const char* callerName,
     use_type_t use_type,
     float value
 ) {
-    enable = true;
-    reset();
-
-    if (strcmp(activatorClass, "player") == 0) {
-        console_log(log_info, "activator is player\n");
+    if (strcmp(callerName, "_wasm_toggle") == 0) {
+        enable = !enable;
+        console_log(log_info, "WASM: Toggling sim.\n");
+        return 1;
     }
 
-    console_log(log_info, "activatorClass: ");
-    pstring(activatorClass);
-    console_log(log_info, "\nactivatorName: ");
-    pstring(activatorName);
-    console_log(log_info, "\notherClass: ");
-    pstring(otherClass);
-    console_log(log_info, "\notherName: ");
-    pstring(otherName);
-    console_log(log_info, "\n");
+    if (strcmp(callerName, "_wasm_reset") == 0) {
+        console_log(log_info, "WASM: Resetting sim.\n");
+        reset();
+    }
 
     return 1;
+}
+
+EXPORT void on_activate(void) {
+    enable = false;
+    console_log(log_info, "WASM: Activated, disabling sim.\n");
 }

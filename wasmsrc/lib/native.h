@@ -1,29 +1,5 @@
-// Mapped 1:1 to ALERT_TYPE in eiface.h.
-typedef enum {
-    log_debug = 2,
-    log_info  = 1,
-    log_warn  = 3,
-    log_error = 4,
-} log_level_t;
-
-// Mapped 1:1 to USE_TYPE in cbase.h.
-typedef enum
-{
-    use_off    = 0,
-    use_on     = 1,
-    use_set    = 2,
-    use_toggle = 3,
-} use_type_t;
-
-void console_log(log_level_t log_level, const char* msg);
-void ent_fire(const char* target, use_type_t use_type, float value);
-
-// {{{ Math
-double sin(double);
-double cos(double);
-double tan(double);
-double mod(double, double);
-// }}}
+#include "native_engine.h"
+#include "native_math.h"
 
 /* {{{ Methods to export, all are optional:
 
@@ -33,8 +9,8 @@ double mod(double, double);
 int32_t on_fire(
     const char* activatorClass,
     const char* activatorName,
-    const char* otherClass,
-    const char* otherName,
+    const char* callerClass,
+    const char* callerName,
     use_type_t use_type,
     float value
 );
@@ -43,6 +19,10 @@ int32_t on_fire(
 // SF_GAME_WASM_THINK is set.
 // Returns delay before next think, < 0 to error out and quit thinking.
 // dt is the time delta since last think.
-float on_think(float dt);
+float on_think(float time);
+
+// Called when the entity is activated, either right after spawn or after loading.
+// Requires SF_GAME_WASM_ACTIVATE to be set.
+void on_activate(void);
 
 }}} */

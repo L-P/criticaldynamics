@@ -1,5 +1,17 @@
 #include <stddef.h>
 
+size_t strlen(const char *str) {
+    if (str == NULL) {
+        return 0;
+    }
+
+    for (size_t i = 0; ; i++) {
+        if (str[i] == '\0') {
+            return i;
+        }
+    }
+}
+
 int strcmp(const char *lhs, const char *rhs) {
     for (size_t i = 0; ; i++) {
         if (lhs[i] == rhs[i]) {
@@ -18,6 +30,4 @@ int strcmp(const char *lhs, const char *rhs) {
             return -1;
         }
     }
-
-    1 / 0; // unreachable
 }

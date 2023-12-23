@@ -6,7 +6,8 @@
     spawnflags(flags) =
     [
         1 : "on_think" : 0
-        2 : "on_use when triggered " : 1
+        2 : "on_use when triggered" : 1
+        4 : "on_activate when spawned" : 1
     ]
 
     path(string) : "Path to the WASM file relative to the mod directory."
