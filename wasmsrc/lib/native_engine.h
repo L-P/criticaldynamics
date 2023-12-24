@@ -17,4 +17,5 @@ typedef enum
 
 void console_log(log_level_t log_level, const char* msg);
 void ent_fire(const char* target, use_type_t use_type, float value);
+bool make_follow(const char* target);
 float global_time(void);

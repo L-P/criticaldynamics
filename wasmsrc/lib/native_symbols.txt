@@ -1,5 +1,8 @@
 console_log
-cos
 ent_fire
+global_time
+make_follow
+cos
 mod
 sin
+tan

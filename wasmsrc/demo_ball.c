@@ -1,6 +1,7 @@
-#include <stdint.h>
 #include <stddef.h>
+#include <stdint.h>
 #include <stdbool.h>
+
 #include "lib/base.h"
 #include "lib/native.h"
 #include "lib/vec.h"

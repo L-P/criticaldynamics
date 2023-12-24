@@ -2225,7 +2225,7 @@
 "classname" "game_wasm"
 "spawnflags" "7"
 "origin" "-32 -16 -16"
-"path" "wasm/debug.wasm"
+"path" "wasm/demo_ball.wasm"
 "targetname" "debug_wasm"
 "_tb_layer" "800"
 }
