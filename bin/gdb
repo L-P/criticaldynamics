@@ -15,6 +15,7 @@ echo "set print pretty on" >> "$commands"
 echo "set print object" >> "$commands"
 echo "set max-value-size 600000" >> "$commands"
 echo "set logging on" >> "$commands"
+echo "run" >> "$commands"
 
 gdb -x "$commands"
 rm -f "$commands"
