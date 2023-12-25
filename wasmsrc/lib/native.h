@@ -7,10 +7,8 @@
 // spawnflag SF_GAME_WASM_USE is set.
 // Returns an arbitrary status code, 0 = success, other values are logged.
 int32_t on_fire(
-    const char* activatorClass,
-    const char* activatorName,
-    const char* callerClass,
-    const char* callerName,
+    const entity_t * activator,
+    const entity_t * caller,
     use_type_t use_type,
     float value
 );

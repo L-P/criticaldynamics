@@ -3,9 +3,10 @@
 #include <stdbool.h>
 
 #include "lib/base.h"
-#include "lib/native.h"
 #include "lib/vec.h"
 #include "lib/strings.h"
+#include "lib/ent.h"
+#include "lib/native.h"
 
 #define SCREEN_WIDTH 10
 #define SCREEN_HEIGHT 10
@@ -30,7 +31,7 @@ static const char * screen[] = {
     "screen_0_9", "screen_1_9", "screen_2_9", "screen_3_9", "screen_4_9", "screen_5_9", "screen_6_9", "screen_7_9", "screen_8_9", "screen_9_9",
 };
 
-static void pixeli(int i, bool state) {
+static void pixeli(size_t i, bool state) {
     if (i < 0 || i >= SCREEN_PIXELS) {
         return;
     }
@@ -42,19 +43,19 @@ static void pixeli(int i, bool state) {
     }
 }
 
-static int pixelxy(int x, int y, bool state) {
-    const int i = (y * SCREEN_WIDTH) + x;
+static size_t pixelxy(int x, int y, bool state) {
+    const size_t i = (y * SCREEN_WIDTH) + x;
     pixeli(i, state);
     return i;
 }
 
-static int lastPixelIndex = 0;
+static size_t lastPixelIndex = 0;
 static vec2_t pos;
 static vec2_t vel;
 static vec2_t g = {0, .01f};
 
 static void draw(void)  {
-    const int newPixelIndex = pixelxy((int) pos.x, (int) pos.y, true);
+    const size_t newPixelIndex = pixelxy((int) pos.x, (int) pos.y, true);
     if (newPixelIndex != lastPixelIndex) {
         pixeli(lastPixelIndex, false);
         lastPixelIndex = newPixelIndex;
@@ -105,20 +106,18 @@ EXPORT float on_think(float dt) {
 }
 
 EXPORT int32_t on_fire(
-    const char* activatorClass,
-    const char* activatorName,
-    const char* callerClass,
-    const char* callerName,
+    const entity_t* activator,
+    const entity_t* caller,
     use_type_t use_type,
     float value
 ) {
-    if (strcmp(callerName, "_wasm_toggle") == 0) {
+    if (ent_matches(caller, NULL, "_wasm_toggle")) {
         enable = !enable;
         console_log(log_info, "WASM: Toggling sim.\n");
         return 1;
     }
 
-    if (strcmp(callerName, "_wasm_reset") == 0) {
+    if (ent_matches(caller, NULL, "_wasm_reset")) {
         console_log(log_info, "WASM: Resetting sim.\n");
         reset();
     }

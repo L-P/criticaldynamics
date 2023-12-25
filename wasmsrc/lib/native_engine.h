@@ -7,8 +7,7 @@ typedef enum {
 } log_level_t;
 
 // Mapped 1:1 to USE_TYPE in cbase.h.
-typedef enum
-{
+typedef enum {
     use_off    = 0,
     use_on     = 1,
     use_set    = 2,

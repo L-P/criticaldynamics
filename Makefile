@@ -15,6 +15,9 @@ LDFLAGS=\
 		-L "wasmsrc/lib" $(WASM_LIBS)
 
 CFLAGS=\
+		-Wall -Wextra \
+		-Wno-unused-parameter \
+		-std=c23 \
 		--target=wasm32 \
 		-nostdlib \
 		-O3
