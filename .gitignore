@@ -1,13 +1,16 @@
 *.dbg
+*.o
 .*.swp
 /*.tga
 /*.zip
 /SAVE
 /buffer.dat
 /config.cfg
+/demoheader.dmf
 /maps/
 /mapssrc/autosave
 /sound/generated
 /sound/sentences.txt
 /user.scr
 /voice_ban.dt
+/wasm/*

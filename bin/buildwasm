@@ -1,0 +1,49 @@
+#!/usr/bin/env sh
+set -eux
+
+cd "$(dirname "$0")/.."
+
+main() {
+    for f in $(find wasmsrc -type f -name "*.c"); do
+        build "$f"
+    done
+
+    for f in $(find wasmsrc -maxdepth 1 -type f -name "*.o"); do
+        wasm="${f%.*}.wasm"
+        wasm="wasm/${wasm#wasmsrc/}"
+        link "$f" "$wasm"
+    done
+}
+
+link() {
+    obj="$1"
+    dst="$2"
+
+    wasm-ld-18 \
+        --no-entry \
+        --strip-all \
+        --export-dynamic \
+        --import-memory \
+        --allow-undefined-file=wasmsrc/lib/native_symbols.txt \
+        --lto-O3 \
+        -L "wasmsrc/lib" \
+        -l:strings.o \
+        -l:vec.o \
+        -o "$dst" \
+        "$obj"
+}
+
+build() {
+    src="$1"
+    obj="${src%.*}.o"
+
+    clang \
+        --target=wasm32 \
+        -nostdlib \
+        -O3 \
+        -c "$src" \
+        -o "$obj"
+}
+
+main
+exit $?

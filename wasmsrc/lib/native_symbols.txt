@@ -1,0 +1,8 @@
+console_log
+ent_fire
+global_time
+make_follow
+cos
+mod
+sin
+tan

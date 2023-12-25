@@ -5,10 +5,13 @@ set -eu
 cd "$(dirname "$(realpath "$0")")/.."
 modpath="$(pwd)"
 
+# release | debug
+RELEASE="${RELEASE:=release}"
+
 (
 cd "$CRITICAL_DYNAMICS_SRC/linux"
 set -x
-make "-j$(nproc)"
-cp release/hl.so* "$modpath/dlls/"
-cp release/client.so* "$modpath/cl_dlls/"
+CFG=$RELEASE make
+cp $RELEASE/hl.so* "$modpath/dlls/"
+cp $RELEASE/client.so* "$modpath/cl_dlls/"
 )
