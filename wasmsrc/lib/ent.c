@@ -53,3 +53,7 @@ void ent_print(log_level_t level, const entity_t* ent) {
     );
     console_log(level, buf);
 }
+
+void ent_movev(const char* target, vec3_t pos) {
+    ent_move(target, pos.x, pos.y, pos.z);
+}

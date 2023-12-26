@@ -13,18 +13,14 @@ EXPORT int32_t on_fire(
     use_type_t use_type,
     float value
 ) {
-    console_log(log_debug, "activator:\n");
-    ent_print(log_debug, activator);
-    console_log(log_debug, "caller:\n");
-    ent_print(log_debug, caller);
-
-    if (ent_matches(activator, "monster_barney", "barney")) {
-        console_log(log_debug, "Barney is activator.");
+    if (ent_matches(caller, "monster_barney", "barney")) {
+        vec3_t delta = {0, 0, 12};
+        ent_movev("card", vec3_add(caller->origin, delta));
         return true;
     }
 
-    if (ent_matches(caller, "monster_barney", "barney")) {
-        console_log(log_debug, "Barney is caller.");
+    if (ent_matches(caller, "item_security", "card")) {
+        console_log(log_debug, "Card pickup.");
         return true;
     }
 

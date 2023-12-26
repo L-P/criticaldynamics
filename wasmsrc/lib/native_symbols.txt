@@ -1,5 +1,6 @@
 console_log
 ent_fire
+ent_move
 global_time
 make_follow
 cos
