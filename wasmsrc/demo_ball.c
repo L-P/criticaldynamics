@@ -5,8 +5,8 @@
 #include "lib/base.h"
 #include "lib/vec.h"
 #include "lib/strings.h"
-#include "lib/ent.h"
 #include "lib/native.h"
+#include "lib/ent.h"
 
 #define SCREEN_WIDTH 10
 #define SCREEN_HEIGHT 10

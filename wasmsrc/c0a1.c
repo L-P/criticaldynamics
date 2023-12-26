@@ -4,9 +4,9 @@
 
 #include "lib/base.h"
 #include "lib/vec.h"
+#include "lib/native.h"
 #include "lib/ent.h"
 #include "lib/strings.h"
-#include "lib/native.h"
 
 EXPORT int32_t on_fire(
     const entity_t* activator,

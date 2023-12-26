@@ -17,6 +17,7 @@ LDFLAGS=\
 CFLAGS=\
 		-Wall -Wextra \
 		-Wno-unused-parameter \
+		-mbulk-memory \
 		-std=c23 \
 		--target=wasm32 \
 		-nostdlib \
