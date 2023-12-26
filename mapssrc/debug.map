@@ -161,7 +161,7 @@
 // entity 5
 {
 "classname" "game_wasm"
-"spawnflags" "2"
+"spawnflags" "6"
 "origin" "-32 0 0"
 "path" "wasm/debug.wasm"
 "targetname" "wasm"
@@ -226,6 +226,6 @@
 "targetname" "game_playerspawn"
 "weapon_357" "1"
 "ammo_357" "4"
-"item_crowbar" "1"
+"weapon_crowbar" "1"
 "_tb_layer" "800"
 }

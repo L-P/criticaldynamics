@@ -7,6 +7,12 @@
 #include "lib/native.h"
 #include "lib/ent.h"
 
+const char* pickup_sound = "buttons/blip2.wav";
+
+EXPORT void on_activate() {
+    precache_sound(pickup_sound);
+}
+
 EXPORT int32_t on_fire(
     const entity_t* activator,
     const entity_t* caller,
@@ -20,7 +26,8 @@ EXPORT int32_t on_fire(
     }
 
     if (ent_matches(caller, "item_security", "card")) {
-        console_log(log_debug, "Card pickup.");
+        console_log(log_debug, "Card pickup.\n");
+        play_sound(pickup_sound, NULL, chan_item, 1, sound_att_norm);
         return true;
     }
 
