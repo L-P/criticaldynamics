@@ -62,7 +62,7 @@ EXPORT int32_t on_fire(
         return true;
     }
 
-    if (ent_matches(caller, "item_security", "card")) {
+    if (ent_matches(caller, "trigger_relay", "card_ms")) {
         play_sound(card_pickup_sound, NULL, chan_item, 1, sound_att_norm);
         return true;
     }

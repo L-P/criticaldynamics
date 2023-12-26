@@ -7,8 +7,8 @@
 // spawnflag SF_GAME_WASM_USE is set.
 // Returns an arbitrary status code, 0 = success, other values are logged.
 int32_t on_fire(
-    const entity_t * activator,
-    const entity_t * caller,
+    const entity_t* activator,
+    const entity_t* caller,
     use_type_t use_type,
     float value
 );
@@ -22,5 +22,10 @@ float on_think(float time);
 // Called when the entity is activated, either right after spawn or after loading.
 // Requires SF_GAME_WASM_ACTIVATE to be set.
 void on_activate(void);
+
+// Called when used as the master of another entity. The activator is the
+// entity that has the game_wasm as master.
+// Any non-zero value will pass the master check.
+int32_t on_master_check(const entity_t* activator, const entity_t* caller);
 
 }}} */

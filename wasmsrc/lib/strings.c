@@ -1,6 +1,6 @@
 #include <stddef.h>
 
-size_t strlen(const char *str) {
+size_t strlen(const char* str) {
     if (str == NULL) {
         return 0;
     }
@@ -12,7 +12,7 @@ size_t strlen(const char *str) {
     }
 }
 
-int strcmp(const char *lhs, const char *rhs) {
+int strcmp(const char* lhs, const char* rhs) {
     for (size_t i = 0; ; i++) {
         if (lhs[i] == rhs[i]) {
             if (lhs[i] == '\0') {

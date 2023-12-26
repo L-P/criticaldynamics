@@ -11010,6 +11010,7 @@
 "sentence" "!C0A1_BARN_03"
 "listener" "player"
 "entity" "barney"
+"target" "barney_out_ms"
 }
 // entity 267
 {
@@ -11137,7 +11138,7 @@
 }
 // entity 269
 {
-"classname" "aiscripted_sequence"
+"classname" "scripted_sequence"
 "m_flRadius" "512"
 "m_flRepeat" "0"
 "m_fMoveTo" "1"
@@ -11151,7 +11152,7 @@
 }
 // entity 270
 {
-"classname" "aiscripted_sequence"
+"classname" "scripted_sequence"
 "m_flRadius" "512"
 "m_flRepeat" "0"
 "m_fMoveTo" "1"
@@ -11166,7 +11167,7 @@
 }
 // entity 271
 {
-"classname" "aiscripted_sequence"
+"classname" "scripted_sequence"
 "m_flRadius" "512"
 "m_flRepeat" "0"
 "m_fMoveTo" "1"
@@ -11443,6 +11444,7 @@
 "delay" "0"
 "spawnflags" "0"
 "target" "card_door_sequence"
+"master" "barney_out_ms"
 // brush 0
 {
 ( 224 -192 96 ) ( 224 -191 96 ) ( 224 -192 97 ) AAATRIGGER [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -11651,6 +11653,22 @@
 }
 // entity 295
 {
+"classname" "multisource"
+"origin" "1632 336 24"
+"targetname" "barney_out_ms"
+}
+// entity 296
+{
+"classname" "trigger_relay"
+"spawnflags" "1"
+"triggerstate" "1"
+"delay" "0"
+"origin" "1744 480 -40"
+"target" "wasm"
+"targetname" "card_ms"
+}
+// entity 297
+{
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Debug"
@@ -11659,7 +11677,7 @@
 "_tb_layer_locked" "1"
 "_tb_layer_hidden" "1"
 }
-// entity 296
+// entity 298
 {
 "classname" "game_player_equip"
 "spawnflags" "0"
@@ -11669,7 +11687,7 @@
 "weapon_crowbar" "1"
 "_tb_layer" "179"
 }
-// entity 297
+// entity 299
 {
 "classname" "info_player_start"
 "spawnflags" "0"
@@ -11677,7 +11695,7 @@
 "origin" "-16 0 -12"
 "_tb_layer" "179"
 }
-// entity 298
+// entity 300
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
@@ -11821,7 +11839,7 @@
 ( 208 -48 80 ) ( 208 -48 81 ) ( 208 -47 80 ) NULL [ 2.2204460492503128e-16 -1 2.220446049250313e-16 16 ] [ 0 -2.220446049250313e-16 -1 0 ] 0 1 1
 }
 }
-// entity 299
+// entity 301
 {
 "classname" "light_surface"
 "_light" "160 170 220 1250"
@@ -11833,14 +11851,14 @@
 "_cone" "60"
 "_tb_layer" "181"
 }
-// entity 300
+// entity 302
 {
 "classname" "info_landmark"
 "origin" "-152 0 0"
 "targetname" "c0a0toc0a1"
 "_tb_layer" "181"
 }
-// entity 301
+// entity 303
 {
 "classname" "trigger_changelevel"
 "changedelay" "0"
@@ -11859,7 +11877,7 @@
 ( -112 80 -48 ) ( -112 80 -47 ) ( -112 81 -48 ) AAATRIGGER [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 302
+// entity 304
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -11867,7 +11885,7 @@
 "_tb_id" "180"
 "_tb_layer" "181"
 }
-// entity 303
+// entity 305
 {
 "classname" "func_door"
 "speed" "40"
@@ -11899,7 +11917,7 @@
 ( 208 80 64 ) ( 208 80 -64 ) ( 208 -80 64 ) LAB1_DOOR2A [ 0 1 0 -80 ] [ 0 0 -1 -64 ] 0 -1 1
 }
 }
-// entity 304
+// entity 306
 {
 "classname" "func_door"
 "speed" "40"
@@ -11931,7 +11949,7 @@
 ( 208 80 64 ) ( 208 80 -64 ) ( 208 -80 64 ) LAB1_DOOR2A [ 0 1 0 -80 ] [ 0 0 -1 -64 ] 0 -1 1
 }
 }
-// entity 305
+// entity 307
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -11941,7 +11959,7 @@
 "_tb_transformation" "-1.8369701987210297e-16 1 0 304 -1 -1.8369701987210297e-16 0 247.99999999999997 0 0 1 0 0 0 0 1"
 "_tb_layer" "181"
 }
-// entity 306
+// entity 308
 {
 "classname" "func_button"
 "speed" "5"
@@ -11998,7 +12016,7 @@
 ( 225 104 0 ) ( 225 103 0 ) ( 225 104 1 ) +0~LAB1_GAD3 [ 1.8369701987210297e-16 1 0 -16 ] [ 0 0 -1 0 ] 0 0.5 0.33333334
 }
 }
-// entity 307
+// entity 309
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -12008,7 +12026,7 @@
 "_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 "_tb_layer" "181"
 }
-// entity 308
+// entity 310
 {
 "classname" "func_button"
 "speed" "5"

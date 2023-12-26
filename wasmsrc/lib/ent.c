@@ -6,6 +6,7 @@
 #include "vec.h"
 #include "strings.h"
 #include "native.h"
+#include "format.h"
 
 #include "ent.h"
 
@@ -18,13 +19,13 @@ bool ent_matches(
         return false;
     }
 
-    if (class != NULL) {
+    if (strlen(class) > 0) {
         if (ent->class == NULL || strcmp(ent->class, class) != 0) {
             return false;
         }
     }
 
-    if (name != NULL) {
+    if (strlen(name) > 0) {
         if (ent->name == NULL || strcmp(ent->name, name) != 0) {
             return false;
         }
@@ -39,19 +40,25 @@ void ent_print(log_level_t level, const entity_t* ent) {
         return;
     }
 
-    char buf[64];
-    stbsp_snprintf(buf, sizeof(buf), "class: %s\n", ent->class);
-    console_log(level, buf);
-    stbsp_snprintf(buf, sizeof(buf), "name: %s\n", ent->name);
-    console_log(level, buf);
-    stbsp_snprintf(
-        buf, sizeof(buf),
+    if (ent->class != NULL) {
+        console_logf(level, "class: '%s'\n", ent->class);
+    } else {
+        console_logf(level, "class: NULL\n");
+    }
+
+    if (ent->name != NULL) {
+        console_logf(level, "name: '%s'\n", ent->name);
+    } else {
+        console_logf(level, "name: NULL\n");
+    }
+
+    console_logf(
+        level,
         "origin: %f %f %f\n",
         ent->origin.x,
         ent->origin.y,
         ent->origin.z
     );
-    console_log(level, buf);
 }
 
 void ent_movev(const char* target, vec3_t pos) {
