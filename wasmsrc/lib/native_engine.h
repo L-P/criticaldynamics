@@ -15,18 +15,18 @@ typedef enum {
 } use_type_t;
 
 typedef enum {
-    chan_auto = 0,
+    chan_auto   = 0,
     chan_weapon = 1,
-    chan_voice = 2,
-    chan_item = 3,
-    chan_body = 4,
+    chan_voice  = 2,
+    chan_item   = 3,
+    chan_body   = 4,
     chan_stream = 5,
     chan_static = 6,
 } sound_channel_t;
 
 static const float sound_att_norm = 0.8;
 
-bool make_follow(const char* target);
+void make_follow(const char* target);
 float global_time(void);
 void console_log(log_level_t log_level, const char* msg);
 void ent_fire(const char* target, use_type_t use_type, float value);
