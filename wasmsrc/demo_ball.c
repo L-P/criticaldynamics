@@ -18,6 +18,11 @@ static const float damp = .75f;
 
 static float time = .0f;
 static bool enable = false;
+static vec3_t ball_offset = {
+    .x = 80,
+    .y = 256 - 32,
+    .z = 128 + 32,
+};
 
 static const char * screen[] = {
     "screen_0_0", "screen_1_0", "screen_2_0", "screen_3_0", "screen_4_0", "screen_5_0", "screen_6_0", "screen_7_0", "screen_8_0", "screen_9_0",
@@ -71,7 +76,7 @@ static void update(void) {
         pos.x = 0;
         vel.x = -vel.x * damp;
     }
-    if (pos.x >= SCREEN_WIDTH) {
+    if (pos.x > (SCREEN_WIDTH - 1)) {
         pos.x = SCREEN_WIDTH - 1;
         vel.x = -vel.x * damp;
     }
@@ -80,10 +85,18 @@ static void update(void) {
         pos.y = 0;
         vel.y = -vel.y * damp;
     }
-    if (pos.y >= SCREEN_HEIGHT) {
+    if (pos.y > (SCREEN_HEIGHT - 1)) {
         pos.y = SCREEN_HEIGHT - 1;
         vel.y = -vel.y * damp;
+
+        if (vel.y < .01f && vel.y > -0.01f) {
+            vel.y = 0;
+            vel.x *= 0.98;
+        }
     }
+
+    vec3_t delta = {0, .y = -pos.x * 51.2, .z = -pos.y * 25.6};
+    ent_movev("ball", vec3_add(ball_offset, delta));
 }
 
 static void reset(void) {
