@@ -26,4 +26,12 @@ void on_activate(void);
 // Any non-zero value will pass the master check.
 int32_t on_master_check(const entity_t* activator, const entity_t* caller);
 
+// Called when the entity is saving itself, you get a 1024 bytes buffer where
+// to write data you wish to be persisted.
+int32_t on_save(char* buf, size_t bufSize);
+
+// Called when the entity is restoring itself, you get a 1024 bytes buffer of
+// data you previously wrote in on_save.
+int32_t on_restore(const char* buf, size_t bufSize);
+
 }}} */

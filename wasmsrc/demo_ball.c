@@ -15,6 +15,7 @@
 static const size_t SCREEN_PIXELS = (SCREEN_WIDTH*SCREEN_HEIGHT);
 static const float fps = 60;
 static const float damp = .75f;
+static const vec2_t gravity = {0, .01f};
 
 static float time = .0f;
 static bool enable = false;
@@ -23,6 +24,10 @@ static vec3_t ball_offset = {
     .y = 256 - 32,
     .z = 128 + 32,
 };
+
+static size_t lastPixelIndex = 0;
+static vec2_t pos;
+static vec2_t vel;
 
 static const char * screen[] = {
     "screen_0_0", "screen_1_0", "screen_2_0", "screen_3_0", "screen_4_0", "screen_5_0", "screen_6_0", "screen_7_0", "screen_8_0", "screen_9_0",
@@ -55,12 +60,8 @@ static size_t pixelxy(int x, int y, bool state) {
     return i;
 }
 
-static size_t lastPixelIndex = 0;
-static vec2_t pos;
-static vec2_t vel;
-static vec2_t g = {0, .01f};
-
 static void draw(void)  {
+    return;
     const size_t newPixelIndex = pixelxy((int) pos.x, (int) pos.y, true);
     if (newPixelIndex != lastPixelIndex) {
         pixeli(lastPixelIndex, false);
@@ -69,7 +70,7 @@ static void draw(void)  {
 }
 
 static void update(void) {
-    vel = vec2_add(vel, g);
+    vel = vec2_add(vel, gravity);
     pos = vec2_add(pos, vel);
 
     if (pos.x <= 0) {
@@ -143,4 +144,39 @@ EXPORT int32_t on_fire(
 EXPORT void on_activate(void) {
     enable = false;
     console_log(log_info, "WASM: Activated, disabling sim.\n");
+}
+
+typedef struct {
+    size_t lastPixelIndex;
+    vec2_t pos;
+    vec2_t vel;
+} state_t;
+
+EXPORT void on_save(char* buf, size_t bufSize) {
+    const state_t state = {
+        .lastPixelIndex = lastPixelIndex,
+        .pos = pos,
+        .vel = vel,
+    };
+
+    if (sizeof(state_t) > bufSize) {
+        console_log(log_error, "sizeof(state_t) > bufSize\n");
+        return;
+    }
+
+    memcpy(buf, &state, sizeof(state_t));
+}
+
+EXPORT void on_restore(const char* buf, size_t bufSize) {
+    if (sizeof(state_t) > bufSize) {
+        console_log(log_error, "sizeof(state_t) > bufSize\n");
+        return;
+    }
+
+    state_t state = {0};
+    memcpy(&state, buf, sizeof(state_t));
+
+    lastPixelIndex = state.lastPixelIndex;
+    pos = state.pos;
+    vel = state.vel;
 }
