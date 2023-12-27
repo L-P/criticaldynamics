@@ -3,8 +3,7 @@
 
 /* {{{ Methods to export, all are optional:
 
-// Called when the entity is fired (ie. ::Use() is called) if the game_wasm
-// spawnflag SF_GAME_WASM_USE is set.
+// Called when the entity is fired (ie. ::Use() is called).
 // Returns an arbitrary status code, 0 = success, other values are logged.
 int32_t on_fire(
     const entity_t* activator,
@@ -13,8 +12,7 @@ int32_t on_fire(
     float value
 );
 
-// Called every time the entity thinks if the game_wasm spawnflag
-// SF_GAME_WASM_THINK is set.
+// Called every time the entity thinks.
 // Returns delay before next think, < 0 to error out and quit thinking.
 // dt is the time delta since last think.
 float on_think(float time);

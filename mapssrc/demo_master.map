@@ -97,7 +97,7 @@
 // entity 4
 {
 "classname" "game_wasm"
-"spawnflags" "6"
+"spawnflags" "0"
 "origin" "0 0 128"
 "path" "wasm/demo_master.wasm"
 "targetname" "wasm"

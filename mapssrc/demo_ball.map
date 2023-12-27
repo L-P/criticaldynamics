@@ -2223,7 +2223,7 @@
 // entity 105
 {
 "classname" "game_wasm"
-"spawnflags" "7"
+"spawnflags" "0"
 "origin" "-32 -16 -16"
 "path" "wasm/demo_ball.wasm"
 "targetname" "debug_wasm"

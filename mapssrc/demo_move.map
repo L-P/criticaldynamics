@@ -161,7 +161,7 @@
 // entity 5
 {
 "classname" "game_wasm"
-"spawnflags" "6"
+"spawnflags" "0"
 "origin" "-32 0 0"
 "path" "wasm/demo_move.wasm"
 "targetname" "wasm"

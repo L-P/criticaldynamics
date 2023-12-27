@@ -11200,7 +11200,7 @@
 // entity 273
 {
 "classname" "game_wasm"
-"spawnflags" "6"
+"spawnflags" "0"
 "origin" "1656 424 40"
 "path" "wasm/c0a1.wasm"
 "targetname" "wasm"
