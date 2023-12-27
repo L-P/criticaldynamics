@@ -5,6 +5,9 @@ WASM_DEPS_O=$(patsubst %.c,%.o,$(wildcard wasmsrc/lib/*.c))
 WASM_TARGET=$(subst wasmsrc/,wasm/,$(patsubst %.c,%.wasm,$(wildcard wasmsrc/*.c)))
 WASM_LIBS=$(subst wasmsrc/lib/,,$(addprefix -l:,$(WASM_DEPS_O)))
 
+MAP_SRC=$(wildcard mapssrc/*.map)
+MAP_TARGET=$(subst mapssrc/,maps/,$(patsubst %.map,%.bsp,$(MAP_SRC)))
+
 LDFLAGS=\
 		--no-entry \
 		--strip-all \
@@ -23,7 +26,12 @@ CFLAGS=\
 		-nostdlib \
 		-O3
 
-all: $(WASM_TARGET)
+all: $(WASM_TARGET) $(MAP_TARGET)
+
+maps/%.bsp: mapssrc/%.map
+	bin/buildmap "$(notdir $<)"
+maps/prefabs.bsp:
+	@:
 
 .SECONDARY: $(WASM_O)
 %.o: %.c $(WASM_DEPS_H)

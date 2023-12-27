@@ -14,9 +14,9 @@ __main() {
     git clean -dfX
 
     bin/buildso
-
-    bin/buildwasm
-    rsync -av wasm "$tmp/wasm"
+    mkdir -p "$tmp/dlls" "$tmp/cl_dlls"
+    cp dlls/*.so "$tmp/dlls/"
+    cp cl_dlls/*.so "$tmp/cl_dlls/"
 
     bin/buildsounds
     rsync -av sound "$tmp/sound"
@@ -24,8 +24,9 @@ __main() {
     bin/buildsprites
     rsync -av sprites "$tmp/sprites"
 
-    __buildmaps
-    mkdir "$tmp/maps"
+    make
+    mkdir -p "$tmp/wasm" "$tmp/maps"
+    cp wasm/*.wasm "$tmp/wasm/"
     cp maps/*.bsp "$tmp/maps/"
 
     __copymisc
@@ -38,7 +39,7 @@ __main() {
 
 __copymisc() {
     rsync -av resource "$tmp"
-    cp titles.txt *.wad logo_big.png liblist.gam \
+    cp titles.txt *.fgd *.wad logo_big.png liblist.gam game.cfg \
         "$tmp/"
 }
 
@@ -48,13 +49,6 @@ __buildzip() {
     rm -f "$dest"
     zip -9 -r "$dest" "$game"
     )
-}
-
-__buildmaps() {
-    for map in mapssrc/c*.map; do
-        cp "$map" "maps/"
-        bin/buildmap "${map#mapssrc/}"
-    done
 }
 
 __main
