@@ -13,6 +13,14 @@ size_t strlen(const char* str) {
 }
 
 int strcmp(const char* lhs, const char* rhs) {
+    if (lhs == NULL && rhs == NULL) {
+        return 0;
+    }
+
+    if (lhs == NULL ^ rhs == NULL) {
+        return lhs == NULL ? -1 : 1;
+    }
+
     for (size_t i = 0; ; i++) {
         if (lhs[i] == rhs[i]) {
             if (lhs[i] == '\0') {

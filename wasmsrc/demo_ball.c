@@ -7,6 +7,7 @@
 #include "lib/strings.h"
 #include "lib/native.h"
 #include "lib/ent.h"
+#include "lib/format.h"
 
 #define SCREEN_WIDTH 10
 #define SCREEN_HEIGHT 10
@@ -113,16 +114,17 @@ EXPORT int32_t on_fire(
 ) {
     if (ent_matches(caller, NULL, "_wasm_toggle")) {
         enable = !enable;
-        console_log(log_info, "WASM: Toggling sim.\n");
-        return 1;
+        console_logf(log_info, "WASM: Toggling sim, current state: %d\n", enable);
+        return true;
     }
 
     if (ent_matches(caller, NULL, "_wasm_reset")) {
         console_log(log_info, "WASM: Resetting sim.\n");
         reset();
+        return true;
     }
 
-    return 1;
+    return false;
 }
 
 EXPORT void on_activate(void) {

@@ -20,13 +20,13 @@ bool ent_matches(
     }
 
     if (strlen(class) > 0) {
-        if (ent->class == NULL || strcmp(ent->class, class) != 0) {
+        if (strcmp(ent->class, class) != 0) {
             return false;
         }
     }
 
     if (strlen(name) > 0) {
-        if (ent->name == NULL || strcmp(ent->name, name) != 0) {
+        if (strcmp(ent->name, name) != 0) {
             return false;
         }
     }
@@ -40,21 +40,10 @@ void ent_print(log_level_t level, const entity_t* ent) {
         return;
     }
 
-    if (ent->class != NULL) {
-        console_logf(level, "class: '%s'\n", ent->class);
-    } else {
-        console_logf(level, "class: NULL\n");
-    }
-
-    if (ent->name != NULL) {
-        console_logf(level, "name: '%s'\n", ent->name);
-    } else {
-        console_logf(level, "name: NULL\n");
-    }
-
+    console_logf(level, "%s#%s\n", ent->class, ent->name);
     console_logf(
         level,
-        "origin: %f %f %f\n",
+        "  origin: %f %f %f\n",
         ent->origin.x,
         ent->origin.y,
         ent->origin.z
