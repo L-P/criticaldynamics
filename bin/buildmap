@@ -5,6 +5,7 @@ mod="criticaldynamics"
 map="$mod/maps/$1"
 mapname="${1%.*}"
 bsp="$mod/maps/$mapname.bsp"
+opts="-noestimate -threads $(nproc)"
 
 fast=0
 ent=0
@@ -38,14 +39,14 @@ fi
 
 rm -f -- "$bsp"
 
-sdHLCSG -cliptype precise "$map"
-sdHLBSP "$map"
+sdHLCSG $opts -cliptype precise "$map"
+sdHLBSP $opts "$map"
 
 if [ $fast -eq 1 ]; then
-    sdHLVIS -fast "$map"
-    sdHLRAD -fast "$map"
+    sdHLVIS $opts -fast "$map"
+    sdHLRAD $opts -fast "$map"
 else
-    sdHLVIS -full "$map"
-    sdHLRAD -bounce 32 "$map"
+    sdHLVIS $opts -full "$map"
+    sdHLRAD $opts -bounce 32 "$map"
 fi
 )
