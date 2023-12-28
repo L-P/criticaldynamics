@@ -11,23 +11,17 @@
 
 #define SCREEN_WIDTH 10
 #define SCREEN_HEIGHT 10
+#define SCREEN_PIXELS (SCREEN_WIDTH*SCREEN_HEIGHT)
+static const float ups = 4;
+static uint8_t previous[SCREEN_PIXELS] = {0};
 
-static const size_t SCREEN_PIXELS = (SCREEN_WIDTH*SCREEN_HEIGHT);
-static const float fps = 60;
-static const float damp = .75f;
-static const vec2_t gravity = {0, .01f};
+typedef struct {
+    float time;
+    bool enable;
+    uint8_t board[SCREEN_PIXELS];
+} state_t;
 
-static float time = .0f;
-static bool enable = false;
-static vec3_t ball_offset = {
-    .x = 80,
-    .y = 256 - 32,
-    .z = 128 + 32,
-};
-
-static size_t lastPixelIndex = 0;
-static vec2_t pos;
-static vec2_t vel;
+static state_t state = {0};
 
 static const char * screen[] = {
     "screen_0_0", "screen_1_0", "screen_2_0", "screen_3_0", "screen_4_0", "screen_5_0", "screen_6_0", "screen_7_0", "screen_8_0", "screen_9_0",
@@ -54,69 +48,98 @@ static void pixeli(size_t i, bool state) {
     }
 }
 
-static size_t pixelxy(int x, int y, bool state) {
-    const size_t i = (y * SCREEN_WIDTH) + x;
-    pixeli(i, state);
-    return i;
+static void draw(void)  {
+    for (size_t i = 0; i < SCREEN_PIXELS; i++) {
+        pixeli(i, state.board[i] == 1);
+    }
 }
 
-static void draw(void)  {
-    const size_t newPixelIndex = pixelxy((int) pos.x, (int) pos.y, true);
-    if (newPixelIndex != lastPixelIndex) {
-        pixeli(lastPixelIndex, false);
-        lastPixelIndex = newPixelIndex;
+static int check(uint8_t* board, size_t x, size_t y) {
+    if (x < 0 || y < 0) {
+        return 0;
     }
+
+    if (x >= SCREEN_WIDTH || y >= SCREEN_HEIGHT) {
+        return 0;
+    }
+
+    const size_t i = (y * SCREEN_WIDTH) + x;
+    return board[i];
+}
+
+static int neighbors(uint8_t* board, size_t x, size_t y) {
+    int ret = 0;
+
+    ret += check(board, x-1, y-1);
+    ret += check(board, x+0, y-1);
+    ret += check(board, x+1, y-1);
+    ret += check(board, x-1, y+0);
+
+    ret += check(board, x+1, y+0);
+    ret += check(board, x-1, y+1);
+    ret += check(board, x+0, y+1);
+    ret += check(board, x+1, y+1);
+
+    return ret;
 }
 
 static void update(void) {
-    vel = vec2_add(vel, gravity);
-    pos = vec2_add(pos, vel);
+    memcpy(&previous, &state.board, sizeof(previous));
 
-    if (pos.x <= 0) {
-        pos.x = 0;
-        vel.x = -vel.x * damp;
-    }
-    if (pos.x > (SCREEN_WIDTH - 1)) {
-        pos.x = SCREEN_WIDTH - 1;
-        vel.x = -vel.x * damp;
-    }
+    for (size_t y = 0; y < SCREEN_HEIGHT; y++) {
+        for (size_t x = 0; x < SCREEN_WIDTH; x++) {
+            const size_t i = (y * SCREEN_WIDTH) + x;
+            const int cnt = neighbors(previous, x, y);
 
-    if (pos.y <= 0) {
-        pos.y = 0;
-        vel.y = -vel.y * damp;
-    }
-    if (pos.y > (SCREEN_HEIGHT - 1)) {
-        pos.y = SCREEN_HEIGHT - 1;
-        vel.y = -vel.y * damp;
-
-        if (vel.y < .01f && vel.y > -0.01f) {
-            vel.y = 0;
-            vel.x *= 0.98;
+            if (previous[i]) {
+                state.board[i] = cnt >= 2 && cnt <= 3;
+            } else {
+                state.board[i] = cnt == 3;
+            }
         }
     }
-
-    vec3_t delta = {0, .y = -pos.x * 51.2, .z = -pos.y * 25.6};
-    ent_movev("ball", vec3_add(ball_offset, delta));
 }
 
 static void reset(void) {
-    vel.x = .3f + mod(time, 8.f);
-    vel.y = 0;
-    pos.x = mod(time, 10.f);
-    pos.y = 0;
+    state.enable = false;
+    memset(previous, 0, SCREEN_PIXELS);
+    memset(state.board, 0, SCREEN_PIXELS);
+    for (size_t i = 0; i < SCREEN_PIXELS; i++) {
+        pixeli(i, false);
+    }
 }
 
 EXPORT float on_think(float dt) {
-    if (!enable) {
+    if (!state.enable) {
         return .1f;
     }
 
-    time += dt;
+    state.time += dt;
 
     update();
     draw();
 
-    return 1 / fps;
+    return 1 / ups;
+}
+
+void handle_pixel_toggle(const char* name) {
+    char buf[10+1];
+    memcpy(buf, name, 11);
+
+    buf[0] = 's';
+    buf[1] = 'c';
+    buf[2] = 'r';
+    buf[3] = 'e';
+    buf[4] = 'e';
+    buf[5] = 'n';
+
+    for (size_t i = 0; i < SCREEN_PIXELS; i++) {
+        if (strcmp(buf, screen[i]) == 0) {
+            state.board[i] = 1;
+            pixeli(i, true);
+            return;
+        }
+    }
 }
 
 EXPORT int32_t on_fire(
@@ -125,15 +148,20 @@ EXPORT int32_t on_fire(
     use_type_t use_type,
     float value
 ) {
-    if (ent_matches(caller, NULL, "_wasm_toggle")) {
-        enable = !enable;
-        console_logf(log_info, "WASM: Toggling sim, current state: %d\n", enable);
+    if (ent_matches(caller, "func_button", "toggle")) {
+        state.enable = !state.enable;
+        console_logf(log_info, "WASM: Toggling sim, current state: %d\n", state.enable);
         return true;
     }
 
-    if (ent_matches(caller, NULL, "_wasm_reset")) {
+    if (ent_matches(caller, "func_button", "reset")) {
         console_log(log_info, "WASM: Resetting sim.\n");
         reset();
+        return true;
+    }
+
+    if (ent_matches(caller, "func_button", NULL)) {
+        handle_pixel_toggle(caller->name);
         return true;
     }
 
@@ -141,23 +169,12 @@ EXPORT int32_t on_fire(
 }
 
 EXPORT void on_activate(void) {
-    enable = false;
+    state.enable = false;
+    reset();
     console_log(log_info, "WASM: Activated, disabling sim.\n");
 }
 
-typedef struct {
-    size_t lastPixelIndex;
-    vec2_t pos;
-    vec2_t vel;
-} state_t;
-
 EXPORT void on_save(char* buf, size_t bufSize) {
-    const state_t state = {
-        .lastPixelIndex = lastPixelIndex,
-        .pos = pos,
-        .vel = vel,
-    };
-
     if (sizeof(state_t) > bufSize) {
         console_log(log_error, "sizeof(state_t) > bufSize\n");
         return;
@@ -172,10 +189,6 @@ EXPORT void on_restore(const char* buf, size_t bufSize) {
         return;
     }
 
-    state_t state = {0};
     memcpy(&state, buf, sizeof(state_t));
-
-    lastPixelIndex = state.lastPixelIndex;
-    pos = state.pos;
-    vel = state.vel;
+    memcpy(previous, state.board, sizeof(previous));
 }
