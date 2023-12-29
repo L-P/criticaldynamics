@@ -7,6 +7,7 @@ WASM_LIBS=$(subst wasmsrc/lib/,,$(addprefix -l:,$(WASM_DEPS_O)))
 
 MAP_SRC=$(wildcard mapssrc/*.map)
 MAP_TARGET=$(subst mapssrc/,maps/,$(patsubst %.map,%.bsp,$(MAP_SRC)))
+NOD_TARGET=$(subst maps/,maps/graphs/,$(patsubst %.bsp,%.nod,$(MAP_TARGET)))
 
 LDFLAGS=\
 		--no-entry \
@@ -28,8 +29,18 @@ CFLAGS=\
 
 all: $(WASM_TARGET) $(MAP_TARGET)
 
+.PHONY: nodes
+nodes: $(NOD_TARGET)
+maps/graphs/%.nod: maps/%.bsp
+	bin/run +map "$(subst .bsp,,$(notdir $<))"
+	# Prevents running maps without nodes upon every make invocation.
+	touch "$@"
+
 maps/%.bsp: mapssrc/%.map
 	bin/buildmap "$(notdir $<)"
+
+maps/graphs/prefabs.nod:
+	@:
 maps/prefabs.bsp:
 	@:
 
@@ -40,7 +51,11 @@ maps/prefabs.bsp:
 wasm/%.wasm: wasmsrc/%.o $(WASM_DEPS_O)
 	wasm-ld-18 $(LDFLAGS) -o "$@" "$<"
 
-.PHONY: clean
+.PHONY: clean mrproper
 clean:
 	rm -f wasm/*.wasm
 	rm -f wasmsrc/*.o wasmsrc/lib/*.o
+	rm -f maps/graphs/*.nrp
+
+mrproper:
+	git clean -fdX
