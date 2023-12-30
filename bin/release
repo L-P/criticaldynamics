@@ -29,6 +29,10 @@ __main() {
     cp wasm/*.wasm "$tmp/wasm/"
     cp maps/*.bsp "$tmp/maps/"
 
+    make nodes
+    mkdir -p "$tmp/maps/graphs"
+    cp maps/graphs/*.nod "$tmp/maps/graphs/"
+
     __copymisc
     __buildzip
 
