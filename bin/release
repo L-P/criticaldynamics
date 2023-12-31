@@ -19,10 +19,10 @@ __main() {
     cp cl_dlls/*.so "$tmp/cl_dlls/"
 
     bin/buildsounds
-    rsync -av sound "$tmp/sound"
+    rsync -av sound/ "$tmp/sound/"
 
     bin/buildsprites
-    rsync -av sprites "$tmp/sprites"
+    rsync -av sprites/ "$tmp/sprites/"
 
     make
     mkdir -p "$tmp/wasm" "$tmp/maps"
@@ -42,16 +42,22 @@ __main() {
 }
 
 __copymisc() {
-    rsync -av resource "$tmp"
-    cp titles.txt ./*.fgd ./*.wad logo_big.png liblist.gam game.cfg \
+    rsync -av resource/ "$tmp/resource/"
+
+    cp \
+        ./*.fgd ./*.wad \
+        game.cfg libiwasm.dll liblist.gam \
+        logo_big.png titles.txt \
         "$tmp/"
 }
 
 __buildzip() {
     (
     cd "$tmp/.."
+    # Needs to be next to hl.exe in the parent directory.
+    mv "$game/libiwasm.dll" .
     rm -f "$dest"
-    zip -9 -r "$dest" "$game"
+    zip -9 -r "$dest" "$game" libiwasm.dll
     )
 }
 
