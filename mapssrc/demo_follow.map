@@ -100,7 +100,7 @@
 "spawnflags" "0"
 "origin" "-32 0 0"
 "path" "wasm/demo_follow.wasm"
-"targetname" "debug_wasm"
+"targetname" "wasm"
 "_tb_layer" "800"
 }
 // entity 5
@@ -120,8 +120,8 @@
 "renderfx" "0"
 "angles" "0 0 0"
 "zhlt_lightflags" "0"
-"target" "debug_wasm"
-"targetname" "_wasm_make_follow"
+"target" "wasm"
+"targetname" "follow"
 "_tb_layer" "800"
 // brush 0
 {
