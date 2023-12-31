@@ -27,7 +27,11 @@ CFLAGS=\
 		-nostdlib \
 		-O3
 
-all: $(WASM_TARGET) $(MAP_TARGET)
+all: $(WASM_TARGET) $(MAP_TARGET) userconfig.cfg
+
+userconfig.cfg:
+	echo "exec dev.cfg" > userconfig.cfg
+	echo "default_fov 90" >> userconfig.cfg
 
 .PHONY: nodes
 nodes: $(NOD_TARGET)
