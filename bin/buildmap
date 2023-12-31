@@ -44,9 +44,9 @@ sdHLBSP $opts "$map"
 
 if [ $fast -eq 1 ]; then
     sdHLVIS $opts -fast "$map"
-    sdHLRAD $opts -fast "$map"
+    sdHLRAD -chart $opts -fast "$map"
 else
     sdHLVIS $opts -full "$map"
-    sdHLRAD $opts -bounce 32 "$map"
+    sdHLRAD -chart $opts -bounce 32 "$map"
 fi
 )
