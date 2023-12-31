@@ -12,7 +12,7 @@ RELEASE="${RELEASE:=release}"
 cd "$CRITICAL_DYNAMICS_SRC/linux"
 set -x
 CFG=$RELEASE make
-cp $RELEASE/hl.so* "$modpath/dlls/"
-cp $RELEASE/client.so* "$modpath/cl_dlls/"
-cp ../network/delta.lst "$modpath/"
+cp "$RELEASE/hl.so"* "$modpath/dlls/"
+cp "$RELEASE/client.so"* "$modpath/cl_dlls/"
+cp "../network/delta.lst" "$modpath/"
 )

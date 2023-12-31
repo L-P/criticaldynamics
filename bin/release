@@ -43,7 +43,7 @@ __main() {
 
 __copymisc() {
     rsync -av resource "$tmp"
-    cp titles.txt *.fgd *.wad logo_big.png liblist.gam game.cfg \
+    cp titles.txt ./*.fgd ./*.wad logo_big.png liblist.gam game.cfg \
         "$tmp/"
 }
 
