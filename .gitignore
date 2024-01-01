@@ -10,9 +10,10 @@
 /config.cfg
 /delta.lst
 /demoheader.dmf
-/maps/
+/maps
 /mapssrc/autosave
-/sound/sentences.txt
+/sound
+/sprites
 /user.scr
 /userconfig.cfg
 /voice_ban.dt
