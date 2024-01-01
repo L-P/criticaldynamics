@@ -5,12 +5,19 @@ mod="criticaldynamics"
 map="$mod/maps/$1"
 mapname="${1%.*}"
 bsp="$mod/maps/$mapname.bsp"
+opts="-noestimate -threads $(nproc)"
 
 fast=0
+ent=0
 if [ $# -gt 1 ]; then
-    if [ "$2" = "-fast" ]; then
-        fast=1
-    fi
+    case "$2" in
+        -fast)
+            fast=1
+            ;;
+        -ent)
+            ent=1
+            ;;
+    esac
 fi
 
 (
@@ -18,23 +25,28 @@ fi
 # for WADs relative to this path.
 cd "$(dirname "$(realpath "$0")")/../.."
 
-goldutil map-export "$mod/mapssrc/$1" > "$map"
+goldutil map-export -cleanup-tb "$mod/mapssrc/$1" > "$map"
 
 grep -q __TB_empty "$map" && (
     echo "__TB_empty found in $map" 1>&2
     sed -i 's/__TB_empty/missing/' "$map"
 )
 
+if [ $ent -eq 1 ]; then
+    sdHLCSG -onlyents "$map"
+    return
+fi
+
 rm -f -- "$bsp"
 
-sdHLCSG -cliptype precise "$map"
-sdHLBSP "$map"
+sdHLCSG $opts -cliptype precise "$map"
+sdHLBSP $opts "$map"
 
 if [ $fast -eq 1 ]; then
-    sdHLVIS -fast "$map"
-    sdHLRAD -fast "$map"
+    sdHLVIS $opts -fast "$map"
+    sdHLRAD -chart $opts -fast "$map"
 else
-    sdHLVIS -full "$map"
-    sdHLRAD -bounce 32 "$map"
+    sdHLVIS $opts -full "$map"
+    sdHLRAD -chart $opts -bounce 32 "$map"
 fi
 )

@@ -1,0 +1,13 @@
+WASM_CFLAGS=\
+    -Wall -Wextra \
+    -Wno-unused-parameter \
+    -mbulk-memory \
+    -std=c23 \
+    --target=wasm32 \
+    -nostdlib \
+    -O3
+
+!cc = |> clang $(WASM_CFLAGS) -c %f -o %o |> %B.o
+
+: foreach *.c |> !cc |>
+: foreach lib/*.c |> !cc |> lib/%B.o <libs>
