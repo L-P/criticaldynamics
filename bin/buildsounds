@@ -38,10 +38,6 @@ __convert_sentences() {
         dst="${dst#soundsrc/}" # strip prefix
         name="$(echo "$dst" | tr '/' '_' | tr '[:lower:]' '[:upper:]')"
 
-        mkdir -p "$destdir/$(dirname "$dst")"
-        printf "Converting %s to %s.wav\n" "$name" "$dst"
-        ffmpeg -y -loglevel error -i "$f" -acodec pcm_u8 -ar 22050 -ac 1 "$destdir/$dst.wav"
-
         # Overwritting sentences existing in base game, they don't follow our
         # naming conventions anyway.
         if [[ "$name" == SCIENTIST_* ]] || [[ "$name" == BARNEY_* ]]; then

@@ -8,26 +8,19 @@ game="criticaldynamics"
 revision="$(git describe)"
 dest="$(pwd)/${game}_${revision}.zip"
 tmp="$(mktemp -d)/$game"
+RSYNC="rsync -exclude=Tupfile"
 mkdir -p "$tmp"
 
 __main() {
     git clean -dfX
 
-    bin/buildso
-    mkdir -p "$tmp/dlls" "$tmp/cl_dlls"
-    cp dlls/*.so "$tmp/dlls/"
-    cp cl_dlls/*.so "$tmp/cl_dlls/"
-
-    bin/buildsounds
-    rsync -av sound/ "$tmp/sound/"
-
-    bin/buildsprites
-    rsync -av sprites/ "$tmp/sprites/"
 
     make
     mkdir -p "$tmp/wasm" "$tmp/maps"
     cp wasm/*.wasm "$tmp/wasm/"
     cp maps/*.bsp "$tmp/maps/"
+    $RSYNC -av sound/ "$tmp/sound/"
+    $RSYNC -av sprites/ "$tmp/sprites/"
 
     make nodes
     mkdir -p "$tmp/maps/graphs"
@@ -42,7 +35,7 @@ __main() {
 }
 
 __copymisc() {
-    rsync -av resource/ "$tmp/resource/"
+    $RSYNC -av resource/ "$tmp/resource/"
 
     cp \
         ./*.fgd ./*.wad \
