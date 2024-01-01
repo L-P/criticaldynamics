@@ -4,15 +4,16 @@
 .*.swp
 /*.tga
 /*.zip
+/.tup
 /SAVE
 /buffer.dat
 /config.cfg
-/userconfig.cfg
 /demoheader.dmf
 /maps/
 /mapssrc/autosave
 /sound/generated
 /sound/sentences.txt
 /user.scr
+/userconfig.cfg
 /voice_ban.dt
 /wasm/*
