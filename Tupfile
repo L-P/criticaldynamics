@@ -1,2 +1,3 @@
 : | src/dlls/<output> |> cp src/dlls/hl.so %o |> dlls/hl.so
 : | src/cl_dll/<output> |> cp src/cl_dll/client.so %o |> cl_dlls/client.so
+: | src/network/delta.lst |> cp src/network/delta.lst %o |> delta.lst
