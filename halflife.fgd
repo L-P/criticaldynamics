@@ -204,6 +204,11 @@
 [
 	UseSentence(String) : "Use Sentence"
 	UnUseSentence(String) : "Un-Use Sentence"
+
+	spawnflags(Flags) =
+	[
+		1024: "No follow"	: 0
+	]
 ]
 
 @BaseClass base(Targetname, Angles) size(-16 -16 -16, 16 16 16) = gibshooterbase
