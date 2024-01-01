@@ -24,7 +24,7 @@ typedef enum {
     chan_static = 6,
 } sound_channel_t;
 
-static const float sound_att_norm = 0.8;
+static const float sound_att_norm = 0.8f;
 
 void make_follow(const char* target);
 float global_time(void);

@@ -1,6 +1,10 @@
 #include <stdarg.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Weverything"
 #include "stb_sprintf.h"
+#pragma clang diagnostic pop
+
 #include "native.h"
 
 #include "format.h"

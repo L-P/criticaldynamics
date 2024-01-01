@@ -1,7 +1,11 @@
 #include <stddef.h>
 #include <stdbool.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Weverything"
 #include "stb_sprintf.h"
+#pragma clang diagnostic pop
+
 #include "base.h"
 #include "vec.h"
 #include "strings.h"

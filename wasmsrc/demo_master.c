@@ -9,7 +9,7 @@
 #include "lib/ent.h"
 #include "lib/format.h"
 
-const char* buzzoff_sound = "buttons/button11.wav";
+static const char* buzzoff_sound = "buttons/button11.wav";
 
 static bool open = false;
 static float lastBuzz = 0;
