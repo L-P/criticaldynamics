@@ -39,6 +39,9 @@ fi
 
 rm -f -- "$bsp"
 
+# Intentional word-splitting on $opts.
+# shellcheck disable=SC2086
+(
 sdHLCSG $opts -cliptype precise "$map"
 sdHLBSP $opts "$map"
 
@@ -49,4 +52,5 @@ else
     sdHLVIS $opts -full "$map"
     sdHLRAD -chart $opts -bounce 32 "$map"
 fi
+)
 )

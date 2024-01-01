@@ -4,7 +4,7 @@ NOD_TARGET=$(subst maps/,maps/graphs/,$(patsubst %.bsp,%.nod,$(MAP_TARGET)))
 
 VMLIB=src/external/wasm-micro-runtime/build/libvmlib.a
 
-all: $(MAP_TARGET) $(VMLIB) tup userconfig.cfg
+all: $(VMLIB) tup userconfig.cfg
 
 .PHONY: tup monitor
 tup:
@@ -39,12 +39,7 @@ maps/graphs/%.nod: maps/%.bsp
 	# Prevents running maps without nodes upon every make invocation.
 	touch "$@"
 
-maps/%.bsp: mapssrc/%.map
-	bin/buildmap "$(notdir $<)"
-
 maps/graphs/prefabs.nod:
-	@:
-maps/prefabs.bsp:
 	@:
 
 .PHONY: clean mrproper
