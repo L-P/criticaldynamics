@@ -549,7 +549,7 @@
 	]
 ]
 
-@PointClass iconsprite("sprites/speaker.spr") base(Targetname) = ambient_generic : "Universal Ambient"
+@PointClass model({"path":"sprites/hammer/AmbientGeneric.spr","scale":.25}) base(Targetname) = ambient_generic : "Universal Ambient"
 [
 	message(sound) : "WAV Name"
 	health(integer) : "Volume (10 = loudest)" : 10
@@ -852,7 +852,7 @@
 	]
 ]
 
-@PointClass base(Targetname) color(255 255 128) = env_global : "Global State"
+@PointClass base(Targetname) color(255 255 128) model({"path":"sprites/hammer/EnvGlobal.spr","scale":.25}) = env_global : "Global State"
 [
 	globalstate(string) : "Global State to Set"
 	triggermode(choices) : "Trigger Mode" : 0 =
@@ -874,7 +874,7 @@
 	]
 ]
 
-@PointClass sprite() base(Targetname, RenderFields) size(-4 -4 -4, 4 4 4) color(30 100 0) = env_glow : "Light Glow/Haze" 
+@PointClass sprite() base(Targetname, RenderFields) size(-4 -4 -4, 4 4 4) color(30 100 0) model({"path":model,"scale":scale}) = env_glow : "Light Glow/Haze" 
 [
 	model(sprite) : "Sprite Name" : "sprites/glow01.spr"
 	scale(integer) : "Scale" : 1
@@ -981,7 +981,7 @@
 	skin(integer) : "Gib Skin" : 0
 ]
 
-@PointClass iconsprite("sprites/speaker.spr") = env_sound : "DSP Sound" 
+@PointClass model({"path":"sprites/hammer/EnvSound.spr","scale":.25}) = env_sound : "DSP Sound" 
 [
 	radius(integer) : "Radius" : 128
 	roomtype(Choices) : "Room Type" : 0 =
@@ -1027,7 +1027,7 @@
 	]
 ]
 
-@PointClass base(Targetname, Angles) size(-16 -16 -16, 16 16 16) = env_spark : "Spark" 
+@PointClass base(Targetname, Angles) size(-16 -16 -16, 16 16 16) model({"path":"sprites/hammer/EnvSpark.spr","scale":.25}) = env_spark : "Spark" 
 [
 	MaxDelay(string) : "Max Delay" : "0"
 	spawnflags(flags) =
@@ -1037,7 +1037,7 @@
 	]
 ]
 
-@PointClass sprite() base(Targetname, RenderFields, Angles) size(-4 -4 -4, 4 4 4) = env_sprite : "Sprite Effect" 
+@PointClass sprite() base(Targetname, RenderFields, Angles) size(-4 -4 -4, 4 4 4) model({"path":model,"scale":scale}) = env_sprite : "Sprite Effect" 
 [
 	framerate(string) : "Framerate" : "10.0"
 	model(sprite) : "Sprite Name" : "sprites/glow01.spr"
@@ -1708,12 +1708,12 @@
 // lights
 //
 
-@PointClass iconsprite("sprites/lightbulb.spr") base(Target, Targetname, Light, ZHLT_point) = light : "Invisible lightsource"
+@PointClass base(Target, Targetname, Light, ZHLT_point) model({"path":"sprites/hammer/lightbulb.spr","scale":.25}) = light : "Invisible lightsource"
 [
 	spawnflags(Flags) = [ 1 : "Initially dark" : 0 ]
 ]
 
-@PointClass iconsprite("sprites/lightbulb.spr") base(Targetname, Target, Angles, ZHLT_point) = light_spot : "Spotlight" 
+@PointClass model({"path":"sprites/hammer/LightSpot.spr","scale":.25}) base(Targetname, Target, Angles, ZHLT_point) = light_spot : "Spotlight" 
 [
 	_cone(integer) : "Inner (bright) angle" : 30
 	_cone2(integer) : "Outer (fading) angle" : 45
@@ -1743,7 +1743,7 @@
 	pattern(string) : "Custom Appearance"
 ]
 
-@PointClass base(Targetname, Angles, ZHLT_point) iconsprite("sprites/lightbulb.spr") = light_environment : "Environment" 
+@PointClass base(Targetname, Angles, ZHLT_point) model({"path":"sprites/hammer/LightEnvironment.spr","scale":.25}) = light_environment : "Environment" 
 [
 	pitch(integer) : "Pitch" : 0
 	_light(color255) : "Brightness" : "255 255 128 200"
@@ -2289,7 +2289,7 @@
 	m_imaxlivechildren(integer) : "Max live children" : 5
 ]
 
-@PointClass base(Targetname) color(255 128 0) = multi_manager : "MultiTarget Manager" 
+@PointClass base(Targetname) color(255 128 0) model({"path":"sprites/hammer/multi_manager.spr","scale":.25}) = multi_manager : "MultiTarget Manager" 
 [
 	spawnflags(Flags) = 
 	[
@@ -2297,7 +2297,7 @@
 	]
 ]
 
-@PointClass base(Targetname, Target) color(128 255 128) = multisource : "Multisource"
+@PointClass base(Targetname, Target) color(128 255 128) model({"path":"sprites/hammer/MultiSource.spr","scale":.25}) = multisource : "Multisource"
 [
 	globalstate(string) : "Global State Master"
 ]
@@ -2400,7 +2400,7 @@
 	]
 ]
 
-@PointClass iconsprite("sprites/speaker.spr") base(Targetname) = speaker : "Announcement Speaker"
+@PointClass model({"path":"sprites/hammer/speaker.spr","scale":.25}) base(Targetname) = speaker : "Announcement Speaker"
 [
 	preset(choices) :"Announcement Presets" : 0 =
 	[
@@ -2469,7 +2469,7 @@
 // Triggers
 //
 
-@PointClass base(Targetx) = trigger_auto : "AutoTrigger"
+@PointClass base(Targetx) model({"path":"sprites/hammer/TriggerAuto.spr","scale":.25}) = trigger_auto : "AutoTrigger"
 [
 	spawnflags(Flags) =
 	[
@@ -2648,7 +2648,7 @@
 	speed(integer) : "Speed of push" : 40
 ]
 
-@PointClass base(Targetname, Targetx) = trigger_relay : "Trigger Relay"
+@PointClass base(Targetname, Targetx) model({"path":"sprites/hammer/TriggerRelay.spr","scale":.25}) = trigger_relay : "Trigger Relay"
 [
 	spawnflags(flags) =
 	[

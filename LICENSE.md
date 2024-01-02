@@ -1,6 +1,9 @@
 ## [hl_lights.wad](./hl_lights.wad) [sprites/lighting](./sprites/lighting)
 Yoinked from https://www.moddb.com/mods/half-life-enriched/downloads/half-life-enriched-alpha-version-0885
 
+## [sprites/hammer](./sprites/hammer)
+Lifted from the Half-Life SDK.
+
 ## Voices
 Generated using elevenlabs.io
 
