@@ -36,12 +36,12 @@ static const char * screen[] = {
     "screen_0_9", "screen_1_9", "screen_2_9", "screen_3_9", "screen_4_9", "screen_5_9", "screen_6_9", "screen_7_9", "screen_8_9", "screen_9_9",
 };
 
-static void pixeli(size_t i, bool state) {
-    if (i < 0 || i >= SCREEN_PIXELS) {
+static void pixeli(size_t i, bool pixelState) {
+    if (i >= SCREEN_PIXELS) {
         return;
     }
 
-    if (state) {
+    if (pixelState) {
         ent_fire(screen[i], use_on, 0);
     } else {
         ent_fire(screen[i], use_off, 0);
@@ -54,7 +54,7 @@ static void draw(void)  {
     }
 }
 
-static int check(uint8_t* board, size_t x, size_t y) {
+static int check(uint8_t* board, int x, int y) {
     if (x < 0 || y < 0) {
         return 0;
     }
@@ -63,11 +63,10 @@ static int check(uint8_t* board, size_t x, size_t y) {
         return 0;
     }
 
-    const size_t i = (y * SCREEN_WIDTH) + x;
-    return board[i];
+    return board[(y * SCREEN_WIDTH) + x];
 }
 
-static int neighbors(uint8_t* board, size_t x, size_t y) {
+static int neighbors(uint8_t* board, int x, int y) {
     int ret = 0;
 
     ret += check(board, x-1, y-1);
@@ -89,7 +88,7 @@ static void update(void) {
     for (size_t y = 0; y < SCREEN_HEIGHT; y++) {
         for (size_t x = 0; x < SCREEN_WIDTH; x++) {
             const size_t i = (y * SCREEN_WIDTH) + x;
-            const int cnt = neighbors(previous, x, y);
+            const int cnt = neighbors(previous, (int) x, (int) y);
 
             if (previous[i]) {
                 state.board[i] = cnt >= 2 && cnt <= 3;

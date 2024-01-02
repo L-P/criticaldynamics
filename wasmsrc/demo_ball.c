@@ -43,7 +43,7 @@ static const char * screen[] = {
 };
 
 static void pixeli(size_t i, bool state) {
-    if (i < 0 || i >= SCREEN_PIXELS) {
+    if (i >= SCREEN_PIXELS) {
         return;
     }
 
@@ -55,7 +55,7 @@ static void pixeli(size_t i, bool state) {
 }
 
 static size_t pixelxy(int x, int y, bool state) {
-    const size_t i = (y * SCREEN_WIDTH) + x;
+    const size_t i = (size_t) ((y * SCREEN_WIDTH) + x);
     pixeli(i, state);
     return i;
 }

@@ -32,22 +32,31 @@ __convert_sentences() {
     echo "// {{{ soundsrc" >> "$dest_sentences"
 
     added=0
+    replaced=0
     for f in $(find soundsrc -type f -name "*.mp3"); do
         dst="${f%.*}" # remove ext
         dst="${dst#soundsrc/}" # strip prefix
         name="$(echo "$dst" | tr '/' '_' | tr '[:lower:]' '[:upper:]')"
 
-        mkdir -p "$destdir/$(dirname "$dst")"
-        printf "Converting %s to %s.wav\n" "$name" "$dst"
-        ffmpeg -y -loglevel error -i "$f" -acodec pcm_u8 -ar 22050 -ac 1 "$destdir/$dst.wav"
+        # Overwritting sentences existing in base game, they don't follow our
+        # naming conventions anyway.
+        if [[ "$name" == SCIENTIST_* ]] || [[ "$name" == BARNEY_* ]]; then
+            replaced=$((replaced+1))
+            continue
+        else
+            added=$((added+1))
+        fi
 
-        added=$((added+1))
+        # Kindly ask tup to believe us when we say this needs to run when files are added.
+        head "$f" > /dev/null
+
         echo "$name $dst" >> "$dest_sentences"
     done
 
     echo "// }}} soundsrc" >> "$dest_sentences"
 
     printf "Added %s static sentences.\n" "$added"
+    printf "Replaced %s existing sounds.\n" "$replaced"
 }
 
 __generate_placeholders() {

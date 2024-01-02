@@ -1,0 +1,3 @@
+!parallel-additive = |> goldutil sprite-create -out "%o" -type parallel -format additive "%f" |>
+
+: foreach ../spritessrc/1280/*.png |> !parallel-additive |> 1280/%B.spr

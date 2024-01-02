@@ -7,7 +7,7 @@
 #include "lib/native.h"
 #include "lib/ent.h"
 
-const char* pickup_sound = "buttons/blip2.wav";
+static const char* pickup_sound = "buttons/blip2.wav";
 
 EXPORT void on_activate() {
     precache_sound(pickup_sound);

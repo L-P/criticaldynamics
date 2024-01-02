@@ -1,19 +1,25 @@
+# Assets generated at compile-time.
+/sprites
+/wasm
+/maps
+/sound
+/delta.lst
+
+# Misc build artefacts
 *.dbg
 *.o
 *.so
 .*.swp
-/*.tga
 /*.zip
 /.tup
+/mapssrc/autosave
+
+# Generated at runtime
 /SAVE
 /buffer.dat
 /config.cfg
 /demoheader.dmf
-/maps/
-/mapssrc/autosave
-/sound/generated
-/sound/sentences.txt
 /user.scr
 /userconfig.cfg
 /voice_ban.dt
-/wasm/*
+/*.tga
