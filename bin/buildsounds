@@ -47,6 +47,9 @@ __convert_sentences() {
             added=$((added+1))
         fi
 
+        # Kindly ask tup to believe us when we say this needs to run when files are added.
+        head "$f" > /dev/null
+
         echo "$name $dst" >> "$dest_sentences"
     done
 

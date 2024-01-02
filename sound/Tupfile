@@ -1,8 +1,9 @@
 !ffmpeg = |> ffmpeg -y -loglevel error -i "%f" -acodec pcm_u8 -ar 22050 -ac 1 "%o" |>
 
-: foreach ../soundsrc/c0a0/*.mp3 |> !ffmpeg |> c0a0/%B.wav
-: foreach ../soundsrc/c0a1/*.mp3 |> !ffmpeg |> c0a1/%B.wav
-: foreach ../soundsrc/sc/*.mp3 |> !ffmpeg |> sc/%B.wav
+: foreach ../soundsrc/c0a0/*.mp3 |> !ffmpeg |> c0a0/%B.wav {sentences}
+: foreach ../soundsrc/c0a1/*.mp3 |> !ffmpeg |> c0a1/%B.wav {sentences}
+: foreach ../soundsrc/sc/*.mp3 |> !ffmpeg |> sc/%B.wav {sentences}
 : foreach ../soundsrc/scientist/*.mp3 |> !ffmpeg |> scientist/%B.wav
+: foreach ../soundsrc/barney/*.mp3 |> !ffmpeg |> barney/%B.wav
 
-: |> ../bin/buildsounds |> sentences.txt
+: | {sentences} |> ../bin/buildsounds |> sentences.txt

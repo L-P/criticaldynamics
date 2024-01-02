@@ -28,7 +28,7 @@ $(VMLIB):
 		-DWAMR_BUILD_AOT=0
 	$(MAKE) -C $(WASM_BUILD_DIR)
 
-userconfig.cfg:
+userconfig.cfg: Makefile
 	echo "exec dev.cfg" > userconfig.cfg
 	echo "default_fov 90" >> userconfig.cfg
 
