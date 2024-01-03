@@ -4,6 +4,12 @@ Yoinked from https://www.moddb.com/mods/half-life-enriched/downloads/half-life-e
 ## [sprites/hammer](./sprites/hammer)
 Lifted from the Half-Life SDK.
 
+## [logo_big.svg](./logo_big.svg)
+Phrase diagram by Cmglee,  
+Licensed under the Creative Commons Attribution-Share Alike license.
+
+Half-Life lambda logo property of Valve.
+
 ## Voices
 Generated using elevenlabs.io
 
