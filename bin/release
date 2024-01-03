@@ -13,7 +13,7 @@ mkdir -p "$tmp"
 
 __main() {
     git clean -dfX
-
+    (cd src && git clean -dfX)
 
     make
     mkdir -p "$tmp/wasm" "$tmp/maps"
