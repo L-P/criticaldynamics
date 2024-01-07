@@ -93,6 +93,5 @@
 "targetname" "game_playerspawn"
 "item_suit" "1"
 "weapon_9mmhandgun" "1"
-"master" "1"
 "weapon_crowbar" "1"
 }
