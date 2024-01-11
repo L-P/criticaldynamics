@@ -9309,7 +9309,7 @@
 // entity 301
 {
 "classname" "monster_scientist_dead"
-"body" "-1"
+"body" "3"
 "pose" "4"
 "sequence" "37"
 "spawnflags" "0"
