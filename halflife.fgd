@@ -119,7 +119,9 @@
 [ 
 	target(target_destination) : "Target" 
 ]
-@BaseClass size(-16 -16 0, 16 16 32) color(0 0 200) base(Targetname, Appearflags, Angles) = Weapon []
+@BaseClass size(-16 -16 0, 16 16 32) color(0 0 200) base(Targetname, Appearflags, Angles) = Weapon [
+    pickupammo(integer) : "Ammo count on pickup, -1 for default clip size"
+]
 @BaseClass = Global 
 [ 
 	globalname(string) : "Global Entity Name" 
@@ -175,7 +177,7 @@
 @BaseClass base(Target, Targetname, RenderFields, Angles) color(0 200 200) = Monster 
 [
 	TriggerTarget(String) : "TriggerTarget"
-      TriggerCondition(Choices) : "Trigger Condition" : 0 =
+	TriggerCondition(Choices) : "Trigger Condition" : 0 =
 	[
 		0 : "No Trigger"
 		1 : "See Player, Mad at Player"
@@ -197,6 +199,15 @@
 		128: "WaitForScript" 	: 0
 		256: "Pre-Disaster" 	: 0
 		512: "Fade Corpse"	: 0
+	]
+]
+
+@BaseClass = DeadMonster
+[
+	dont_fall_to_ground(Choices) : "For corpses only" : 0 =
+	[
+		0 : "Fall to ground (default)"
+		1 : "Stay at origin"
 	]
 ]
 
@@ -2176,7 +2187,7 @@
 		127 : "kneel"
 	]
 ]
-@PointClass base(Appearflags,RenderFields, Angles) size(-16 -16 0, 16 16 72) model({ "path": "models/scientist.mdl" }) = monster_scientist_dead : "Dead Scientist" 
+@PointClass base(Appearflags,RenderFields, Angles, DeadMonster) size(-16 -16 0, 16 16 72) model({ "path": "models/scientist.mdl" }) = monster_scientist_dead : "Dead Scientist" 
 [
 	body(Choices) : "Body" : -1 =
 	[
