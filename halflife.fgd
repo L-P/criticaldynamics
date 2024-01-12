@@ -2187,8 +2187,9 @@
 		127 : "kneel"
 	]
 ]
-@PointClass base(Appearflags,RenderFields, Angles, DeadMonster) size(-16 -16 0, 16 16 72) model({ "path": "models/scientist.mdl" }) = monster_scientist_dead : "Dead Scientist" 
+@PointClass base(Appearflags,RenderFields, Angles, DeadMonster) size(-16 -16 0, 16 16 72) model({"path": {{model == "" -> "models/scientist.mdl", model}}, "skin": skin}) = monster_scientist_dead : "Dead Scientist"
 [
+	model(studio) : "Model"
 	body(Choices) : "Body" : -1 =
 	[
 		-1 : "Random"
