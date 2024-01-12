@@ -12,5 +12,5 @@ WASM_CFLAGS+=-Wno-declaration-after-statement -Wno-pre-c23-compat
 
 !cc = |> clang $(WASM_CFLAGS) -c %f -o %o |> %B.o
 
-: foreach *.c |> !cc |>
-: foreach lib/*.c |> !cc |> lib/%B.o <libs>
+: foreach *.c | lib/<headers> |> !cc |>
+: foreach lib/*.c | lib/<headers> |> !cc |> lib/%B.o <libs>

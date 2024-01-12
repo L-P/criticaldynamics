@@ -1,0 +1,3 @@
+: foreach ../../src/demo/wasmsrc/lib/*.c |> cp "%f" "%o" |> "%b" <sources>
+: foreach ../../src/demo/wasmsrc/lib/*.h |> cp "%f" "%o" |> "%b" <headers>
+: foreach ../../src/demo/wasmsrc/lib/*.txt |> cp "%f" "%o" |> "%b" <symbols>
