@@ -22,7 +22,7 @@ __main() {
     $RSYNC -av sound/ "$tmp/sound/"
     $RSYNC -av sprites/ "$tmp/sprites/"
 
-    make nodes
+    bin/run +echo "Please load all campaign maps."
     mkdir -p "$tmp/maps/graphs"
     cp maps/graphs/*.nod "$tmp/maps/graphs/"
 

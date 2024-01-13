@@ -17,13 +17,6 @@ userconfig.cfg: Makefile
 	echo "exec dev.cfg" > userconfig.cfg
 	echo "default_fov 90" >> userconfig.cfg
 
-.PHONY: nodes
-nodes: $(NOD_TARGET)
-maps/graphs/%.nod: maps/%.bsp
-	bin/run +map "$(subst .bsp,,$(notdir $<))"
-	# Prevents running maps without nodes upon every make invocation.
-	touch "$@"
-
 maps/graphs/prefabs.nod:
 	@:
 
