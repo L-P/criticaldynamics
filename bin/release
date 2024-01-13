@@ -8,7 +8,6 @@ game="criticaldynamics"
 revision="$(git describe)"
 dest="$(pwd)/${game}_${revision}.zip"
 tmp="$(mktemp -d)/$game"
-RSYNC="rsync -exclude=Tupfile"
 mkdir -p "$tmp"
 
 __main() {
@@ -21,14 +20,16 @@ __main() {
     cp maps/*.bsp "$tmp/maps/"
     cp dlls/hl.* "$tmp/dlls/"
     cp cl_dlls/client.* "$tmp/cl_dlls/"
-    $RSYNC -av sound/ "$tmp/sound/"
-    $RSYNC -av sprites/ "$tmp/sprites/"
+    rsync -av sound/ "$tmp/sound/"
+    rsync -av sprites/ "$tmp/sprites/"
 
     bin/run +echo "Please load all campaign maps."
     mkdir -p "$tmp/maps/graphs"
     cp maps/graphs/*.nod "$tmp/maps/graphs/"
 
     __copymisc
+
+    find "$tmp" -type f -name "Tupfile" -delete
     __buildzip
 
     rm --preserve-root -rf "$(realpath "$tmp/..")"
@@ -37,7 +38,7 @@ __main() {
 }
 
 __copymisc() {
-    $RSYNC -av resource/ "$tmp/resource/"
+    rsync -av resource/ "$tmp/resource/"
 
     cp \
         ./*.fgd ./*.wad \
