@@ -15,13 +15,15 @@ __main() {
     (cd src && git clean -dfX)
 
     make
-    mkdir -p "$tmp/wasm" "$tmp/maps" "$tmp/dlls" "$tmp/cl_dlls"
+    mkdir -p "$tmp/wasm" "$tmp/maps" "$tmp/dlls" "$tmp/cl_dlls" "$tmp/models"
     cp wasm/*.wasm "$tmp/wasm/"
     cp maps/*.bsp "$tmp/maps/"
     cp dlls/hl.* "$tmp/dlls/"
     cp cl_dlls/client.* "$tmp/cl_dlls/"
+
     rsync -av sound/ "$tmp/sound/"
     rsync -av sprites/ "$tmp/sprites/"
+    rsync -av models/ "$tmp/models/"
 
     bin/run +echo "Please load all campaign maps."
     mkdir -p "$tmp/maps/graphs"
