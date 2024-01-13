@@ -16,9 +16,11 @@ __main() {
     (cd src && git clean -dfX)
 
     make
-    mkdir -p "$tmp/wasm" "$tmp/maps"
+    mkdir -p "$tmp/wasm" "$tmp/maps" "$tmp/dlls" "$tmp/cl_dlls"
     cp wasm/*.wasm "$tmp/wasm/"
     cp maps/*.bsp "$tmp/maps/"
+    cp dlls/hl.* "$tmp/dlls/"
+    cp cl_dlls/client.* "$tmp/cl_dlls/"
     $RSYNC -av sound/ "$tmp/sound/"
     $RSYNC -av sprites/ "$tmp/sprites/"
 
