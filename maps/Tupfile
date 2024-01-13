@@ -1,1 +1,1 @@
-: foreach ../mapssrc/*.map ^prefabs.map |> ../bin/buildmap "%B.map" |> %B.bsp | %B.map %B.prt %B.wa_ %B.ext %B.log
+: foreach ../mapssrc/c*.map |> ../bin/buildmap "%B.map" |> %B.bsp | %B.map %B.prt %B.wa_ %B.ext %B.log
