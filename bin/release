@@ -25,7 +25,8 @@ __main() {
     rsync -av sprites/ "$tmp/sprites/"
     rsync -av models/ "$tmp/models/"
 
-    bin/run +echo "Please load all campaign maps."
+    # You're expected to run sv_load_mod_maps and wait for it to end before quitting.
+    bin/run +map c0a0
     mkdir -p "$tmp/maps/graphs"
     cp maps/graphs/*.nod "$tmp/maps/graphs/"
 
