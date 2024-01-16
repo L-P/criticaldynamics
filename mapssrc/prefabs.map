@@ -6385,7 +6385,7 @@
 "rendercolor" "0 0 0"
 "renderfx" "0"
 "angles" "0 0 0"
-"zhlt_lightflags" "0"
+"zhlt_lightflags" "2"
 "targetname" "door_simple_%d"
 "distance" "85"
 "_tb_group" "2754"
