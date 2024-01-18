@@ -1427,6 +1427,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "transpalette"
 "_tb_id" "129"
+"_tb_linked_group_id" "{7b8b816c-9825-4baf-ba71-2c6523694cd9}"
 }
 // entity 2
 {
@@ -1701,6 +1702,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Lab door"
 "_tb_id" "132"
+"_tb_linked_group_id" "{50dddbea-cff1-4a50-9390-b19493ba37ce}"
 // brush 0
 {
 ( 230 -60 96 ) ( 230 -59 96 ) ( 230 -60 97 ) C1A0B_DR4 [ 0 1 0 60 ] [ 0 0 -1 0 ] 180 1 1
@@ -1755,6 +1757,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "table"
 "_tb_id" "171"
+"_tb_linked_group_id" "{bf7ac804-c31f-4ac4-9720-044e8b31faf3}"
 }
 // entity 6
 {
@@ -1909,6 +1912,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "trash"
 "_tb_id" "746"
+"_tb_linked_group_id" "{0c90d722-6f62-4386-9110-c6c9f06569b3}"
 }
 // entity 9
 {
@@ -1953,6 +1957,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "bookcase"
 "_tb_id" "784"
+"_tb_linked_group_id" "{71057282-6649-441d-8a1c-12d3128f3be5}"
 // brush 0
 {
 ( -26.106014177022644 112 16.00697490957583 ) ( -26.106014177022644 113 16.00697490957583 ) ( -26.106014177022644 112 17.00697490957583 ) PFAB_BKS1A [ 0 -1 0 -2.6666718 ] [ 0 0 -1 -6.3888397 ] 0 0.75 0.625
@@ -2023,6 +2028,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "shelf"
 "_tb_id" "783"
+"_tb_linked_group_id" "{3fb6a5fc-bab0-4778-a5e6-1aed4d6ee90e}"
 "_tb_group" "784"
 }
 // entity 12
@@ -2224,6 +2230,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "desk"
 "_tb_id" "798"
+"_tb_linked_group_id" "{40a8dafe-c8ed-4acb-9833-910cab45635f}"
 }
 // entity 15
 {
@@ -2367,6 +2374,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lamp"
 "_tb_id" "799"
+"_tb_linked_group_id" "{425d3c07-4313-4f5f-9b0f-56a342c38e7f}"
 }
 // entity 17
 {
@@ -2450,6 +2458,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "smoke"
 "_tb_id" "802"
+"_tb_linked_group_id" "{3f9228ab-b011-4061-8369-4520c4617350}"
 }
 // entity 19
 {
@@ -2480,6 +2489,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "smoke stack"
 "_tb_id" "801"
+"_tb_linked_group_id" "{a406a595-5575-4635-a996-5fa4961eb147}"
 "_tb_group" "802"
 }
 // entity 21
@@ -2650,6 +2660,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "TV"
 "_tb_id" "844"
+"_tb_linked_group_id" "{17ad1c77-8f0a-42d3-8890-1322f8a90be9}"
 }
 // entity 32
 {
@@ -2814,6 +2825,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "broom"
 "_tb_id" "873"
+"_tb_linked_group_id" "{a67ca9c6-0f12-45be-9a2f-2c5526cd2719}"
 }
 // entity 35
 {
@@ -2868,6 +2880,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "elevator"
 "_tb_id" "883"
+"_tb_linked_group_id" "{2c156453-c437-4124-9c5f-a5698fac5b4e}"
 // brush 0
 {
 ( -496 208 144 ) ( -496 209 144 ) ( -496 208 145 ) NULL [ 0 -1 0 16 ] [ 0 0 -1 0 ] 0 1 1
@@ -3142,6 +3155,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "vending green"
 "_tb_id" "2324"
+"_tb_linked_group_id" "{f2e0b782-7e74-4453-975d-c603c06aa7a3}"
 // brush 0
 {
 ( 140 160 16 ) ( 140 160 17 ) ( 140 159 16 ) GENERIC106 [ -1.2246467991473532e-16 -1 0 16 ] [ 0 0 -1 0 ] 180 1 1
@@ -3746,6 +3760,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "vending red"
 "_tb_id" "2331"
+"_tb_linked_group_id" "{c4d98226-db9a-4bd2-8fbd-1d79d83115c0}"
 // brush 0
 {
 ( 140 80 16 ) ( 140 80 17 ) ( 140 79 16 ) GENERIC105 [ -1.2246467991473532e-16 -1 0 0 ] [ 0 0 -1 0 ] 180 1 1
@@ -4350,6 +4365,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "door %d"
 "_tb_id" "2282"
+"_tb_linked_group_id" "{8db01680-67c2-4d55-812a-d9c5a11d5384}"
 // brush 0
 {
 ( -512 8 116 ) ( -512 8 117 ) ( -512 7 116 ) NULL [ 0 1 0 24 ] [ 0 0 -1 0 ] 0 1 1
@@ -4902,6 +4918,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "trash"
 "_tb_id" "2376"
+"_tb_linked_group_id" "{de8d38df-cd52-4e4a-abea-37bc911e692b}"
 }
 // entity 96
 {
@@ -5005,6 +5022,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "paper"
 "_tb_id" "805"
+"_tb_linked_group_id" "{d3ce72f2-cf7a-4641-97da-7a807f96cdcf}"
 "_tb_group" "2376"
 }
 // entity 98
@@ -5065,6 +5083,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "paper"
 "_tb_id" "804"
+"_tb_linked_group_id" "{9db3bfb9-0094-4a37-8046-974fc2c21482}"
 "_tb_group" "2376"
 }
 // entity 100
@@ -5125,6 +5144,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "door locked"
 "_tb_id" "2383"
+"_tb_linked_group_id" "{fe793eec-9fb1-480c-8998-e6a51c241c9f}"
 // brush 0
 {
 ( -500 -72 96 ) ( -500 -72 97 ) ( -500 -73 96 ) NULL [ 0 1 0 8 ] [ 0 0 -1 0 ] 0 1 1
@@ -5457,6 +5477,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "FIFTS_LGHT4 glow"
 "_tb_id" "2577"
+"_tb_linked_group_id" "{00a9f538-ddaf-4abf-80cb-8bfe4d185033}"
 // brush 0
 {
 ( -704 -152 66 ) ( -704 -136 66 ) ( -704 -136 194 ) NULL [ 0 -1 0 8 ] [ 0 0 -1 2 ] 0 1 1
@@ -5508,6 +5529,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "door one-way latch %d"
 "_tb_id" "2580"
+"_tb_linked_group_id" "{b89a9b83-455f-419d-8c8e-cad57ad2362c}"
 // brush 0
 {
 ( -512 -140 116 ) ( -512 -140 117 ) ( -512 -141 116 ) NULL [ 0 1 0 12 ] [ 0 0 -1 0 ] 0 1 1
@@ -6132,6 +6154,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Vort spawner #%d"
 "_tb_id" "2582"
+"_tb_linked_group_id" "{a12528d9-d639-4c5d-8027-3f6879577ac9}"
 }
 // entity 128
 {
@@ -6249,6 +6272,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Headcrab spawner #%d"
 "_tb_id" "2583"
+"_tb_linked_group_id" "{8ad169b6-9f03-41fc-8157-9347796c1e5a}"
 }
 // entity 135
 {
@@ -6366,6 +6390,34 @@
 "_tb_type" "_tb_group"
 "_tb_name" "door simple %d"
 "_tb_id" "2754"
+"_tb_linked_group_id" "{d6fc5c8b-6b03-4f73-9316-626efa99829f}"
+// brush 0
+{
+( 32 -133 96 ) ( 28 -133 100 ) ( 28 -141 100 ) NULL [ 0 1 0 13 ] [ 1 0 -2.220446049250313e-16 4 ] 0 1 1
+( 28 -141 100 ) ( 100 -141 100 ) ( 96 -141 96 ) FIFTIES_DR6A [ -4.371139006309477e-08 0 0.999999999999999 0 ] [ 0.999999999999999 0 4.371139006309477e-08 0 ] -90 1 1
+( 96 -141 96 ) ( 96 -133 96 ) ( 32 -133 96 ) FIFTIES_DR6A [ -3.308722450212111e-24 1 1.6653345369377348e-16 37 ] [ 0.9999999999999991 -3.308722450212111e-24 4.371139006309477e-08 0 ] -90 1 1
+( 28 -133 100 ) ( 100 -133 100 ) ( 100 -141 100 ) NULL [ 1 0 0 -4 ] [ 0 -1 0 -13 ] 90 1 1
+( 96 -133 96 ) ( 100 -133 100 ) ( 28 -133 100 ) FIFTIES_DR6A [ -4.371139006309477e-08 0 0.999999999999999 0 ] [ 0.999999999999999 0 4.371139006309477e-08 0 ] -90 1 1
+( 96 -133 96 ) ( 96 -141 96 ) ( 100 -141 100 ) NULL [ 0 -1 0 -13 ] [ -1 0 -2.220446049250313e-16 4 ] 0 1 1
+}
+// brush 1
+{
+( 28 -133 100 ) ( 28 -141 100 ) ( 28 -141 0 ) NULL [ 0 -1 0 -13 ] [ 0 0 -1 0 ] 0 1 1
+( 28 -141 100 ) ( 32 -141 96 ) ( 32 -141 0 ) FIFTIES_DR6A [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 32 -141 0 ) ( 32 -133 0 ) ( 28 -133 0 ) NULL [ -1 0 0 0 ] [ 0 -1 0 -13 ] 0 1 1
+( 32 -133 0 ) ( 32 -133 96 ) ( 28 -133 100 ) FIFTIES_DR6A [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 28 -133 100 ) ( 32 -133 96 ) ( 32 -141 96 ) NULL [ 1 0 0 0 ] [ 0 -1 0 -13 ] 0 1 1
+( 32 -141 96 ) ( 32 -133 96 ) ( 32 -133 0 ) FIFTIES_DR6A [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+// brush 2
+{
+( 96 -141 96 ) ( 96 -133 0 ) ( 96 -133 96 ) FIFTIES_DR6A [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 100 -133 100 ) ( 96 -141 96 ) ( 96 -133 96 ) NULL [ -1 0 0 0 ] [ 0 -1 0 -13 ] 90 1 1
+( 100 -141 100 ) ( 96 -141 0 ) ( 96 -141 96 ) FIFTIES_DR6A [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 96 -141 0 ) ( 100 -133 0 ) ( 96 -133 0 ) NULL [ 1 0 0 0 ] [ 0 -1 0 -13 ] 180 1 1
+( 96 -133 0 ) ( 100 -133 100 ) ( 96 -133 96 ) FIFTIES_DR6A [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 100 -133 100 ) ( 100 -141 0 ) ( 100 -141 100 ) NULL [ 0 -1 0 -13 ] [ 0 0 -1 0 ] 0 1 1
+}
 }
 // entity 142
 {
@@ -6528,6 +6580,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lamp"
 "_tb_id" "2858"
+"_tb_linked_group_id" "{c5b2a796-cba8-4f97-bdb4-45cbffd71276}"
 }
 // entity 146
 {
@@ -6642,6 +6695,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "chair"
 "_tb_id" "815"
+"_tb_linked_group_id" "{5fe322ff-3adf-4f88-af1a-35c950e73e59}"
 }
 // entity 152
 {
@@ -6764,6 +6818,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "chair"
 "_tb_id" "2925"
+"_tb_linked_group_id" "{40ad81a0-e2de-459a-8a1e-74bf9b944d36}"
 }
 // entity 154
 {
@@ -6899,6 +6954,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "desk"
 "_tb_id" "2914"
+"_tb_linked_group_id" "{2a6e9d98-1e8f-4486-bb64-b3bc7bfd1855}"
 }
 // entity 157
 {
