@@ -953,7 +953,7 @@
 	]
 ]
 
-@PointClass base(Targetname, Target, RenderFields) size(-16 -16 -16, 16 16 16) color(100 100 0) = env_render : "Render Controls"
+@PointClass base(Targetname, Target, RenderFields) iconsprite({"path":"sprites/trenchbroom/env_render.png","scale":.25}) = env_render : "Render Controls"
 [
 	spawnflags(flags) =
 	[
@@ -2303,7 +2303,7 @@
 	m_imaxlivechildren(integer) : "Max live children" : 5
 ]
 
-@PointClass base(Targetname) color(255 128 0) model({"path":"sprites/hammer/multi_manager.spr","scale":.25}) = multi_manager : "MultiTarget Manager" 
+@PointClass base(Targetname) color(255 128 0) iconsprite({"path":"sprites/trenchbroom/multi_manager.png","scale":.25}) = multi_manager : "MultiTarget Manager" 
 [
 	spawnflags(Flags) = 
 	[
@@ -2311,7 +2311,7 @@
 	]
 ]
 
-@PointClass base(Targetname, Target) color(128 255 128) model({"path":"sprites/hammer/MultiSource.spr","scale":.25}) = multisource : "Multisource"
+@PointClass base(Targetname, Target) color(128 255 128) iconsprite({"path":"sprites/trenchbroom/multisource.png","scale":.25}) = multisource : "Multisource"
 [
 	globalstate(string) : "Global State Master"
 ]
@@ -2661,7 +2661,7 @@
 	speed(integer) : "Speed of push" : 40
 ]
 
-@PointClass base(Targetname, Targetx) model({"path":"sprites/hammer/TriggerRelay.spr","scale":.25}) = trigger_relay : "Trigger Relay"
+@PointClass base(Targetname, Targetx) model({"path":"sprites/trenchbroom/trigger_relay.png","scale":.25}) = trigger_relay : "Trigger Relay"
 [
 	spawnflags(flags) =
 	[
