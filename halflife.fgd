@@ -82,7 +82,7 @@
 		3 : "Opaque + Embedded fix"
 		6 : "Opaque + Concave Fix"
 	]
-	light_origin(string) : "Light Origin Target"
+	light_origin(target_destination) : "Light Origin Target"
 ]
 
 @BaseClass = ZHLT_point
@@ -176,7 +176,7 @@
 
 @BaseClass base(Target, Targetname, RenderFields, Angles) color(0 200 200) = Monster 
 [
-	TriggerTarget(String) : "TriggerTarget"
+	TriggerTarget(target_destination) : "TriggerTarget"
 	TriggerCondition(Choices) : "Trigger Condition" : 0 =
 	[
 		0 : "No Trigger"
@@ -536,7 +536,7 @@
 
 @PointClass base(Targetname, Targetx, Angles) size(-16 -16 0, 16 16 72) color(255 0 255)=aiscripted_sequence:"AI Scripted Sequence"
 [
-	m_iszEntity(string) : "Target Monster"
+	m_iszEntity(target_destination) : "Target Monster"
 	m_iszPlay(string) : "Action Animation" : ""
 	m_flRadius(integer) : "Search Radius" : 512
 	m_flRepeat(integer) : "Repeat Rate ms" : 0
@@ -1566,7 +1566,7 @@
 		2 : "Kill Player" : 0
 		4 : "Gib Player" : 0
 	]
-	target(string) : "game_team_master to use" 
+	target(target_destination) : "game_team_master to use" 
 	master(string) : "Master"
 ]
 
@@ -2391,7 +2391,7 @@
 
 @PointClass base(Targetname, Targetx, Angles) size(-16 -16 0, 16 16 72) color(255 0 255) = scripted_sequence : "Scripted Sequence"
 [
-	m_iszEntity(string) : "Target Monster"
+	m_iszEntity(target_destination) : "Target Monster"
 	m_iszPlay(string) : "Action Animation" : ""
 	m_iszIdle(string) : "Idle Animation" : ""
 	m_flRadius(integer) : "Search Radius" : 512
@@ -2556,9 +2556,8 @@
 	]
 ]
 
-@SolidClass = trigger_changelevel : "Trigger: Change level"
+@SolidClass base(Targetname) = trigger_changelevel : "Trigger: Change level"
 [
-	targetname(string) : "Name"
 	map(string) : "New map name"
 	landmark(string) : "Landmark name"
 	changetarget(target_destination) : "Change Target"
@@ -2572,7 +2571,7 @@
 
 @PointClass base(Targetx, Targetname) = trigger_changetarget : "Trigger Change Target"
 [
-	m_iszNewTarget(string) : "New Target"
+	m_iszNewTarget(target_destination) : "New Target"
 ]
 
 @SolidClass base(Trigger, Targetname) = trigger_counter : "Trigger counter" 
