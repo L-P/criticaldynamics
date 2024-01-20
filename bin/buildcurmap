@@ -7,4 +7,4 @@ latest="$(ls mapssrc/c*.map --sort=time --time=ctime | head -n1)"
 latest="${latest#mapssrc/}"
 
 bin/buildmap "$latest" "$@"
-bin/gdb +map "${latest%.*}"
+bin/run +map "${latest%.*}"

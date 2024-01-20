@@ -5,5 +5,6 @@
 : foreach ../soundsrc/sc/*.mp3 |> !ffmpeg |> sc/%B.wav {sentences}
 : foreach ../soundsrc/scientist/*.mp3 |> !ffmpeg |> scientist/%B.wav
 : foreach ../soundsrc/barney/*.mp3 |> !ffmpeg |> barney/%B.wav
+: foreach ../soundsrc/fx/*.flac |> !ffmpeg |> fx/%B.wav
 
 : | {sentences} |> ../bin/buildsounds |> sentences.txt

@@ -50,7 +50,9 @@ if [ $fast -eq 1 ]; then
     sdHLRAD -chart $opts -fast "$map"
 else
     sdHLVIS $opts -full "$map"
-    sdHLRAD -chart $opts -bounce 32 "$map"
+    sdHLRAD -chart $opts -bounce 32 \
+        -rgbtransfers -customshadowwithbounce \
+        "$map"
 fi
 )
 )

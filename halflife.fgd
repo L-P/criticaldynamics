@@ -82,7 +82,7 @@
 		3 : "Opaque + Embedded fix"
 		6 : "Opaque + Concave Fix"
 	]
-	light_origin(string) : "Light Origin Target"
+	light_origin(target_destination) : "Light Origin Target"
 ]
 
 @BaseClass = ZHLT_point
@@ -119,7 +119,9 @@
 [ 
 	target(target_destination) : "Target" 
 ]
-@BaseClass size(-16 -16 0, 16 16 32) color(0 0 200) base(Targetname, Appearflags, Angles) = Weapon []
+@BaseClass size(-16 -16 0, 16 16 32) color(0 0 200) base(Targetname, Appearflags, Angles) = Weapon [
+    pickupammo(integer) : "Ammo count on pickup, -1 for default clip size"
+]
 @BaseClass = Global 
 [ 
 	globalname(string) : "Global Entity Name" 
@@ -174,8 +176,8 @@
 
 @BaseClass base(Target, Targetname, RenderFields, Angles) color(0 200 200) = Monster 
 [
-	TriggerTarget(String) : "TriggerTarget"
-      TriggerCondition(Choices) : "Trigger Condition" : 0 =
+	TriggerTarget(target_destination) : "TriggerTarget"
+	TriggerCondition(Choices) : "Trigger Condition" : 0 =
 	[
 		0 : "No Trigger"
 		1 : "See Player, Mad at Player"
@@ -197,6 +199,15 @@
 		128: "WaitForScript" 	: 0
 		256: "Pre-Disaster" 	: 0
 		512: "Fade Corpse"	: 0
+	]
+]
+
+@BaseClass = DeadMonster
+[
+	dont_fall_to_ground(Choices) : "For corpses only" : 0 =
+	[
+		0 : "Fall to ground (default)"
+		1 : "Stay at origin"
 	]
 ]
 
@@ -525,7 +536,7 @@
 
 @PointClass base(Targetname, Targetx, Angles) size(-16 -16 0, 16 16 72) color(255 0 255)=aiscripted_sequence:"AI Scripted Sequence"
 [
-	m_iszEntity(string) : "Target Monster"
+	m_iszEntity(target_destination) : "Target Monster"
 	m_iszPlay(string) : "Action Animation" : ""
 	m_flRadius(integer) : "Search Radius" : 512
 	m_flRepeat(integer) : "Repeat Rate ms" : 0
@@ -549,7 +560,7 @@
 	]
 ]
 
-@PointClass iconsprite("sprites/speaker.spr") base(Targetname) = ambient_generic : "Universal Ambient"
+@PointClass model({"path":"sprites/hammer/AmbientGeneric.spr","scale":.25}) base(Targetname) = ambient_generic : "Universal Ambient"
 [
 	message(sound) : "WAV Name"
 	health(integer) : "Volume (10 = loudest)" : 10
@@ -852,7 +863,7 @@
 	]
 ]
 
-@PointClass base(Targetname) color(255 255 128) = env_global : "Global State"
+@PointClass base(Targetname) color(255 255 128) model({"path":"sprites/hammer/EnvGlobal.spr","scale":.25}) = env_global : "Global State"
 [
 	globalstate(string) : "Global State to Set"
 	triggermode(choices) : "Trigger Mode" : 0 =
@@ -942,7 +953,7 @@
 	]
 ]
 
-@PointClass base(Targetname, Target, RenderFields) size(-16 -16 -16, 16 16 16) color(100 100 0) = env_render : "Render Controls"
+@PointClass base(Targetname, Target, RenderFields) iconsprite({"path":"sprites/trenchbroom/env_render.png","scale":.25}) = env_render : "Render Controls"
 [
 	spawnflags(flags) =
 	[
@@ -981,7 +992,7 @@
 	skin(integer) : "Gib Skin" : 0
 ]
 
-@PointClass iconsprite("sprites/speaker.spr") = env_sound : "DSP Sound" 
+@PointClass model({"path":"sprites/hammer/EnvSound.spr","scale":.25}) = env_sound : "DSP Sound" 
 [
 	radius(integer) : "Radius" : 128
 	roomtype(Choices) : "Room Type" : 0 =
@@ -1027,7 +1038,7 @@
 	]
 ]
 
-@PointClass base(Targetname, Angles) size(-16 -16 -16, 16 16 16) = env_spark : "Spark" 
+@PointClass base(Targetname, Angles) size(-16 -16 -16, 16 16 16) model({"path":"sprites/hammer/EnvSpark.spr","scale":.25}) = env_spark : "Spark" 
 [
 	MaxDelay(string) : "Max Delay" : "0"
 	spawnflags(flags) =
@@ -1555,7 +1566,7 @@
 		2 : "Kill Player" : 0
 		4 : "Gib Player" : 0
 	]
-	target(string) : "game_team_master to use" 
+	target(target_destination) : "game_team_master to use" 
 	master(string) : "Master"
 ]
 
@@ -1676,12 +1687,12 @@
 @PointClass base(Targetname) = info_null : "info_null (spotlight target)" []
 
 @PointClass base(PlayerClass) = info_player_coop : "Player cooperative start" []
-@PointClass base(PlayerClass, Sequence) model({ "path": "models/player.mdl" }) = info_player_deathmatch : "Player deathmatch start" 
+@PointClass base(PlayerClass, Sequence) model({ "path": "models/player.mdl", "frame": sequence, "skin": skin }) = info_player_deathmatch : "Player deathmatch start" 
 [
 	target(target_destination) : "Target"
 	master(string) : "Master"
 ]
-@PointClass base(PlayerClass, Sequence) model({ "path": "models/player.mdl" }) = info_player_start : "Player 1 start" []
+@PointClass base(PlayerClass, Sequence) model({ "path": "models/player.mdl", "frame": sequence, "skin": skin }) = info_player_start : "Player 1 start" []
 
 @PointClass base(Targetname) size(-4 -4 -4, 4 4 4) color(200 100 50) = info_target : "Beam Target" []
 @PointClass size(-8 -8 0, 8 8 16) base(PlayerClass, Targetname) = info_teleport_destination : "Teleport destination" []
@@ -1708,12 +1719,12 @@
 // lights
 //
 
-@PointClass iconsprite("sprites/lightbulb.spr") base(Target, Targetname, Light, ZHLT_point) = light : "Invisible lightsource"
+@PointClass base(Target, Targetname, Light, ZHLT_point) model({"path":"sprites/hammer/lightbulb.spr","scale":.25}) = light : "Invisible lightsource"
 [
 	spawnflags(Flags) = [ 1 : "Initially dark" : 0 ]
 ]
 
-@PointClass iconsprite("sprites/lightbulb.spr") base(Targetname, Target, Angles, ZHLT_point) = light_spot : "Spotlight" 
+@PointClass model({"path":"sprites/hammer/LightSpot.spr","scale":.25}) base(Targetname, Target, Angles, ZHLT_point) = light_spot : "Spotlight" 
 [
 	_cone(integer) : "Inner (bright) angle" : 30
 	_cone2(integer) : "Outer (fading) angle" : 45
@@ -1743,7 +1754,7 @@
 	pattern(string) : "Custom Appearance"
 ]
 
-@PointClass base(Targetname, Angles, ZHLT_point) iconsprite("sprites/lightbulb.spr") = light_environment : "Environment" 
+@PointClass base(Targetname, Angles, ZHLT_point) model({"path":"sprites/hammer/LightEnvironment.spr","scale":.25}) = light_environment : "Environment" 
 [
 	pitch(integer) : "Pitch" : 0
 	_light(color255) : "Brightness" : "255 255 128 200"
@@ -1796,8 +1807,8 @@
 // monsters
 //
 
-@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/controller.mdl" }) = monster_alien_controller : "Controller"  []
-@PointClass base(Monster, Sequence) size(-32 -32 0, 32 32 64) model({ "path": "models/agrunt.mdl" }) = monster_alien_grunt : "Alien Grunt" 
+@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/controller.mdl", "frame": sequence, "skin": skin }) = monster_alien_controller : "Controller"  []
+@PointClass base(Monster, Sequence) size(-32 -32 0, 32 32 64) model({ "path": "models/agrunt.mdl", "frame": sequence, "skin": skin }) = monster_alien_grunt : "Alien Grunt" 
 [
 	netname(string) : "Squad Name"
 	spawnflags(Flags) =
@@ -1805,7 +1816,7 @@
 		32 : "SquadLeader" : 0
 	]
 ]
-@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/islave.mdl" }) = monster_alien_slave : "Vortigaunt" 
+@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/islave.mdl", "frame": sequence, "skin": skin }) = monster_alien_slave : "Vortigaunt" 
 [
 	netname(string) : "Squad Name"
 	spawnflags(Flags) =
@@ -1814,7 +1825,7 @@
 		64 : "IgnorePlayer" : 0
 	]
 ]
-@PointClass base(Monster, Sequence) size(-360 -360 -172, 360 360 8) model({ "path": "models/apache.mdl" }) = monster_apache : "Apache" 
+@PointClass base(Monster, Sequence) size(-360 -360 -172, 360 360 8) model({ "path": "models/apache.mdl", "frame": sequence, "skin": skin }) = monster_apache : "Apache" 
 [
 	spawnflags(Flags) = 
 	[
@@ -1822,9 +1833,9 @@
 		64 : "Start Inactive" : 0
 	]
 ]
-@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 36) model({ "path": "models/baby_headcrab.mdl" }) = monster_babycrab : "Baby Headcrab" []
-@PointClass base(RenderFields, Sequence) size(-16 -16 -36, 16 16 0) model({ "path": "models/barnacle.mdl" }) = monster_barnacle : "Barnacle Monster" []
-@PointClass base(Monster,TalkMonster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/barney.mdl" }) = monster_barney : "Barney" []
+@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 36) model({ "path": "models/baby_headcrab.mdl", "frame": sequence, "skin": skin }) = monster_babycrab : "Baby Headcrab" []
+@PointClass base(RenderFields, Sequence) size(-16 -16 -36, 16 16 0) model({ "path": "models/barnacle.mdl", "frame": sequence, "skin": skin }) = monster_barnacle : "Barnacle Monster" []
+@PointClass base(Monster,TalkMonster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/barney.mdl", "frame": sequence, "skin": skin }) = monster_barney : "Barney" []
 @PointClass base(RenderFields,Appearflags, Angles, Sequence) size(-16 -16 0, 16 16 72) = monster_barney_dead : "Dead Barney" 
 [
       pose(Choices) : "Pose" : 0 =
@@ -1834,14 +1845,14 @@
 		2 : "On stomach"
 	]
 ]
-@PointClass base(Monster, Sequence) size(-95 -95 0, 95 95 190) model({ "path": "models/big_mom.mdl" }) = monster_bigmomma : "Big Mamma" 
+@PointClass base(Monster, Sequence) size(-95 -95 0, 95 95 190) model({ "path": "models/big_mom.mdl", "frame": sequence, "skin": skin }) = monster_bigmomma : "Big Mamma" 
 [
 	netname(string) : "First node" : ""
 ]
-@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/floater.mdl" }) = monster_bloater : "Bloater" []
-@PointClass base(Monster, Sequence) size(-32 -32 0, 32 32 64) model({ "path": "models/bullsquid.mdl" }) = monster_bullchicken : "BullChicken" []
-@PointClass base(Monster, Sequence) size(-3 -3 0, 3 3 3) model({ "path": "models/roach.mdl" }) = monster_cockroach : "Cockroach" []
-@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 16) model({ "path": "models/aflock.mdl" }) = monster_flyer_flock : "Flock of Flyers" 
+@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/floater.mdl", "frame": sequence, "skin": skin }) = monster_bloater : "Bloater" []
+@PointClass base(Monster, Sequence) size(-32 -32 0, 32 32 64) model({ "path": "models/bullsquid.mdl", "frame": sequence, "skin": skin }) = monster_bullchicken : "BullChicken" []
+@PointClass base(Monster, Sequence) size(-3 -3 0, 3 3 3) model({ "path": "models/roach.mdl", "frame": sequence, "skin": skin }) = monster_cockroach : "Cockroach" []
+@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 16) model({ "path": "models/aflock.mdl", "frame": sequence, "skin": skin }) = monster_flyer_flock : "Flock of Flyers" 
 [
 	iFlockSize(Integer) : "Flock Size" : 8
 	flFlockRadius(Integer) : "Flock Radius" : 128
@@ -1851,7 +1862,7 @@
 	model(studio) : "model"
 
 ]
-@PointClass base(Monster, Sequence) size(-32 -32 0, 32 32 128) model({ "path": "models/garg.mdl" }) = monster_gargantua : "Gargantua" []
+@PointClass base(Monster, Sequence) size(-32 -32 0, 32 32 128) model({ "path": "models/garg.mdl", "frame": sequence, "skin": skin }) = monster_gargantua : "Gargantua" []
 @PointClass base(Monster, RenderFields, Sequence) size(-16 -16 -36, 16 16 36) studio() = monster_generic : "Generic Script Monster" 
 [
 	spawnflags(Flags) = 
@@ -1861,10 +1872,10 @@
 	model(studio) : "model"
 	body(Integer) : "Body" : 0
 ]
-@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/gman.mdl" }) = monster_gman : "G-Man" []
-@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/hgrunt.mdl" }) = monster_grunt_repel : "Human Grunt (Repel)" []
-@PointClass base(Weapon, Targetx, RenderFields, Sequence) model({ "path": "models/w_grenade.mdl" }) = monster_handgrenade : "Live Handgrenade" []
-@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 36) model({ "path": "models/headcrab.mdl" }) = monster_headcrab : "Head Crab" []
+@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/gman.mdl", "frame": sequence, "skin": skin }) = monster_gman : "G-Man" []
+@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/hgrunt.mdl", "frame": sequence, "skin": skin }) = monster_grunt_repel : "Human Grunt (Repel)" []
+@PointClass base(Weapon, Targetx, RenderFields, Sequence) model({ "path": "models/w_grenade.mdl", "frame": sequence, "skin": skin }) = monster_handgrenade : "Live Handgrenade" []
+@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 36) model({ "path": "models/headcrab.mdl", "frame": sequence, "skin": skin }) = monster_headcrab : "Head Crab" []
 @PointClass base(Appearflags,RenderFields, Angles, Sequence) size(-16 -16 0, 16 16 72) = monster_hevsuit_dead : "Dead HEV Suit" 
 [
       pose(Choices) : "Pose" : 0 =
@@ -1875,7 +1886,7 @@
 		3 : "On Table"
 	]
 ]
-@PointClass base(Appearflags,RenderFields, Angles) size(-16 -16 0, 16 16 72) model({ "path": "models/hgrunt.mdl" }) = monster_hgrunt_dead : "Dead Human Grunt" 
+@PointClass base(Appearflags,RenderFields, Angles) size(-16 -16 0, 16 16 72) model({ "path": "models/hgrunt.mdl", "frame": sequence, "skin": skin }) = monster_hgrunt_dead : "Dead Human Grunt" 
 [
       pose(Choices) : "Pose" : 0 =
 	[
@@ -1897,16 +1908,18 @@
 		46 : "deadsitting"
 	]
 ]
-@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 36) model({ "path": "models/houndeye.mdl" }) = monster_houndeye : "Houndeye" 
+@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 36) model({ "path": "models/houndeye.mdl", "frame": sequence, "skin": skin }) = monster_houndeye : "Houndeye" 
 [
 	netname(string) : "Squad Name"
 	spawnflags(Flags) =
 	[
+		8 : "Fast wake sequence" : 0
 		32 : "SquadLeader" : 0
+		64 : "Start asleep" : 0
 	]
 ]
-@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/hassassin.mdl" }) = monster_human_assassin : "Human Assassin" []
-@PointClass base(Monster) size(-16 -16 0, 16 16 72) model({ "path": "models/hgrunt.mdl" }) = monster_human_grunt : "Human Grunt (camo)" 
+@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/hassassin.mdl", "frame": sequence, "skin": skin }) = monster_human_assassin : "Human Assassin" []
+@PointClass base(Monster) size(-16 -16 0, 16 16 72) model({ "path": "models/hgrunt.mdl", "frame": sequence, "skin": skin }) = monster_human_grunt : "Human Grunt (camo)" 
 [
 	spawnflags(Flags) =
 	[
@@ -2007,9 +2020,9 @@
 		81 : "plunger"
 	]
 ]
-@PointClass base(Monster, Sequence) size(-32 -32 0, 32 32 64) model({ "path": "models/icky.mdl" }) = monster_ichthyosaur : "Ichthyosaur" []
-@PointClass base(Monster, Sequence) size(-6 -6 0, 6 6 6) model({ "path": "models/leech.mdl" }) = monster_leech : "Leech" []
-@PointClass base(Monster, Sequence) size(-16 -16 -32, 16 16 32) model({ "path": "models/miniturret.mdl" }) = monster_miniturret : "Mini Auto Turret"
+@PointClass base(Monster, Sequence) size(-32 -32 0, 32 32 64) model({ "path": "models/icky.mdl", "frame": sequence, "skin": skin }) = monster_ichthyosaur : "Ichthyosaur" []
+@PointClass base(Monster, Sequence) size(-6 -6 0, 6 6 6) model({ "path": "models/leech.mdl", "frame": sequence, "skin": skin }) = monster_leech : "Leech" []
+@PointClass base(Monster, Sequence) size(-16 -16 -32, 16 16 32) model({ "path": "models/miniturret.mdl", "frame": sequence, "skin": skin }) = monster_miniturret : "Mini Auto Turret"
 [
 	orientation(Choices) : "Orientation" : 0 =
 	[
@@ -2022,17 +2035,17 @@
 		64 : "Start Inactive" : 0
 	]
 ]
-@PointClass base(Monster, Sequence) size(-192 -192 0, 192 192 384) model({ "path": "models/nihilanth.mdl" }) = monster_nihilanth : "Nihilanth"  []
-@PointClass base(Monster, Sequence) size(-480 -480 -112, 480 480 24) model({ "path": "models/osprey.mdl" }) = monster_osprey : "Osprey"
+@PointClass base(Monster, Sequence) size(-192 -192 0, 192 192 384) model({ "path": "models/nihilanth.mdl", "frame": sequence, "skin": skin }) = monster_nihilanth : "Nihilanth"  []
+@PointClass base(Monster, Sequence) size(-480 -480 -112, 480 480 24) model({ "path": "models/osprey.mdl", "frame": sequence, "skin": skin }) = monster_osprey : "Osprey"
 [
 	spawnflags(Flags) = 
 	[
 		64 : "Start Inactive" : 0
 	]
 ]
-@PointClass base(Monster, Sequence) size(-6 -6 0, 6 6 6) model({ "path": "models/bigrat.mdl" }) = monster_rat : "Rat (no ai)" []
-@PointClass base(Weapon,Targetx,RenderFields, Sequence) model({ "path": "models/w_satchel.mdl" }) = monster_satchelcharge : "Live Satchel Charge" []
-@PointClass base(Monster, TalkMonster) size(-16 -16 0, 16 16 72) model({ "path": "models/scientist.mdl" }) = monster_scientist : "Scared Scientist" 
+@PointClass base(Monster, Sequence) size(-6 -6 0, 6 6 6) model({ "path": "models/bigrat.mdl", "frame": sequence, "skin": skin }) = monster_rat : "Rat (no ai)" []
+@PointClass base(Weapon,Targetx,RenderFields, Sequence) model({ "path": "models/w_satchel.mdl", "frame": sequence, "skin": skin }) = monster_satchelcharge : "Live Satchel Charge" []
+@PointClass base(Monster, TalkMonster) size(-16 -16 0, 16 16 72) model({ "path": "models/scientist.mdl", "frame": sequence, "skin": skin }) = monster_scientist : "Scared Scientist" 
 [
       body(Choices) : "Body" : -1 =
 	[
@@ -2174,8 +2187,9 @@
 		127 : "kneel"
 	]
 ]
-@PointClass base(Appearflags,RenderFields, Angles) size(-16 -16 0, 16 16 72) model({ "path": "models/scientist.mdl" }) = monster_scientist_dead : "Dead Scientist" 
+@PointClass base(Appearflags,RenderFields, Angles, DeadMonster) size(-16 -16 0, 16 16 72) model({"path": {{model == "" -> "models/scientist.mdl", model}}, "skin": skin, "frame": sequence}) = monster_scientist_dead : "Dead Scientist"
 [
+	model(studio) : "Model"
 	body(Choices) : "Body" : -1 =
 	[
 		-1 : "Random"
@@ -2204,7 +2218,7 @@
 		42 : "dead_table3"
 	]
 ]
-@PointClass base(Monster) size(-14 -14 22, 14 14 72) model({ "path": "models/scientist.mdl" }) = monster_sitting_scientist : "Sitting Scientist" 
+@PointClass base(Monster) size(-14 -14 22, 14 14 72) model({ "path": "models/scientist.mdl", "frame": sequence, "skin": skin }) = monster_sitting_scientist : "Sitting Scientist" 
 [
 	body(Choices) : "Body" : -1 =
 	[
@@ -2223,7 +2237,7 @@
 		75 : "sitting3"
 	]
 ]
-@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/sentry.mdl" }) = monster_sentry : "Sentry Turret Gun"
+@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/sentry.mdl", "frame": sequence, "skin": skin }) = monster_sentry : "Sentry Turret Gun"
 [
 	spawnflags(Flags) = 
 	[
@@ -2231,8 +2245,8 @@
 		64 : "Start Inactive" : 0
 	]
 ]
-@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 36) model({ "path": "models/w_squeak.mdl" }) = monster_snark : "Armed Snark" []
-@PointClass base(Monster, Sequence) size(-32 -32 0, 32 32 64) model({ "path": "models/tentacle2.mdl" }) = monster_tentacle : "Tentacle Arm" 
+@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 36) model({ "path": "models/w_squeak.mdl", "frame": sequence, "skin": skin }) = monster_snark : "Armed Snark" []
+@PointClass base(Monster, Sequence) size(-32 -32 0, 32 32 64) model({ "path": "models/tentacle2.mdl", "frame": sequence, "skin": skin }) = monster_tentacle : "Tentacle Arm" 
 [
 	sweeparc(integer) : "Sweep Arc" : 130
 	sound(Choices) : "Tap Sound" : -1 =
@@ -2250,7 +2264,7 @@
 		1 : "Instant On" : 1
 	]
 ]
-@PointClass base(Monster, Sequence) size(-32 -32 -32, 32 32 32) model({ "path": "models/turret.mdl" }) = monster_turret : "Auto Turret"
+@PointClass base(Monster, Sequence) size(-32 -32 -32, 32 32 32) model({ "path": "models/turret.mdl", "frame": sequence, "skin": skin }) = monster_turret : "Auto Turret"
 [
 	orientation(Choices) : "Orientation" : 0 =
 	[
@@ -2263,7 +2277,7 @@
 		64 : "Start Inactive" : 0
 	]
 ]
-@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/zombie.mdl" }) = monster_zombie : "Scientist Zombie" []
+@PointClass base(Monster, Sequence) size(-16 -16 0, 16 16 72) model({ "path": "models/zombie.mdl", "frame": sequence, "skin": skin }) = monster_zombie : "Scientist Zombie" []
 @PointClass base(Targetname, Angles) size(-16 -16 -16, 16 16 16) = monstermaker : "Monster Maker"
 [
 	target(string) : "Target On Release" 
@@ -2289,7 +2303,7 @@
 	m_imaxlivechildren(integer) : "Max live children" : 5
 ]
 
-@PointClass base(Targetname) color(255 128 0) = multi_manager : "MultiTarget Manager" 
+@PointClass base(Targetname) color(255 128 0) iconsprite({"path":"sprites/trenchbroom/multi_manager.png","scale":.25}) = multi_manager : "MultiTarget Manager" 
 [
 	spawnflags(Flags) = 
 	[
@@ -2297,7 +2311,7 @@
 	]
 ]
 
-@PointClass base(Targetname, Target) color(128 255 128) = multisource : "Multisource"
+@PointClass base(Targetname, Target) color(128 255 128) iconsprite({"path":"sprites/trenchbroom/multisource.png","scale":.25}) = multisource : "Multisource"
 [
 	globalstate(string) : "Global State Master"
 ]
@@ -2377,7 +2391,7 @@
 
 @PointClass base(Targetname, Targetx, Angles) size(-16 -16 0, 16 16 72) color(255 0 255) = scripted_sequence : "Scripted Sequence"
 [
-	m_iszEntity(string) : "Target Monster"
+	m_iszEntity(target_destination) : "Target Monster"
 	m_iszPlay(string) : "Action Animation" : ""
 	m_iszIdle(string) : "Idle Animation" : ""
 	m_flRadius(integer) : "Search Radius" : 512
@@ -2400,7 +2414,7 @@
 	]
 ]
 
-@PointClass iconsprite("sprites/speaker.spr") base(Targetname) = speaker : "Announcement Speaker"
+@PointClass model({"path":"sprites/hammer/speaker.spr","scale":.25}) base(Targetname) = speaker : "Announcement Speaker"
 [
 	preset(choices) :"Announcement Presets" : 0 =
 	[
@@ -2469,7 +2483,7 @@
 // Triggers
 //
 
-@PointClass base(Targetx) = trigger_auto : "AutoTrigger"
+@PointClass base(Targetx) model({"path":"sprites/hammer/TriggerAuto.spr","scale":.25}) = trigger_auto : "AutoTrigger"
 [
 	spawnflags(Flags) =
 	[
@@ -2542,9 +2556,8 @@
 	]
 ]
 
-@SolidClass = trigger_changelevel : "Trigger: Change level"
+@SolidClass base(Targetname) = trigger_changelevel : "Trigger: Change level"
 [
-	targetname(string) : "Name"
 	map(string) : "New map name"
 	landmark(string) : "Landmark name"
 	changetarget(target_destination) : "Change Target"
@@ -2558,7 +2571,7 @@
 
 @PointClass base(Targetx, Targetname) = trigger_changetarget : "Trigger Change Target"
 [
-	m_iszNewTarget(string) : "New Target"
+	m_iszNewTarget(target_destination) : "New Target"
 ]
 
 @SolidClass base(Trigger, Targetname) = trigger_counter : "Trigger counter" 
@@ -2648,7 +2661,7 @@
 	speed(integer) : "Speed of push" : 40
 ]
 
-@PointClass base(Targetname, Targetx) = trigger_relay : "Trigger Relay"
+@PointClass base(Targetname, Targetx) model({"path":"sprites/trenchbroom/trigger_relay.png","scale":.25}) = trigger_relay : "Trigger Relay"
 [
 	spawnflags(flags) =
 	[
@@ -2677,7 +2690,7 @@
 @PointClass base(Weapon, Targetx) model({ "path": "models/w_shotgun.mdl" }) = weapon_shotgun : "Shotgun" []
 @PointClass base(Weapon, Targetx) model({ "path": "models/w_rpg.mdl" }) = weapon_rpg : "RPG" []
 @PointClass base(Weapon, Targetx) model({ "path": "models/w_gauss.mdl" }) = weapon_gauss : "Gauss Gun" []
-@PointClass base(Weapon, Targetx) model({ "path": "models/w_crossbow.mdl" }) = weapon_crossbow : "Crossbow" 
+@PointClass base(Weapon, Targetx) model({ "path": "models/w_crossbow.mdl", "frame": sequence }) = weapon_crossbow : "Crossbow" 
 [
 	sequence(choices) : "Placement" : 0 =
 	[

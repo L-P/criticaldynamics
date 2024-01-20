@@ -13,6 +13,7 @@
 /*.zip
 /.tup
 /mapssrc/autosave
+/wasmsrc/lib
 
 # Generated at runtime
 /SAVE

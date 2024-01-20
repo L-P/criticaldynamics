@@ -8,25 +8,31 @@ game="criticaldynamics"
 revision="$(git describe)"
 dest="$(pwd)/${game}_${revision}.zip"
 tmp="$(mktemp -d)/$game"
-RSYNC="rsync -exclude=Tupfile"
 mkdir -p "$tmp"
 
 __main() {
     git clean -dfX
-
+    (cd src && git clean -dfX)
 
     make
-    mkdir -p "$tmp/wasm" "$tmp/maps"
+    mkdir -p "$tmp/wasm" "$tmp/maps" "$tmp/dlls" "$tmp/cl_dlls" "$tmp/models"
     cp wasm/*.wasm "$tmp/wasm/"
     cp maps/*.bsp "$tmp/maps/"
-    $RSYNC -av sound/ "$tmp/sound/"
-    $RSYNC -av sprites/ "$tmp/sprites/"
+    cp dlls/hl.* "$tmp/dlls/"
+    cp cl_dlls/client.* "$tmp/cl_dlls/"
 
-    make nodes
+    rsync -av sound/ "$tmp/sound/"
+    rsync -av sprites/ "$tmp/sprites/"
+    rsync -av models/ "$tmp/models/"
+
+    # You're expected to run sv_load_mod_maps and wait for it to end before quitting.
+    bin/run +map c0a0
     mkdir -p "$tmp/maps/graphs"
     cp maps/graphs/*.nod "$tmp/maps/graphs/"
 
     __copymisc
+
+    find "$tmp" -type f -name "Tupfile" -delete
     __buildzip
 
     rm --preserve-root -rf "$(realpath "$tmp/..")"
@@ -35,7 +41,7 @@ __main() {
 }
 
 __copymisc() {
-    $RSYNC -av resource/ "$tmp/resource/"
+    rsync -av resource/ "$tmp/resource/"
 
     cp \
         ./*.fgd ./*.wad \
