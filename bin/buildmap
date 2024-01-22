@@ -42,7 +42,7 @@ rm -f -- "$bsp"
 # Intentional word-splitting on $opts.
 # shellcheck disable=SC2086
 (
-sdHLCSG $opts -cliptype precise "$map"
+sdHLCSG $opts -clipeconomy -cliptype precise "$map"
 sdHLBSP $opts "$map"
 
 if [ $fast -eq 1 ]; then
