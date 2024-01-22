@@ -28,3 +28,7 @@ Generated using elevenlabs.io.
 
 - Barney uses the "Wade - powerful" voice, ID `nOfxRJfUnaMmcaFm56Fr`  
   https://elevenlabs.io/voice-lab/share/de2490b4b3752b677d64ed768928ae92cedd949bc3d9cf0dc2f226ffc1c5d10a/jCPDcISniKZHVuI3CBI7
+
+## Birds
+- [bird/0.mp3](bird/0.mp3) Bald Eagle - Haliaeetus leucocephalus, Beverly Hallberg, XC636910. Accessible at www.xeno-canto.org/636910.
+- [bird/1.mp3](bird/1.mp3) [bird/2.mp3](bird/2.mp3) [bird/3.mp3](bird/3.mp3) Steller's Jay - Cyanocitta stelleri, Thomas G. Graves, XC731972. Accessible at www.xeno-canto.org/731972.
