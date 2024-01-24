@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+set -eux
+
+in="$1"
+out="$2"
+
+max="$(ffmpeg -i "$in" -af volumedetect -vn -f null - 2>&1 | grep -oP "(?<=max_volume:\s-)[^dB]+")"
+filters="
+bandpass=f=1650:csg=1:width_type=h:w=1350,
+volume=+${max}dB
+"
+ffmpeg -y -loglevel error -i "$in" -filter:a "$filters" -acodec pcm_s16le -ar 22050 -ac 1 "$out"
