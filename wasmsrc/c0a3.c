@@ -8,8 +8,6 @@
 #include "lib/ent.h"
 #include "lib/format.h"
 
-static const char* snd_garyyouhere = "c0a3/garyyouhere.wav";
-
 typedef struct{
     float playGaryAfter;
 } state_t;
@@ -34,15 +32,11 @@ EXPORT float on_think(float time) {
     if (state.playGaryAfter > 0.f && global_time() >= state.playGaryAfter) {
         // If Gary got gibbed nothing will play, but we can consider his radio
         // to be a fine mist covering his spread remains.
-        play_sound(snd_garyyouhere, "gary", chan_voice, 1, sound_att_norm);
+        play_sound("!C0A3_GARY", "gary", chan_voice, 1, sound_att_norm);
         state.playGaryAfter = -1;
     }
 
     return .1f;
-}
-
-EXPORT void on_activate() {
-    precache_sound(snd_garyyouhere);
 }
 
 EXPORT void on_save(char* buf, size_t bufSize) {
