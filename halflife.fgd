@@ -119,7 +119,7 @@
 [ 
 	target(target_destination) : "Target" 
 ]
-@BaseClass size(-16 -16 0, 16 16 32) color(0 0 200) base(Targetname, Appearflags, Angles) = Weapon [
+@BaseClass size(-16 -16 0, 16 16 32) color(0 0 200) base(Targetname, Appearflags, Angles, Item) = Weapon [
     pickupammo(integer) : "Ammo count on pickup, -1 for default clip size"
 ]
 @BaseClass = Global 

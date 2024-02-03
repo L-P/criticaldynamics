@@ -67,6 +67,7 @@ EXPORT float on_think(float time) {
         // to be a fine mist covering his spread remains.
         play_radio("!C0A3_GARY");
         state.playGaryAfter = -1;
+        ent_fire("bring_squad", use_on, 0);
     }
 
     return .1f;
