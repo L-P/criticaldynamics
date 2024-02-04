@@ -8,6 +8,8 @@
 #include "lib/ent.h"
 #include "lib/format.h"
 
+#define ENABLE_TALKIE_SWAP 0
+
 typedef struct{
     bool garyIsDead;
     bool hasTalkie;
@@ -17,12 +19,16 @@ typedef struct{
 static state_t state = {};
 
 static void play_radio(const char *snd) {
+#if ENABLE_TALKIE_SWAP
     const char* src = NULL;
     if (!state.garyIsDead) {
         src = "gary";
     } else if (!state.hasTalkie) { 
         src = "talkie";
     }
+#else
+    const char* src = "gary";
+#endif
 
     play_sound(snd, src, chan_voice, 1, sound_att_norm);
 }
@@ -46,10 +52,12 @@ EXPORT int32_t on_fire(
         state.garyIsDead = true;
         state.playGaryAfter = global_time() + 2.f;
 
+#if ENABLE_TALKIE_SWAP // I don't know where I'm going with this.
         // Move before setting model to avoid brush model position shenanigans.
         const vec3_t offset = {0, 0, 16};
         ent_movev("talkie", vec3_add(caller->origin, offset));
         set_model_from("talkie", "talkiemdl");
+#endif
         return true;
     }
 
