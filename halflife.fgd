@@ -119,12 +119,20 @@
 [ 
 	target(target_destination) : "Target" 
 ]
-@BaseClass size(-16 -16 0, 16 16 32) color(0 0 200) base(Targetname, Appearflags, Angles) = Weapon [
+@BaseClass size(-16 -16 0, 16 16 32) color(0 0 200) base(Targetname, Appearflags, Angles, Item) = Weapon [
     pickupammo(integer) : "Ammo count on pickup, -1 for default clip size"
 ]
 @BaseClass = Global 
 [ 
 	globalname(string) : "Global Entity Name" 
+]
+
+@BaseClass = Item
+[ 
+	spawnflags(Flags) = 
+	[
+		1 : "Don't fall to ground" 	: 0
+	]
 ]
 
 @BaseClass base(Target) = Targetx 
@@ -1701,13 +1709,13 @@
 // items
 //
 
-@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx) model({ "path": "models/w_oxygen.mdl" }) = item_airtank : "Oxygen tank" []
-@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx) model({ "path": "models/w_antidote.mdl" }) = item_antidote : "Poison antidote" []
-@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx) model({ "path": "models/w_battery.mdl" }) = item_battery : "HEV battery" []
-@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx) model({ "path": "models/w_medkit.mdl" }) = item_healthkit : "Small Health Kit" []
-@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx) model({ "path": "models/w_longjump.mdl" }) = item_longjump : "Longjump Module" []
-@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx) model({ "path": "models/w_security.mdl" }) = item_security : "Security card" []
-@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx) model({ "path": "models/w_suit.mdl" }) = item_suit : "HEV Suit" 
+@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx, Item) model({ "path": "models/w_oxygen.mdl" }) = item_airtank : "Oxygen tank" []
+@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx, Item) model({ "path": "models/w_antidote.mdl" }) = item_antidote : "Poison antidote" []
+@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx, Item) model({ "path": "models/w_battery.mdl" }) = item_battery : "HEV battery" []
+@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx, Item) model({ "path": "models/w_medkit.mdl" }) = item_healthkit : "Small Health Kit" []
+@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx, Item) model({ "path": "models/w_longjump.mdl" }) = item_longjump : "Longjump Module" []
+@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx, Item) model({ "path": "models/w_security.mdl" }) = item_security : "Security card" []
+@PointClass size(-16 -16 0, 16 16 36) base(Weapon, Targetx, Item) model({ "path": "models/w_suit.mdl" }) = item_suit : "HEV Suit" 
 [
 	spawnflags(Flags) =
 	[

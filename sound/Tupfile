@@ -1,10 +1,16 @@
 !ffmpeg = |> ffmpeg -y -loglevel error -i "%f" -acodec pcm_u8 -ar 22050 -ac 1 "%o" |>
+!ffmpeg16 = |> ffmpeg -y -loglevel error -i "%f" -acodec pcm_s16le -ar 22050 -ac 1 "%o" |>
 
+# Spoken sentences, needs pcm_u8 for lip sync.
 : foreach ../soundsrc/c0a0/*.mp3 |> !ffmpeg |> c0a0/%B.wav {sentences}
 : foreach ../soundsrc/c0a1/*.mp3 |> !ffmpeg |> c0a1/%B.wav {sentences}
 : foreach ../soundsrc/sc/*.mp3 |> !ffmpeg |> sc/%B.wav {sentences}
 : foreach ../soundsrc/scientist/*.mp3 |> !ffmpeg |> scientist/%B.wav
 : foreach ../soundsrc/barney/*.mp3 |> !ffmpeg |> barney/%B.wav
-: foreach ../soundsrc/fx/*.flac |> !ffmpeg |> fx/%B.wav
+
+# FX or spoken indirectly, can use better sampling.
+: foreach ../soundsrc/fx/*.flac |> !ffmpeg16 |> fx/%B.wav
+: foreach ../soundsrc/bird/*.mp3 |> !ffmpeg16 |> bird/%B.wav {sentences}
+: foreach ../soundsrc/c0a3/*.mp3 |> ../bin/radioeffect "%f" "%o" |> c0a3/%B.wav {sentences}
 
 : | {sentences} |> ../bin/buildsounds |> sentences.txt

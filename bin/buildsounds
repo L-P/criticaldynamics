@@ -38,6 +38,9 @@ __convert_sentences() {
         dst="${dst#soundsrc/}" # strip prefix
         name="$(echo "$dst" | tr '/' '_' | tr '[:lower:]' '[:upper:]')"
 
+        # Kindly ask tup to believe us when we say this needs to run when files are added.
+        head "$f" > /dev/null
+
         # Overwritting sentences existing in base game, they don't follow our
         # naming conventions anyway.
         if [[ "$name" == SCIENTIST_* ]] || [[ "$name" == BARNEY_* ]]; then
@@ -47,10 +50,11 @@ __convert_sentences() {
             added=$((added+1))
         fi
 
-        # Kindly ask tup to believe us when we say this needs to run when files are added.
-        head "$f" > /dev/null
-
-        echo "$name $dst" >> "$dest_sentences"
+        if [[ "$name" == C0A3_* ]]; then
+            echo "$name c0a3/clik ${dst#c0a3/} clik" >> "$dest_sentences"
+        else
+            echo "$name $dst" >> "$dest_sentences"
+        fi
     done
 
     echo "// }}} soundsrc" >> "$dest_sentences"
