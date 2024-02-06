@@ -8968,13 +8968,6 @@
 }
 // entity 212
 {
-"classname" "info_player_start"
-"spawnflags" "0"
-"angles" "0 -90 0"
-"origin" "3312 928 -28"
-}
-// entity 213
-{
 "classname" "func_door_rotating"
 "spawnflags" "0"
 "distance" "87"
@@ -9012,7 +9005,7 @@
 ( 3174 850 34 ) ( 3174 850 35 ) ( 3174 851 34 ) ORIGIN [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 214
+// entity 213
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -9021,7 +9014,7 @@
 "_tb_linked_group_id" "{920bda85-8eda-4028-933c-c8d5caf70109}"
 "_tb_transformation" "1 0 0 2824 0 1 0 1112.125 0 0 1 -184 0 0 0 1"
 }
-// entity 215
+// entity 214
 {
 "classname" "func_detail"
 "zhlt_detaillevel" "1"
@@ -9046,7 +9039,7 @@
 ( 3064 976.125 64 ) ( 3064 964.125 62 ) ( 3064 960.125 64 ) CRETE4_FLR01 [ 0 1 0 -56.125 ] [ 0 0 -1 8 ] 0 1 1
 }
 }
-// entity 216
+// entity 215
 {
 "classname" "light"
 "spawnflags" "0"
@@ -9057,7 +9050,7 @@
 "origin" "3056 968.13 54"
 "_tb_group" "4458"
 }
-// entity 217
+// entity 216
 {
 "classname" "env_glow"
 "model" "sprites/glow01.spr"
@@ -9069,27 +9062,27 @@
 "renderamt" "60"
 "_tb_group" "4458"
 }
-// entity 218
+// entity 217
 {
 "classname" "env_sound"
 "radius" "64"
 "roomtype" "17"
 "origin" "3108 872 -8"
 }
-// entity 219
+// entity 218
 {
 "classname" "env_sound"
 "radius" "64"
 "roomtype" "18"
 "origin" "3236 872 -8"
 }
-// entity 220
+// entity 219
 {
 "classname" "info_landmark"
 "origin" "3096 888 -56"
 "targetname" "c032toc0a4"
 }
-// entity 221
+// entity 220
 {
 "classname" "trigger_changelevel"
 "spawnflags" "0"
@@ -9105,7 +9098,7 @@
 ( 3104 1196 -48 ) ( 3104 1196 -47 ) ( 3104 1197 -48 ) AAATRIGGER [ 0 1 0 4 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 222
+// entity 221
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -9114,7 +9107,7 @@
 "_tb_linked_group_id" "{920bda85-8eda-4028-933c-c8d5caf70109}"
 "_tb_transformation" "1 0 0 2824 0 1 0 1304.125 0 0 1 -184 0 0 0 1"
 }
-// entity 223
+// entity 222
 {
 "classname" "func_detail"
 "zhlt_detaillevel" "1"
@@ -9139,7 +9132,7 @@
 ( 3064 1168.125 64 ) ( 3064 1156.125 62 ) ( 3064 1152.125 64 ) CRETE4_FLR01 [ 0 1 0 -120.125 ] [ 0 0 -1 8 ] 0 1 1
 }
 }
-// entity 224
+// entity 223
 {
 "classname" "light"
 "spawnflags" "0"
@@ -9150,7 +9143,7 @@
 "origin" "3056 1160.13 54"
 "_tb_group" "4459"
 }
-// entity 225
+// entity 224
 {
 "classname" "env_glow"
 "model" "sprites/glow01.spr"
@@ -9161,6 +9154,13 @@
 "origin" "3056 1160.13 62"
 "renderamt" "60"
 "_tb_group" "4459"
+}
+// entity 225
+{
+"classname" "info_player_start"
+"spawnflags" "0"
+"angles" "0 -90 0"
+"origin" "16 -80 -28"
 }
 // entity 226
 {
@@ -10520,12 +10520,5 @@
 "_tb_name" "scratch"
 "_tb_id" "4448"
 "_tb_layer_sort_index" "13"
-}
-// entity 300
-{
-"classname" "info_player_start"
-"spawnflags" "0"
-"angles" "0 -90 0"
-"origin" "16 -80 -28"
-"_tb_layer" "4448"
+"_tb_layer_omit_from_export" "1"
 }
