@@ -29,6 +29,9 @@ Generated using elevenlabs.io.
 - Barney uses the "Wade - powerful" voice, ID `nOfxRJfUnaMmcaFm56Fr`  
   https://elevenlabs.io/voice-lab/share/de2490b4b3752b677d64ed768928ae92cedd949bc3d9cf0dc2f226ffc1c5d10a/jCPDcISniKZHVuI3CBI7
 
+- HECU use the "Mats" voice, ID `SnHRekSnkMk4C9Xk52M8`  
+  https://elevenlabs.io/app/voice-lab/share/5fb120b5fd741eaeccc030e2f6e4476bb3e5bf2542b949674e275c11f97622cb/4c1yh4pxic0CAlTZu5LK
+
 ## Prefabs
 - [prefabs_vehicles.map](./mapssrc/prefabs_vehicles.map):  [Vehicle Prefabs](https://twhl.info/vault/view/6276) by Victor-933
 
