@@ -91,6 +91,10 @@ EXPORT int32_t on_master_check(const entity_t* activator, const entity_t* caller
         return state.pressureIsUp;
     }
 
+    if (ent_matches(caller, "func_door", NULL)) {
+        return generator_is_running();
+    }
+
     console_log(log_error, "Unhandled master check for caller: ");
     ent_print(log_error, caller);
 
