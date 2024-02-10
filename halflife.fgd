@@ -570,7 +570,7 @@
 
 @PointClass model({"path":"sprites/hammer/AmbientGeneric.spr","scale":.25}) base(Targetname) = ambient_generic : "Universal Ambient"
 [
-	message(sound) : "WAV Name"
+	message(sound) : "WAV Name" : "ambience/.wav"
 	health(integer) : "Volume (10 = loudest)" : 10
 	preset(choices) :"Dynamic Presets" : 0 =
 	[
@@ -621,8 +621,8 @@
 		2 : "Small Radius" : 0
 		4 : "Medium Radius" : 1
 		8 : "Large Radius" : 0
-		16 : "Start Silent":0
-		32 : "Not Toggled":0
+		16 : "Start Silent": 1
+		32 : "Not Toggled": 0
 	]
 ]
 

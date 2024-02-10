@@ -74,6 +74,7 @@ EXPORT int32_t on_fire(
             ent_fire("biglight", use_on, 0);
             ent_fire("biglight_ready", use_off, 0);
             ent_fire("biglight_clang", use_toggle, 0);
+            ent_fire("controller_spawn", use_toggle, 0);
             state.lightIsOn = true;
         }
 
