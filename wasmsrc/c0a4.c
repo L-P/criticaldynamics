@@ -8,26 +8,31 @@
 #include "lib/ent.h"
 #include "lib/format.h"
 
+static const int numGenerators = 2;
+static const float generatorStartDelay = 1.f;
+
 typedef struct{
-    uint32_t generatorRunningCount;
+    // 1. Water pressure for turbine.
     bool pressureIsUp;
+
+    // 2. Two generators to get running.
+    uint32_t generatorRunningCount;
+    float generatorRunningAfter;
+    bool generatorIsRunning;
+
+    // 3. Light breaker.
     bool lightIsOn;
 } state_t;
 
 static state_t state = {};
 
 EXPORT void on_activate() {
-    console_logf(
-        log_debug,
-        "state: pressureIsUp(%d), generatorRunningCount(%d), lightIsOn(%d)\n",
-        state.pressureIsUp,
-        state.generatorRunningCount,
-        state.lightIsOn
-    );
-}
-
-bool generator_is_running() {
-    return state.generatorRunningCount >= 2;
+    console_logf(log_debug, "state:\n");
+    console_logf(log_debug, "  generatorRunningCount: %d\n", state.generatorRunningCount);
+    console_logf(log_debug, "  generatorRunningAfter: %f\n", state.generatorRunningAfter);
+    console_logf(log_debug, "  generatorIsRunning: %d\n", state.generatorIsRunning);
+    console_logf(log_debug, "  pressureIsUp: %d\n", state.pressureIsUp);
+    console_logf(log_debug, "  lightIsOn: %d\n", state.lightIsOn);
 }
 
 EXPORT int32_t on_fire(
@@ -47,8 +52,15 @@ EXPORT int32_t on_fire(
     if (   ent_matches(caller, NULL, "generator_button_a")
         || ent_matches(caller, NULL, "generator_button_b")
     ) {
+        if (state.generatorIsRunning) {
+            return true;
+        }
+
         if (state.pressureIsUp) {
             state.generatorRunningCount += 1;
+            if (state.generatorRunningCount >= numGenerators) {
+                state.generatorRunningAfter = global_time() + generatorStartDelay;
+            }
 
             if (ent_matches(caller, NULL, "generator_button_a")) {
                 ent_fire("generator_sound_a", use_on, 0);
@@ -59,18 +71,13 @@ EXPORT int32_t on_fire(
             }
         }
 
-        if (generator_is_running()) {
-            // Small red light above the breaker.
-            ent_fire("biglight_ready", use_on, 0);
-            ent_fire("generator_up_lights", use_on, 0);
-        }
         return true;
     }
 
     if (ent_matches(caller, "func_button", "biglight_lever_button")) {
         ent_fire("biglight_lever", use_toggle, 0);
 
-        if (generator_is_running() && !state.lightIsOn) {
+        if (state.generatorIsRunning && !state.lightIsOn) {
             ent_fire("biglight", use_on, 0);
             ent_fire("biglight_ready", use_off, 0);
             ent_fire("biglight_clang", use_toggle, 0);
@@ -92,13 +99,26 @@ EXPORT int32_t on_master_check(const entity_t* activator, const entity_t* caller
     }
 
     if (ent_matches(caller, "func_door", NULL)) {
-        return generator_is_running();
+        return state.generatorIsRunning && state.lightIsOn;
     }
 
     console_log(log_error, "Unhandled master check for caller: ");
     ent_print(log_error, caller);
 
     return false;
+}
+
+EXPORT float on_think(float time) {
+    if (state.generatorRunningAfter > 0.f && global_time() >= state.generatorRunningAfter) {
+        // Small red light above the breaker.
+        ent_fire("biglight_ready", use_on, 0);
+        ent_fire("generator_up_lights", use_on, 0);
+
+        state.generatorIsRunning = true;
+        state.generatorRunningAfter = 0.f;
+    }
+
+    return .1f;
 }
 
 EXPORT void on_save(char* buf, size_t bufSize) {
