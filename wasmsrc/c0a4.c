@@ -11,6 +11,13 @@
 static const int numGenerators = 2;
 static const float generatorStartDelay = 1.f;
 
+typedef enum {
+    WATER_NONE,
+    WATER_RAISING,
+    WATER_FILLED,
+    WATER_PULL,
+} waterstate_t;
+
 typedef struct{
     // 1. Water pressure for turbine.
     bool pressureIsUp;
@@ -22,6 +29,9 @@ typedef struct{
 
     // 3. Light breaker.
     bool lightIsOn;
+
+    // 4. Water raises.
+    waterstate_t waterState;
 } state_t;
 
 static state_t state = {};
@@ -33,9 +43,10 @@ EXPORT void on_activate() {
     console_logf(log_debug, "  generatorIsRunning: %d\n", state.generatorIsRunning);
     console_logf(log_debug, "  pressureIsUp: %d\n", state.pressureIsUp);
     console_logf(log_debug, "  lightIsOn: %d\n", state.lightIsOn);
+    console_logf(log_debug, "  waterState: %d\n", state.waterState);
 }
 
-EXPORT int32_t on_fire(
+static int32_t handle_generator_setup(
     const entity_t* activator,
     const entity_t* caller,
     use_type_t use_type,
@@ -91,7 +102,64 @@ EXPORT int32_t on_fire(
     return false;
 }
 
+
+static int32_t handle_water_escape(
+    const entity_t* activator,
+    const entity_t* caller,
+    use_type_t use_type,
+    float value
+) {
+    if (ent_matches(caller, "func_button", "water_start_raise")) {
+        if (!state.lightIsOn || state.waterState != WATER_NONE) {
+            return true;
+        }
+
+        ent_fire("waa_mm", use_on, 0);
+        ent_fire("closabledoor", use_off, 0);
+        state.waterState = WATER_RAISING;
+        return true;
+    }
+
+    if (ent_matches(caller, "func_water", "waa")) {
+        if (state.waterState != WATER_RAISING) {
+            console_log(log_error, "unreachable, waa should not be able to fire\n");
+        }
+
+        state.waterState = WATER_FILLED;
+        ent_fire("waa_getmeout_mm", use_on, 0);
+        return true;
+    }
+
+    if (ent_matches(caller, "multi_manager", "waa_getmeout_mm")) {
+        state.waterState = WATER_PULL;
+        return true;
+    }
+
+    return false;
+}
+
+EXPORT int32_t on_fire(
+    const entity_t* activator,
+    const entity_t* caller,
+    use_type_t use_type,
+    float value
+) {
+    if (handle_generator_setup(activator, caller, use_type, value)) {
+        return true;
+    }
+
+    if (handle_water_escape(activator, caller, use_type, value)) {
+        return true;
+    }
+
+    return false;
+}
+
 EXPORT int32_t on_master_check(const entity_t* activator, const entity_t* caller) {
+    if (ent_matches(caller, "trigger_once", "falldamage")) {
+		return state.waterState == WATER_NONE;
+	}
+
     if (   ent_matches(caller, NULL, "generator_button_a")
         || ent_matches(caller, NULL, "generator_button_b")
     ) {
@@ -99,7 +167,11 @@ EXPORT int32_t on_master_check(const entity_t* activator, const entity_t* caller
     }
 
     if (ent_matches(caller, "func_door", NULL)) {
-        return state.generatorIsRunning && state.lightIsOn;
+        return state.generatorIsRunning && state.lightIsOn && state.waterState == WATER_NONE;
+    }
+
+    if (ent_matches(caller, "trigger_once", "startescape")) {
+        return state.waterState == WATER_PULL;
     }
 
     console_log(log_error, "Unhandled master check for caller: ");
