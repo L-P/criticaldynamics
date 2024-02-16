@@ -61,6 +61,16 @@ POSTMORTEM:
 Subject failed to effectively utilize
 material assets in achievement of goal.
 }
+
+FAIL_SELF
+{
+SUBJECT: BYRON
+
+STATUS:  EVALUATION TERMINATED
+
+POSTMORTEM:
+Subject failed to self-preserve.
+}
 // }}} Game Over
 
 // {{{ "Standard" text

@@ -369,9 +369,10 @@
 		1 : "Starts Open" : 0
 		4 : "Don't link" : 0
 		8: "Passable" : 0
-	    	32: "Toggle" : 0
+		32: "Toggle" : 0
 		256:"Use Only" : 0
 		512: "Monsters Can't" : 0
+		1024: "Unlocked" : 0
 	]
 	// NOTE: must be duplicated in BUTTON
 	locked_sound(choices) : "Locked Sound" : 0 = 
@@ -570,7 +571,7 @@
 
 @PointClass model({"path":"sprites/hammer/AmbientGeneric.spr","scale":.25}) base(Targetname) = ambient_generic : "Universal Ambient"
 [
-	message(sound) : "WAV Name"
+	message(sound) : "WAV Name" : "ambience/.wav"
 	health(integer) : "Volume (10 = loudest)" : 10
 	preset(choices) :"Dynamic Presets" : 0 =
 	[
@@ -621,8 +622,8 @@
 		2 : "Small Radius" : 0
 		4 : "Medium Radius" : 1
 		8 : "Large Radius" : 0
-		16 : "Start Silent":0
-		32 : "Not Toggled":0
+		16 : "Start Silent": 1
+		32 : "Not Toggled": 0
 	]
 ]
 
@@ -2520,6 +2521,7 @@
 		1: "Start At Player" : 1
 		2: "Follow Player" : 1
 		4: "Freeze Player" : 0
+		8: "Hide player" : 0
 	]
 	speed(string) : "Initial Speed" : "0"
 	acceleration(string) : "Acceleration units/sec^2" : "500"
