@@ -19,6 +19,7 @@ set print object
 set max-value-size 600000
 set logging enabled on
 run
+exit
 EOF
 
 gdb -x "$commands"

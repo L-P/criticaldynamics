@@ -22,6 +22,7 @@ static state_t state = {
     .barney_is_alive = true,
     .keycard_obtained = false,
 };
+IMPLEMENT_SAVERESTORE(state_t, state)
 
 static void handle_barneys_death(const entity_t* barney) {
     const vec3_t cardSpawnOffset = {0, 0, 12};
@@ -103,24 +104,6 @@ EXPORT int32_t on_master_check(const entity_t* activator, const entity_t* caller
     ent_print(log_error, caller);
 
     return false;
-}
-
-EXPORT void on_save(char* buf, size_t bufSize) {
-    if (sizeof(state_t) > bufSize) {
-        console_log(log_error, "sizeof(state_t) > bufSize\n");
-        return;
-    }
-
-    memcpy(buf, &state, sizeof(state_t));
-}
-
-EXPORT void on_restore(const char* buf, size_t bufSize) {
-    if (sizeof(state_t) > bufSize) {
-        console_log(log_error, "sizeof(state_t) > bufSize\n");
-        return;
-    }
-
-    memcpy(&state, buf, sizeof(state_t));
 }
 
 EXPORT void on_activate() {

@@ -17,6 +17,7 @@ typedef struct{
 } state_t;
 
 static state_t state = {};
+IMPLEMENT_SAVERESTORE(state_t, state)
 
 static void play_radio(const char *snd) {
 #if ENABLE_TALKIE_SWAP
@@ -79,22 +80,4 @@ EXPORT float on_think(float time) {
     }
 
     return .1f;
-}
-
-EXPORT void on_save(char* buf, size_t bufSize) {
-    if (sizeof(state_t) > bufSize) {
-        console_log(log_error, "sizeof(state_t) > bufSize\n");
-        return;
-    }
-
-    memcpy(buf, &state, sizeof(state_t));
-}
-
-EXPORT void on_restore(const char* buf, size_t bufSize) {
-    if (sizeof(state_t) > bufSize) {
-        console_log(log_error, "sizeof(state_t) > bufSize\n");
-        return;
-    }
-
-    memcpy(&state, buf, sizeof(state_t));
 }

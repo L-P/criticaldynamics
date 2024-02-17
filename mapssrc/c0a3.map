@@ -11,6 +11,7 @@
 "message" "c0a3 - Humans"
 "skyname" "desert"
 "MaxRange" "6144"
+"_tb_layer_locked" "1"
 // brush 0
 {
 ( -112 -272 -80 ) ( -112 -271 -80 ) ( -112 -272 -79 ) floor [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -10288,7 +10289,6 @@
 "_tb_id" "4447"
 "_tb_layer_sort_index" "12"
 "_tb_layer_locked" "1"
-"_tb_layer_hidden" "1"
 "_tb_layer_omit_from_export" "1"
 }
 // entity 295
@@ -10367,16 +10367,16 @@
 "_tb_id" "4448"
 "_tb_layer_sort_index" "13"
 "_tb_layer_locked" "1"
-"_tb_layer_hidden" "1"
 "_tb_layer_omit_from_export" "1"
 }
 // entity 299
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
-"_tb_name" "c0a3 transition"
+"_tb_name" "c0a4 transition"
 "_tb_id" "4464"
 "_tb_layer_sort_index" "14"
+"_tb_layer_locked" "1"
 }
 // entity 300
 {
