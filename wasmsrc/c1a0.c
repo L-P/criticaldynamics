@@ -9,6 +9,8 @@
 #include "lib/format.h"
 #include "lib/sequence.h"
 
+#define DEBUG true
+
 typedef enum {
     STEP_INTRO_VORTS = 0,
     STEP_INTRO_HUMANS,
@@ -21,13 +23,15 @@ typedef struct {
     step_t step;
 } state_t;
 static state_t state = {
-    // .step = STEP_INTRO_HUMANS, // DEBUG
+#if DEBUG
+    .step = STEP_INTRO_HUMANS,
+#endif
 };
 IMPLEMENT_SAVERESTORE(state_t, state)
 
 static void intro_freeze(void*) {
     flags_add("!player", FL_FROZEN);
-    ent_move("!player", 0, 0, -28);
+    ent_copy_pos("!player", "intro_spawndest");
 }
 
 static void intro_unfreeze(void*) {
@@ -36,6 +40,10 @@ static void intro_unfreeze(void*) {
 
 static void intro_teleport(void*) {
     ent_copy_pos("!player", "intro_tpdest");
+}
+
+static void make_barney_follow(void*) {
+    make_follow("barney");
 }
 
 static sequence_event_t step_vorts_events[] = {
@@ -59,7 +67,6 @@ static sequence_event_t step_vorts_events[] = {
     // }}}
 
     // {{{ Cleanup before handing control over next sequence.
-    {EVENT_FIRE, .0f, .target = "intro_snd", .use_type = use_off},
     {EVENT_KILL, .0f, .target = "intro_vort_a_anim"},
     {EVENT_KILL, .0f, .target = "intro_vort_c_anim"},
     {EVENT_KILL, .0f, .target = "intro_vort_b_anim"},
@@ -81,6 +88,14 @@ static sequence_event_t step_vorts_events[] = {
 
 static sequence_event_t step_humans_events[] = {
     {EVENT_PAUSE, -1.f},
+    {EVENT_FIRE, 0.f,  .target = "seq_slick_standup", .use_type = use_on},
+    {EVENT_FIRE, 1.f,  .target = "stn_slick_01awake", .use_type = use_on},
+    {EVENT_PAUSE, -1.f},
+    {EVENT_FIRE, 0.f,  .target = "wakeroom_door", .use_type = use_on},
+    {EVENT_FIRE, 0.f,  .target = "seq_barney_enter", .use_type = use_on},
+    {EVENT_FIRE, 1.0f,  .target = "stn_barney_01alive", .use_type = use_on},
+    {EVENT_PAUSE, -1.f},
+    {EVENT_CALLBACK, 0.f, .callback = make_barney_follow},
 };
 
 static void init_seq_for_step(sequence_t *seq, const step_t step) {
@@ -114,6 +129,11 @@ EXPORT int32_t on_fire(
     use_type_t use_type,
     float value
 ) {
+    if (state.step == STEP_INTRO_HUMANS && ent_matches(caller, NULL, "resume")) {
+        sequence_resume(&state.seq);
+        return true;
+    }
+
     return false;
 }
 
@@ -127,4 +147,14 @@ EXPORT float on_think(float time) {
     }
 
     return .1f;
+}
+
+EXPORT int32_t on_master_check(const entity_t* activator, const entity_t* caller) {
+    if (ent_matches(caller, "func_door", "wakeroom_door")) {
+        console_log(log_debug, "door activator:\n");
+        ent_print(log_debug, activator);
+        return ent_matches(activator, "monster_barney", NULL);
+	}
+
+    return false;
 }

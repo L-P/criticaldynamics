@@ -1,7 +1,5 @@
 ## c0a3
-- Short outside segment
-- Chased by HECU
-- Run to survive
+- Break road halfway with guard booth.
 
 ## General
 - Notify player upon key/keycard pickup
