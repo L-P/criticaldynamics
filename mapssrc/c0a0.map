@@ -11,7 +11,6 @@
 "startdark" "1"
 "gametitle" "1"
 "message" "c0a0 - Intro"
-"_tb_layer_locked" "1"
 // brush 0
 {
 ( -96 1152 0 ) ( -96 416 0 ) ( -96 1152 -32 ) NULL [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -7335,13 +7334,17 @@
 }
 // entity 176
 {
-"classname" "func_wall"
+"classname" "func_breakable"
 "spawnflags" "0"
 "rendermode" "2"
 "rendercolor" "0 0 0"
 "renderfx" "0"
-"zhlt_lightflags" "1"
 "renderamt" "150"
+"zhlt_embedlightmap" "1"
+"health" "50"
+"material" "0"
+"explosion" "1"
+"gibmodel" "models/glassgibs.mdl"
 "_tb_group" "169"
 // brush 0
 {
