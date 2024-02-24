@@ -87,6 +87,13 @@ static sequence_event_t step_vorts_events[] = {
 };
 
 static sequence_event_t step_humans_events[] = {
+#if DEBUG
+    {EVENT_PAUSE, -1.f},
+    {EVENT_FIRE, 0.f,  .target = "wakeroom_door", .use_type = use_on},
+    {EVENT_FIRE, 0.0f,  .target = "stn_barney_08quack", .use_type = use_on},
+    {EVENT_PAUSE, -1.f},
+    {EVENT_CALLBACK, 0.f, .callback = make_barney_follow},
+#else
     {EVENT_PAUSE, -1.f},
     {EVENT_FIRE, 0.f,  .target = "seq_slick_standup", .use_type = use_on},
     {EVENT_FIRE, 1.f,  .target = "stn_slick_01awake", .use_type = use_on},
@@ -96,6 +103,7 @@ static sequence_event_t step_humans_events[] = {
     {EVENT_FIRE, 1.0f,  .target = "stn_barney_01alive", .use_type = use_on},
     {EVENT_PAUSE, -1.f},
     {EVENT_CALLBACK, 0.f, .callback = make_barney_follow},
+#endif
 };
 
 static void init_seq_for_step(sequence_t *seq, const step_t step) {
@@ -150,11 +158,5 @@ EXPORT float on_think(float time) {
 }
 
 EXPORT int32_t on_master_check(const entity_t* activator, const entity_t* caller) {
-    if (ent_matches(caller, "func_door", "wakeroom_door")) {
-        console_log(log_debug, "door activator:\n");
-        ent_print(log_debug, activator);
-        return ent_matches(activator, "monster_barney", NULL);
-	}
-
     return false;
 }
