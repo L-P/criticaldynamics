@@ -2373,7 +2373,7 @@
 
 @PointClass base(Targetname) size(-16 -16 -16, 16 16 16) = player_weaponstrip : "Strips player's weapons" []
 
-@PointClass base(Targetname, Targetx) size(-8 -8 -8, 8 8 8) color(255 0 255) = scripted_sentence : "Scripted Sentence"
+@PointClass base(Targetname, Targetx) model({"path":"sprites/trenchbroom/scripted_sentence.png","scale":.25}) color(255 0 255) = scripted_sentence : "Scripted Sentence"
 [
 	spawnflags(Flags) = 
 	[
