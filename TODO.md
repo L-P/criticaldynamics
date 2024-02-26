@@ -1,5 +1,5 @@
-## c0a3
-- Break road halfway with guard booth.
+## c1a0
+- Intro dialogue fix (last few sentences)
 
 ## General
 - Notify player upon key/keycard pickup
