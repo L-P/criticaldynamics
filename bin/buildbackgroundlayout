@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+set -eu
+
+width=1920
+height=1080
+
+printf "resolution\t%d\t%d\n\n" "$width" "$height"
+
+i=0
+for y in $(seq 0 256 $height); do
+    for x in $(seq 0 256 $width); do
+        printf "resource/background/background-%d.tga\tscaled\t%d\t%d\n" \
+            "$i" "$x" "$y"
+        i=$((i+1))
+    done
+done

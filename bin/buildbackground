@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+set -eu
+
+cd "$(dirname "$0")/.."
+
+mkdir -p "resource/background"
+convert -crop 256x256 +repage "resourcesrc/background.png" "resource/background/background.tga"    
+mogrify -orient bottom-left -flip "resource/background/*.tga"
