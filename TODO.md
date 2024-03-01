@@ -1,5 +1,8 @@
+## c0a4
+- Bubbles to show current
+
 ## c1a0
-- Intro dialogue fix (last few sentences)
+- Exit through hangar
 
 ## General
 - Notify player upon key/keycard pickup

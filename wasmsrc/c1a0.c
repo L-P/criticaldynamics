@@ -90,7 +90,7 @@ static sequence_event_t step_humans_events[] = {
 #if DEBUG
     {EVENT_PAUSE, -1.f},
     {EVENT_FIRE, 0.f,  .target = "wakeroom_door", .use_type = use_on},
-    {EVENT_FIRE, 0.0f,  .target = "stn_barney_08quack", .use_type = use_on},
+    {EVENT_FIRE, 0.0f,  .target = "stn_barney_08lead", .use_type = use_on},
     {EVENT_PAUSE, -1.f},
     {EVENT_CALLBACK, 0.f, .callback = make_barney_follow},
 #else
