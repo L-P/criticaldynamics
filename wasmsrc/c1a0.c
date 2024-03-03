@@ -9,7 +9,7 @@
 #include "lib/format.h"
 #include "lib/sequence.h"
 
-#define DEBUG true
+#define DEBUG false
 
 typedef enum {
     STEP_INTRO_VORTS = 0,
