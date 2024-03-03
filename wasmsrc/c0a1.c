@@ -77,6 +77,7 @@ EXPORT int32_t on_fire(
     if (ent_matches(caller, "item_security", "card")) {
         state.keycard_obtained = true;
         play_sound(card_pickup_sound, NULL, chan_item, 1, sound_att_norm);
+        ent_fire("card_message", use_on, 0);
         return true;
     }
 
