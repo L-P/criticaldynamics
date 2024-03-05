@@ -9,7 +9,7 @@
 #include "lib/format.h"
 #include "lib/sequence.h"
 
-#define DEBUG true
+#define DEBUG false
 
 typedef enum {
     STEP_INTRO_VORTS = 0,
@@ -155,8 +155,4 @@ EXPORT float on_think(float time) {
     }
 
     return .1f;
-}
-
-EXPORT int32_t on_master_check(const entity_t* activator, const entity_t* caller) {
-    return false;
 }
