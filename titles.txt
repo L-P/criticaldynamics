@@ -87,4 +87,9 @@ GAMESAVED
 {
 Saved...
 }
+
+KEYCARDPICKUP
+{
+You picked up a keycard
+}
 // }}} "Standard" text

@@ -1872,7 +1872,7 @@
 
 ]
 @PointClass base(Monster, Sequence) size(-32 -32 0, 32 32 128) model({ "path": "models/garg.mdl", "frame": sequence, "skin": skin }) = monster_gargantua : "Gargantua" []
-@PointClass base(Monster, RenderFields, Sequence) size(-16 -16 -36, 16 16 36) studio() = monster_generic : "Generic Script Monster" 
+@PointClass base(Monster, RenderFields, Sequence) size(-16 -16 -36, 16 16 36) model({"path": model}) = monster_generic : "Generic Script Monster" 
 [
 	spawnflags(Flags) = 
 	[
@@ -2373,7 +2373,7 @@
 
 @PointClass base(Targetname) size(-16 -16 -16, 16 16 16) = player_weaponstrip : "Strips player's weapons" []
 
-@PointClass base(Targetname, Targetx) size(-16 -16 0, 16 16 72) color(255 0 255) = scripted_sentence : "Scripted Sentence"
+@PointClass base(Targetname, Targetx) model({"path":"sprites/trenchbroom/scripted_sentence.png","scale":.25}) color(255 0 255) = scripted_sentence : "Scripted Sentence"
 [
 	spawnflags(Flags) = 
 	[

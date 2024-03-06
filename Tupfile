@@ -2,4 +2,4 @@
 : | src/cl_dll/<output> |> cp src/cl_dll/client.so %o |> cl_dlls/client.so
 : | src/network/delta.lst |> cp src/network/delta.lst %o |> delta.lst
 
-: | wadsrc/*.png |> goldutil wad-create -out "%o" wadsrc |> criticaldynamics.wad
+: wadsrc/*.png |> goldutil wad-create -out "%o" %f |> criticaldynamics.wad

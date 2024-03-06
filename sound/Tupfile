@@ -4,6 +4,7 @@
 # Spoken sentences, needs pcm_u8 for lip sync.
 : foreach ../soundsrc/c0a0/*.mp3 |> !ffmpeg |> c0a0/%B.wav {sentences}
 : foreach ../soundsrc/c0a1/*.mp3 |> !ffmpeg |> c0a1/%B.wav {sentences}
+: foreach ../soundsrc/c1a0/*.mp3 |> !ffmpeg |> c1a0/%B.wav {sentences}
 : foreach ../soundsrc/sc/*.mp3 |> !ffmpeg |> sc/%B.wav {sentences}
 : foreach ../soundsrc/scientist/*.mp3 |> !ffmpeg |> scientist/%B.wav
 : foreach ../soundsrc/barney/*.mp3 |> !ffmpeg |> barney/%B.wav

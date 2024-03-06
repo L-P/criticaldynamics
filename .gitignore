@@ -4,6 +4,8 @@
 /maps
 /sound
 /delta.lst
+/resource/BackgroundLayout.txt
+/resource/background/background-*.tga
 
 # Misc build artefacts
 *.dbg

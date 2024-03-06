@@ -1,7 +1,8 @@
 @include "halflife.fgd"
 @include "sdhlt.fgd"
 
-@PointClass base(Targetname) = game_wasm
+@PointClass base(Targetname) model({"path":"sprites/trenchbroom/game_wasm.png","scale":.25}) = game_wasm
+
 [
     spawnflags(flags) =
     [

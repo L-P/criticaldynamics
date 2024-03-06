@@ -17,7 +17,7 @@ __main() {
     make
     mkdir -p "$tmp/wasm" "$tmp/maps" "$tmp/dlls" "$tmp/cl_dlls" "$tmp/models"
     cp wasm/*.wasm "$tmp/wasm/"
-    cp maps/*.bsp "$tmp/maps/"
+    cp maps/*.bsp maps/*.cfg "$tmp/maps/"
     cp dlls/hl.* "$tmp/dlls/"
     cp cl_dlls/client.* "$tmp/cl_dlls/"
 
@@ -45,7 +45,8 @@ __copymisc() {
 
     cp \
         ./*.fgd ./*.wad \
-        game.cfg libiwasm.dll liblist.gam \
+        dev.cfg game.cfg libiwasm.dll liblist.gam \
+        criticaldynamics.wad  \
         logo_big.png titles.txt \
         "$tmp/"
 }
