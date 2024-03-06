@@ -8,7 +8,7 @@ Released under the Creative Commons CC-BY-SA 4.0 license, see the
   By popcorn chicken.
   https://gamebanana.com/mods/6694
 
-- [hl_lights.wad](./hl_lights.wad) [sprites/lighting](./sprites/lighting)  
+- [hl_lights.wad](./hl_lights.wad), [sprites/lighting](./sprites/lighting)  
   By Hezus.
   https://www.moddb.com/mods/half-life-enriched/downloads/half-life-enriched-alpha-version-0885
 
@@ -19,6 +19,10 @@ Released under the Creative Commons CC-BY-SA 4.0 license, see the
   Phrase diagram by Cmglee, licensed under the Creative Commons CC-BY-SA 3.0 license.  
   https://commons.wikimedia.org/wiki/File:Phase_diagram_of_water_simplified.svg  
   Half-Life lambda logo property of Valve Corporation.
+
+- [models](./models), [wadsrc](./wadsrc)  
+    Adapted from Half-Life and Blue Shift. Property of Valve Corporation,
+    released under the please don't sue me license.
 
 ## Voices
 Generated using elevenlabs.io.
