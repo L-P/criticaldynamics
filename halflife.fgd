@@ -2614,6 +2614,7 @@
 	[ 
 		1: "Target Once" : 0 
 		2: "Start Off" : 0
+		4: "Hurt Once" : 0
 		8: "No clients" : 0
 		16:"FireClientOnly" : 0
 		32:"TouchClientOnly" : 0
