@@ -46,7 +46,7 @@ __copymisc() {
     cp \
         ./*.fgd ./*.wad \
         dev.cfg game.cfg libiwasm.dll liblist.gam \
-        criticaldynamics.wad  \
+        criticaldynamics.wad LICENSE.md cc-by-sa-4.0.txt delta.lst \
         logo_big.png titles.txt \
         "$tmp/"
 }
